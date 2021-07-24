@@ -1,0 +1,19 @@
+
+
+.menu__ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu__li {
+  text-decoration: none;
+  color: black;
+  margin-left: 50px;
+  transition: opacity 0.3s linear;
+}
+
+.menu__li:hover {
+  opacity: 0.6;
+}
+
