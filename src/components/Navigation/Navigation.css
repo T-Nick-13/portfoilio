@@ -11,6 +11,7 @@
   color: black;
   margin-left: 50px;
   transition: opacity 0.3s linear;
+  font-size: 20px;
 }
 
 .menu__li:hover {

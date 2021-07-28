@@ -1,14 +1,15 @@
 .header {
-
+  /* max-width: 80vw; */
 }
 
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
 }
 
 .header__logo {
   width: 130px;
+  margin-right: 20px;
 }

@@ -1,0 +1,40 @@
+.main {
+  /* background-color: rgb(171, 164, 164, 0.2); */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  margin: auto;
+  justify-items: center;
+}
+
+.grid {
+
+}
+
+.grid__item {
+
+}
+
+.grid__item-wrapper {
+
+}
+
+.grid__img {
+  max-width: 400px;
+  width: 100%;
+}
+
+@media (max-width: 884px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+}

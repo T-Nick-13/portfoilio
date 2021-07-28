@@ -1,5 +1,13 @@
 .page {
-  max-width: 80vw;
-  padding: 0 20px;
+  /* width: 80vw; */
+
   font-family: 'Century Gothic';
+
+  background: rgb(102, 140, 123, 0.1);
+}
+
+.page__wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: auto;
 }
