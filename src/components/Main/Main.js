@@ -13,7 +13,7 @@ function Main() {
         <div className="grid__item">
           <Link to="/">
             <div className="grid__item-wrapper"></div>
-            <img src={img1} alt="" className="grid__img"></img>
+            <img src="http://localhost:3000/static/media/recycle.5d87f030.jpeg" alt="" className="grid__img"></img>
           </Link>
         </div>
         <div className="grid__item">

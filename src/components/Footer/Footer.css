@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.footer__contacts {
+
+}
+
+.footer__img {
+  width: 30px;
+  margin-left: 10px;
+}

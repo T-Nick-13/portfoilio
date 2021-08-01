@@ -1,5 +1,6 @@
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <div className="page__wrapper">
         <Header />
         <Main />
+        <Footer />
       </div>
 
     </div>
