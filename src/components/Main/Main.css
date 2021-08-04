@@ -1,10 +1,10 @@
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 5px;
+  column-gap: 4px;
   margin: auto;
   justify-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   max-width: 1280px;
 }
 
@@ -13,16 +13,30 @@
 }
 
 .grid__item {
-
+  position: relative;
+  display: flex;
+  margin-bottom: 3px;
 }
 
-.grid__item-wrapper {
+.grid__item:hover .grid__overlay {
+  opacity: 0.3;
+}
 
+.grid__overlay {
+  position: absolute;
+  opacity: 0;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s all linear;
 }
 
 .grid__img {
   width: 100%;
 }
+
 
 @media (max-width: 884px) {
   .main {

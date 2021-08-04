@@ -10,66 +10,48 @@ function Main() {
     <main className="main">
 
       <div className="grid">
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src="http://localhost:3000/static/media/recycle.5d87f030.jpeg" alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img2} alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img3} alt="" className="grid__img"></img>
-          </Link>
-        </div>
+        <Link to="/" className="grid__item">
+          <img src={img2} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img3} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img1} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
       </div>
 
       <div className="grid">
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img2} alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img1} alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img3} alt="" className="grid__img"></img>
-          </Link>
-        </div>
+        <Link to="/" className="grid__item" >
+          <img src={img1} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img2} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img3} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
       </div>
 
       <div className="grid">
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img3} alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img2} alt="" className="grid__img"></img>
-          </Link>
-        </div>
-        <div className="grid__item">
-          <Link to="/">
-            <div className="grid__item-wrapper"></div>
-            <img src={img1} alt="" className="grid__img"></img>
-          </Link>
-        </div>
+        <Link to="/" className="grid__item" >
+          <img src={img3} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img1} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
+        <Link to="/" className="grid__item" >
+          <img src={img2} alt="" className="grid__img"></img>
+          <div className="grid__overlay"></div>
+        </Link>
       </div>
 
     </main>
