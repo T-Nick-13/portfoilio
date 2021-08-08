@@ -12,17 +12,24 @@
 
 }
 
-.grid__item {
+.card {
   position: relative;
   display: flex;
   margin-bottom: 3px;
+  align-items: center;
+  justify-content: center;
 }
 
-.grid__item:hover .grid__overlay {
-  opacity: 0.3;
+.card:hover .card__overlay {
+  opacity: 0.4;
 }
 
-.grid__overlay {
+.card:hover .card__tag{
+  opacity: 1;
+}
+
+
+.card__overlay {
   position: absolute;
   opacity: 0;
   background-color: #000;
@@ -33,8 +40,22 @@
   transition: 0.3s all linear;
 }
 
-.grid__img {
+.card__img {
   width: 100%;
+}
+
+.card__tag {
+  position: absolute;
+  margin: auto;
+  opacity: 0;
+  font-size: 30px;
+  transition: 0.5s all linear;
+  color: #fff;
+  text-decoration: none;
+}
+
+.card__tag:hover {
+  text-decoration: underline;
 }
 
 

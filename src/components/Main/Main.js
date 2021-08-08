@@ -9,48 +9,57 @@ function Main() {
   return (
     <main className="main">
 
-      <div className="grid">
-        <Link to="/" className="grid__item">
-          <img src={img2} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+      <div className="column">
+        <Link to="/" className="card">
+          <img src={img2} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#vaccine</Link>
         </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img3} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+        <Link to="/" className="card" >
+          <img src={img3} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#delivery</Link>
         </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img1} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
-        </Link>
-      </div>
-
-      <div className="grid">
-        <Link to="/" className="grid__item" >
-          <img src={img1} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
-        </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img2} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
-        </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img3} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+        <Link to="/" className="card" >
+          <img src={img1} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
         </Link>
       </div>
 
-      <div className="grid">
-        <Link to="/" className="grid__item" >
-          <img src={img3} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+      <div className="column">
+        <Link to="/" className="card" >
+          <img src={img1} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
         </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img1} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+        <Link to="/" className="card" >
+          <img src={img2} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
         </Link>
-        <Link to="/" className="grid__item" >
-          <img src={img2} alt="" className="grid__img"></img>
-          <div className="grid__overlay"></div>
+        <Link to="/" className="card" >
+          <img src={img3} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
+        </Link>
+      </div>
+
+      <div className="column">
+        <Link to="/" className="card" >
+          <img src={img3} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
+        </Link>
+        <Link to="/" className="card" >
+          <img src={img1} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
+        </Link>
+        <Link to="/" className="card" >
+          <img src={img2} alt="" className="card__img"></img>
+          <div className="card__overlay"></div>
+          <Link to="/" className="card__tag">#recycle</Link>
         </Link>
       </div>
 
