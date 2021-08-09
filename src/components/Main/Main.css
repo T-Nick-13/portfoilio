@@ -8,10 +8,6 @@
   max-width: 1280px;
 }
 
-.grid {
-
-}
-
 .card {
   position: relative;
   display: flex;
@@ -27,7 +23,6 @@
 .card:hover .card__tag{
   opacity: 1;
 }
-
 
 .card__overlay {
   position: absolute;
@@ -57,7 +52,6 @@
 .card__tag:hover {
   text-decoration: underline;
 }
-
 
 @media (max-width: 884px) {
   .main {
