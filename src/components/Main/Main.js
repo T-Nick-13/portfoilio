@@ -3,23 +3,21 @@ import Card from '../Card/Card';
 
 function Main(props) {
 
-/*   function handlclick(e) {
-    debugger
 
-    console.log(pictures.link);
-  } */
 
   return (
     <main className="main">
 
       <div className="column">
         {
-          props.cards.map((card) =>{
+          props.column1.map((card) =>{
             return (
               <Card
                 link={card.link}
                 name={card.name}
                 tag={card.tag}
+                key={card.name}
+                onCardClick={props.handleCardClick}
               />
             )
           })
@@ -28,12 +26,14 @@ function Main(props) {
 
       <div className="column">
         {
-          props.cards.map((card) =>{
+          props.column2.map((card) =>{
             return (
               <Card
                 link={card.link}
                 name={card.name}
                 tag={card.tag}
+                key={card.name}
+                onCardClick={props.handleCardClick}
               />
             )
           })
@@ -42,12 +42,14 @@ function Main(props) {
 
       <div className="column">
         {
-          props.cards.map((card) =>{
+          props.column3.map((card) =>{
             return (
               <Card
                 link={card.link}
                 name={card.name}
                 tag={card.tag}
+                key={card.name}
+                onCardClick={props.handleCardClick}
               />
             )
           })
