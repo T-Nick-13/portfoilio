@@ -1,10 +1,10 @@
-import img1 from '../images/recycle.jpeg';
-import img2 from '../images/vaccine.jpeg';
-import img3 from '../images/delivers.jpg';
-import test from '../images/12345.jpg';
-import test1 from '../images/SET.svg';
-import test2 from '../images/AdobeStock_446193555.jpeg';
-import test3 from '../images/Вело.svg';
+import img1 from '../images/light/recycle.jpeg';
+import img2 from '../images/light/vaccine.jpeg';
+import img3 from '../images/light/delivers.jpg';
+import test from '../images/light/12345.jpg';
+import test1 from '../images/light/SET.svg';
+import test2 from '../images/light/AdobeStock_446193555.jpeg';
+import test3 from '../images/light/Открытка2.jpg';
 
 
 export const column1 = [
@@ -32,7 +32,7 @@ export const column1 = [
 
 export const column2 = [
   {
-    link: test1,
+    link: test2,
     name: 'testy1',
     tag: '#advertising'
   },

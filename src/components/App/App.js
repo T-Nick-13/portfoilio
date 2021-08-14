@@ -15,8 +15,46 @@ function App() {
       link: card.link,
       tag: card.tag
     })
+  }
+
+  function handlePopupCloseOverlay(e) {
+    debugger
+    e.stopPropagation()
+    console.log(e.currentTarget)
+    console.log(e.target)
+    /* e.stopPropagation() */
+
 
   }
+
+  function handlePopupClose(e) {
+
+    /* console.log(e.currentTarget) */
+    /* console.log(e.target) */
+    setSelectedCard({})
+  }
+
+
+  React.useEffect(() => {
+    const ESC = 'Escape';
+
+    function handleEscClose(evt) {
+      if (evt.key === ESC) {
+        handlePopupClose();
+      }
+    }
+
+    function handleOverlayClose (evt) {
+      if (evt.target.classList.contains('popup_opened')) {
+        handlePopupClose()
+      }
+    }
+
+    document.addEventListener('keyup', handleEscClose);
+    document.addEventListener('click', handleOverlayClose);
+
+
+  }, [])
 
 
   return (
@@ -33,7 +71,7 @@ function App() {
 
         <ImagePopup
           card={selectedCard}
-
+          onClose={handlePopupClose}
         />
       </div>
 
