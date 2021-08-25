@@ -41,12 +41,15 @@
 
 .card__tag {
   position: absolute;
-  margin: auto;
+  bottom: 0;
   opacity: 0;
-  font-size: 30px;
-  transition: 0.5s all linear;
+  font-size: 20px;
+  line-height: 1.5;
+  transition: 0.3s all linear;
   color: #fff;
   text-decoration: none;
+  background-color: rgb(1,1,1, 0.6);
+  width: 100%;
 }
 
 .card__tag:hover {
