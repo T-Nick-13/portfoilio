@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
 import Navigation from '../Navigation/Navigation';
+import Burger from '../Burger/Burger';
 
 function Header() {
   return (

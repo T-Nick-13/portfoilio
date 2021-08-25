@@ -1,0 +1,46 @@
+.burger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .burger {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 19px;
+    cursor: pointer;
+  }
+  .burger span,
+  .burger::before,
+  .burger::after {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3 linear;
+    background-color: #fff;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+  }
+
+  .burger::before {
+    top: 0;
+  }
+
+  .burger::after {
+    bottom: 0;
+  }
+
+  .burger span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+
+
+
+}

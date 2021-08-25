@@ -13,3 +13,9 @@
   width: 130px;
   margin-right: 20px;
 }
+
+@media (max-width: 767px) {
+  .header__container {
+    justify-content: space-between;
+  }
+}
