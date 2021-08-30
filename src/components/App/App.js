@@ -1,9 +1,12 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ImagePopup from '../ImagePopup/ImagePopup';
+import About from '../About/About';
+
 import { column1, column2, column3 } from '../../utils/constants';
 
 function App() {
@@ -17,23 +20,9 @@ function App() {
     })
   }
 
-  function handlePopupCloseOverlay(e) {
-    debugger
-    e.stopPropagation()
-    console.log(e.currentTarget)
-    console.log(e.target)
-    /* e.stopPropagation() */
-
-
-  }
-
   function handlePopupClose(e) {
-
-    /* console.log(e.currentTarget) */
-    /* console.log(e.target) */
     setSelectedCard({})
   }
-
 
   React.useEffect(() => {
     const ESC = 'Escape';
@@ -53,7 +42,6 @@ function App() {
     document.addEventListener('keyup', handleEscClose);
     document.addEventListener('click', handleOverlayClose);
 
-
   }, [])
 
 
@@ -61,12 +49,26 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header />
-        <Main
-          column1={column1}
-          column2={column2}
-          column3={column3}
-          handleCardClick={handleCardClick}
-        />
+        <Switch>
+          <Route exact path="/">
+            <Main
+              column1={column1}
+              column2={column2}
+              column3={column3}
+              handleCardClick={handleCardClick}
+            />
+          </Route>
+
+          <Route exact path="/about">
+            <About />
+          </Route>
+
+
+
+
+        </Switch>
+
+
         <Footer />
 
         <ImagePopup

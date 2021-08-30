@@ -21,13 +21,13 @@ function Navigation() {
     <nav className={menuClass}>
       <ul className="menu__ul">
         <li>
-          <Link to="/" className="menu__li">Обо мне</Link>
+          <Link to="/about" className="menu__li">About</Link>
         </li>
         <li>
-          <Link to="/" className="menu__li">Работы</Link>
+          <Link to="/" className="menu__li">Works</Link>
         </li>
         <li>
-          <Link to="/" className="menu__li">Контакты</Link>
+          <Link to="/" className="menu__li">Contacts</Link>
         </li>
       </ul>
     </nav>
