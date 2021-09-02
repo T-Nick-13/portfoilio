@@ -1,11 +1,13 @@
 .about {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
 }
 
 .about__container {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: min-content minmax(240px, auto);
+  grid-gap: 20px;
   margin-bottom: 50px;
 }
 
@@ -14,7 +16,6 @@
   max-width: 170px;
   border-radius: 148px;
   object-fit: cover;
-  margin-right: 30px;
 }
 
 .about__info {
@@ -81,5 +82,44 @@
     padding-right: 0;
   }
 
+}
+
+@media (max-width: 520px) {
+
+  .about__name {
+    font-size: 28px;
+  }
+
+  .about__header {
+    font-size: 26px;
+  }
+
+  .about__paragraph {
+    font-size: 14px;
+  }
+
+  .about__photo {
+    height: 140px;
+    max-width: 140px;
+  }
+
+  .about__container {
+    align-self: center;
+  }
+
+}
+
+@media (max-width: 438px) {
+  .about__container {
+    justify-content: center;
+    margin-bottom: 30px;
+    grid-template-columns: auto;
+    justify-items: center;
+    grid-gap: 0;
+  }
+
+  .about__info {
+    text-align: center;
+  }
 }
 
