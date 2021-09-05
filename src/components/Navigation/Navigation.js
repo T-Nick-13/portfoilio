@@ -13,6 +13,10 @@ function Navigation() {
     openedMenu ? setOpenMenu(false) : setOpenMenu(true);
   }
 
+  function handleMenuItemClick() {
+    openedMenu ? setOpenMenu(false) : setOpenMenu(true);
+  }
+
   const currentLocation = useLocation().pathname;
 
 
@@ -25,14 +29,16 @@ function Navigation() {
     <nav className={menuClass}>
       <ul className="menu__ul">
         <li>
-          <Link to="/about" className={currentLocation === '/about' ? 'menu__li menu__li_active' : 'menu__li'}>About</Link>
+          <Link to="/about" className={currentLocation === '/about' ? 'menu__li menu__li_active' : 'menu__li'}
+            onClick={handleBurgerClick}>About</Link>
         </li>
         <li>
-          <Link to="/works" className={currentLocation === '/'
-            || currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}>Works</Link>
+          <Link to="/" className={currentLocation === '/' || currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
+            onClick={handleBurgerClick}>Works</Link>
         </li>
         <li>
-          <Link to="/contacts" className={currentLocation === '/contacts' ? 'menu__li menu__li_active' : 'menu__li'}>Contacts</Link>
+          <Link to="/contacts" className={currentLocation === '/contacts' ? 'menu__li menu__li_active' : 'menu__li'}
+          onClick={handleBurgerClick}>Contacts</Link>
         </li>
       </ul>
     </nav>
