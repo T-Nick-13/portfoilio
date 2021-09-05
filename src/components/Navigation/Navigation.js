@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 
 function Navigation() {
@@ -13,6 +13,10 @@ function Navigation() {
     openedMenu ? setOpenMenu(false) : setOpenMenu(true);
   }
 
+  const currentLocation = useLocation().pathname;
+
+
+
   return (
     <>
     <div className={burgerClass} onClick={handleBurgerClick}>
@@ -21,13 +25,14 @@ function Navigation() {
     <nav className={menuClass}>
       <ul className="menu__ul">
         <li>
-          <Link to="/about" className="menu__li">About</Link>
+          <Link to="/about" className={currentLocation === '/about' ? 'menu__li menu__li_active' : 'menu__li'}>About</Link>
         </li>
         <li>
-          <Link to="/" className="menu__li">Works</Link>
+          <Link to="/works" className={currentLocation === '/'
+            || currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}>Works</Link>
         </li>
         <li>
-          <Link to="/" className="menu__li">Contacts</Link>
+          <Link to="/contacts" className={currentLocation === '/contacts' ? 'menu__li menu__li_active' : 'menu__li'}>Contacts</Link>
         </li>
       </ul>
     </nav>

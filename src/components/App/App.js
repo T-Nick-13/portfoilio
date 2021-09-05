@@ -1,11 +1,12 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ImagePopup from '../ImagePopup/ImagePopup';
 import About from '../About/About';
+
 
 import { column1, column2, column3 } from '../../utils/constants';
 
@@ -62,7 +63,6 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
-
 
 
 
