@@ -2,6 +2,7 @@
   list-style-type: none;
   padding: 0;
   display: flex;
+  position: relative;
 }
 
 .menu__li {
@@ -25,6 +26,74 @@
 .burger {
   display: none;
 }
+
+.menu__sub-ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  background-color: #bfbfbf;
+  padding: 15px;
+  transform: translate(0px, 10%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.3s all ease;
+  list-style-type: none;
+  z-index: 1;
+}
+
+.menu__sub-li {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.menu__sub-li:hover {
+  opacity: 0.5;
+}
+
+
+/*Открытие под меню при наведении.*
+/* .menu__ul > li:hover .menu__sub-ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+} */
+
+.menu__arrow {
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 0 0 0 9px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #5f5c5c;
+  border-right: 2px solid #5f5c5c;
+  transform: rotate(135deg);
+
+}
+
+.menu__ul > li {
+  display: flex;
+  align-items: center;
+}
+
+.menu__ul > li._active .menu__sub-ul {
+  opacity: 0.7;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+.menu__ul > li._active .menu__arrow {
+  transform: rotate(-45deg);
+}
+
+.menu__sub-ul > li {
+  margin-top: 10px;
+}
+
 
 @media (max-width: 767px) {
   .menu {
@@ -120,6 +189,10 @@
     top: 50%;
     transform: rotate(45deg) translate(0px, 50%);
   }
+
+
+
+
 }
 
 @media (max-width: 580px) {
