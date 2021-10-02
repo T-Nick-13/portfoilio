@@ -55,8 +55,8 @@ function Navigation() {
 
 
         <li>
-          <Link to="/contacts" className={currentLocation === '/contacts' ? 'menu__li menu__li_active' : 'menu__li'}
-          onClick={handleBurgerClick}>Contacts</Link>
+          <Link to="/contact" className={currentLocation === '/contact' ? 'menu__li menu__li_active' : 'menu__li'}
+          onClick={handleBurgerClick}>Contact</Link>
         </li>
       </ul>
     </nav>

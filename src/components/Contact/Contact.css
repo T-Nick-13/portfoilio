@@ -1,0 +1,54 @@
+.contact {
+
+}
+
+.form {
+  max-width: 60%;
+  margin: 0px auto;
+}
+
+.form *{
+  outline: none;
+}
+
+.form__body {
+
+}
+
+.form__item {
+  margin-bottom: 20px;
+}
+
+.form__title {
+
+}
+
+.form__label {
+  display: block;
+}
+
+.form__input {
+  height: 30px;
+  width: 100%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.form__input:focus {
+  box-shadow: 0 0 10px rgb(90, 90, 90);
+}
+
+textarea.form__input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  cursor: pointer;
+  text-transform: uppercase;
+}

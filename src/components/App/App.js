@@ -6,6 +6,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import ImagePopup from '../ImagePopup/ImagePopup';
 import About from '../About/About';
+import Contact from '../Contact/Contact';
 
 
 import { column1, column2, column3 } from '../../utils/constants';
@@ -62,6 +63,10 @@ function App() {
 
           <Route exact path="/about">
             <About />
+          </Route>
+
+          <Route exact path="/contact">
+            <Contact />
           </Route>
 
 
