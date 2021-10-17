@@ -15,6 +15,25 @@
 
 }
 
+.form__body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.9) url("../../images/7VE.gif") center / 350px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .form__item {
   margin-bottom: 20px;
 }
@@ -34,6 +53,10 @@
   transition: all 0.3s ease;
 }
 
+.form__input._error {
+  box-shadow: 0 0 10px rgb(230, 67, 67);
+}
+
 .form__input:focus {
   box-shadow: 0 0 10px rgb(90, 90, 90);
 }
@@ -51,4 +74,12 @@ textarea.form__input {
   min-height: 60px;
   cursor: pointer;
   text-transform: uppercase;
+  background-color: #c1c4c5;
+  border: none;
+}
+
+.form__error {
+  font-size: 13px;
+  color: red;
+  margin: 0;
 }
