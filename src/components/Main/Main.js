@@ -18,6 +18,8 @@ function Main(props) {
                 tag={card.tag}
                 key={card.name}
                 onCardClick={props.handleCardClick}
+                onTagClick={props.handleTagClick}
+
               />
             )
           })

@@ -10,11 +10,15 @@ function Card(props) {
     })
   }
 
+  function handleTagClick() {
+    props.onTagClick();
+  }
+
   return (
-    <div className="card" onClick={handlCardClick}>
-      <img src={props.link} alt={props.name} className="card__img"></img>
-      <div className="card__overlay"></div>
-      <Link to="/" className="card__tag">{props.tag}</Link>
+    <div className="card" >
+      <img src={props.link} alt={props.name} className="card__img" ></img>
+      <div className="card__overlay" onClick={handlCardClick}></div>
+      <p className="card__tag" onClick={handleTagClick}>{props.tag}</p>
     </div>
   );
 }

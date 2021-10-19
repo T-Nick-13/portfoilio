@@ -1,5 +1,4 @@
 import React from 'react';
-import test from '../../../src/'
 
 
 function Contact() {

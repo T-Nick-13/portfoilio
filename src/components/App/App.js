@@ -14,17 +14,32 @@ import { column1, column2, column3 } from '../../utils/constants';
 function App() {
 
   const [selectedCard, setSelectedCard] = React.useState({});
+  const [filteredTags, setFilteredTags] = React.useState(column1);
+
 
   function handleCardClick(card) {
     setSelectedCard({
       link: card.link,
       tag: card.tag
-    })
+    });
   }
 
+
   function handlePopupClose(e) {
-    setSelectedCard({})
+    setSelectedCard({});
   }
+
+
+  function handleTagClick() {
+
+    const filteredCards = column1.filter((card) => {
+      return card.tag.includes(this.tag)
+    })
+
+    setFilteredTags(filteredCards);
+
+  }
+
 
   React.useEffect(() => {
     const ESC = 'Escape';
@@ -43,7 +58,6 @@ function App() {
 
     document.addEventListener('keyup', handleEscClose);
     document.addEventListener('click', handleOverlayClose);
-
   }, [])
 
 
@@ -54,10 +68,11 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
-              column1={column1}
+              column1={filteredTags}
               column2={column2}
               column3={column3}
               handleCardClick={handleCardClick}
+              handleTagClick={handleTagClick}
             />
           </Route>
 
