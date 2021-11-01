@@ -9,12 +9,12 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 
 
-import { column1, column2, column3 } from '../../utils/constants';
+import { pic } from '../../utils/constants';
 
 function App() {
 
   const [selectedCard, setSelectedCard] = React.useState({});
-  const [filteredTags, setFilteredTags] = React.useState(column1);
+  const [filteredCards, setFilteredCards] = React.useState(pic);
 
 
   function handleCardClick(card) {
@@ -31,13 +31,10 @@ function App() {
 
 
   function handleTagClick() {
-
-    const filteredCards = column1.filter((card) => {
+    const filteredCards = pic.filter((card) => {
       return card.tag.includes(this.tag)
-    })
-
-    setFilteredTags(filteredCards);
-
+    });
+    setFilteredCards(filteredCards);
   }
 
 
@@ -68,9 +65,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
-              column1={filteredTags}
-              column2={column2}
-              column3={column3}
+              pic={filteredCards}
               handleCardClick={handleCardClick}
               handleTagClick={handleTagClick}
             />

@@ -7,7 +7,7 @@ import test2 from '../images/light/AdobeStock_446193555.jpeg';
 import test3 from '../images/light/Открытка2.jpg';
 
 
-export const column1 = [
+export const pic = [
   {
     link: test,
     name: 'testy',
@@ -25,53 +25,33 @@ export const column1 = [
   },
   {
     link: img3,
-    name: 'delivers',
+    name: 'delivers1',
     tag: '#advertising'
   },
-];
-
-export const column2 = [
+  {
+    link: test1,
+    name: 'delivers2',
+    tag: '#advertising'
+  },
   {
     link: test2,
-    name: 'testy1',
+    name: 'delivers3',
     tag: '#advertising'
   },
   {
     link: test3,
-    name: 'recycle1',
-    tag: '#advertising'
-  },
-  {
-    link: img2,
-    name: 'vaccine1',
-    tag: '#sticker'
-  },
-  {
-    link: img3,
-    name: 'delivers1',
-    tag: '#advertising'
-  },
-];
-
-export const column3 = [
-  {
-    link: img3,
-    name: 'testy1',
+    name: 'delivers4',
     tag: '#advertising'
   },
   {
     link: img1,
-    name: 'recycle1',
+    name: 'delivers5',
     tag: '#advertising'
   },
   {
-    link: img2,
-    name: 'vaccine1',
-    tag: '#sticker'
-  },
-  {
-    link: test2,
-    name: 'delivers1',
+    link: test,
+    name: 'delivers6',
     tag: '#advertising'
-  },
+  }
+
 ];
