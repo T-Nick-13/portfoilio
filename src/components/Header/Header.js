@@ -3,14 +3,17 @@ import logoPath from '../../images/logo.svg';
 
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header(props) {
   return (
     <header className="header">
       <div className="header__container">
         <Link to="/">
-          <img className="header__logo" src={logoPath} alt="logo" />
+          <img className="header__logo" src={logoPath} alt="logo"/>
         </Link>
-        <Navigation />
+        <Navigation
+          onTagClick={props.handleTagClick}
+          tags={props.tags}
+        />
       </div>
 
     </header>

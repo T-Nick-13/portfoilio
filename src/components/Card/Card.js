@@ -10,8 +10,9 @@ function Card(props) {
     })
   }
 
-  function handleTagClick() {
-    props.onTagClick();
+  function handleTagClick(e) {
+    const tagsName = e.target.textContent;
+    props.onTagClick(tagsName);
   }
 
   return (

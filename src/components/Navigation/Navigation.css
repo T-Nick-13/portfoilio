@@ -32,7 +32,7 @@
   top: 100%;
   right: 0;
   min-width: 200px;
-  background-color: #bfbfbf;
+  background-color: rgb(140 141 135 / 40%);
   padding: 15px;
   transform: translate(0px, 10%);
   opacity: 0;
@@ -42,25 +42,27 @@
   list-style-type: none;
   z-index: 1;
   display: none;
+  border-radius: 7px;
 }
 
 .menu__sub-li {
   color: #000;
   text-decoration: none;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .menu__sub-li:hover {
   opacity: 0.5;
 }
 
-
-/*Открытие под меню при наведении.*
+/*Открытие под меню при наведении*/
 /* .menu__ul > li:hover .menu__sub-ul {
   opacity: 1;
   visibility: visible;
   transform: translate(0px, 0px);
   pointer-events: all;
+  display: block;
 } */
 
 .menu__arrow {

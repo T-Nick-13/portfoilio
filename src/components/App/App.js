@@ -24,18 +24,31 @@ function App() {
     });
   }
 
-
-  function handlePopupClose(e) {
+  function handlePopupClose() {
     setSelectedCard({});
   }
 
-
-  function handleTagClick() {
-    const filteredCards = pic.filter((card) => {
-      return card.tag.includes(this.tag)
+  function handleTagClick(e) {
+     const filteredCards = pic.filter((card) => {
+      return card.tag.includes(e)
     });
-    setFilteredCards(filteredCards);
+     setFilteredCards(filteredCards);
   }
+
+  function handleTagClicks(e) {
+    debugger
+    console.log(e)
+ }
+
+
+
+  const tags = pic.map((card) => {
+    return card.tag;
+  })
+
+  const sortedTags = tags.reverse().filter((e, i, arr) => {
+    return arr.indexOf(e, i+1) === -1;
+  }).reverse();
 
 
   React.useEffect(() => {
@@ -49,7 +62,7 @@ function App() {
 
     function handleOverlayClose (evt) {
       if (evt.target.classList.contains('popup_opened')) {
-        handlePopupClose()
+        handlePopupClose();
       }
     }
 
@@ -61,7 +74,10 @@ function App() {
   return (
     <div className="page">
       <div className="page__wrapper">
-        <Header />
+        <Header
+          handleTagClick={handleTagClick}
+          tags={sortedTags}
+        />
         <Switch>
           <Route exact path="/">
             <Main

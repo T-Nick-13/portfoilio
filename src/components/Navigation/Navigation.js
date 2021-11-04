@@ -1,15 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 
-function Navigation() {
+function Navigation(props) {
 
   const [openedMenu, setOpenMenu] = React.useState(false);
   const [openedSubMenu, SetOpenedSubMenu] = React.useState(false);
+  const currentLocation = useLocation().pathname;
 
   const menuClass = openedMenu ? 'menu menu_active' : 'menu';
   const burgerClass = openedMenu ? 'burger burger_inactive' : 'burger';
   const liClass = openedSubMenu ? '_active' : '';
-
 
   function handleBurgerClick() {
     openedMenu ? setOpenMenu(false) : setOpenMenu(true);
@@ -19,9 +19,10 @@ function Navigation() {
     openedSubMenu ? SetOpenedSubMenu(false) : SetOpenedSubMenu(true);
   }
 
-
-
-  const currentLocation = useLocation().pathname;
+  function handleTagClick(e) {
+    const tagsName = e.target.textContent;
+    props.onTagClick(tagsName);
+  }
 
   return (
     <>
@@ -35,22 +36,21 @@ function Navigation() {
             onClick={handleBurgerClick}>About</Link>
         </li>
 
-
         <li className={liClass}>
           <Link to="/" className={currentLocation === '/' || currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
             onClick={handleBurgerClick}>Works</Link>
           <span className="menu__arrow" onClick={handleArrowClick}></span>
+
           <ul className="menu__sub-ul">
-            <li >
-              <Link to="#" className="menu__sub-li">Advertising</Link>
-            </li>
-            <li>
-              <Link to="#" className="menu__sub-li">Stickers</Link>
-            </li>
-            <li>
-              <Link to="#" className="menu__sub-li">People</Link>
-            </li>
+
+            {props.tags.map((tag) => {
+              return (
+                <li className="menu__sub-li" onClick={handleTagClick} key={tag}>{tag}</li>
+              )
+            })}
+
           </ul>
+
         </li>
 
 
