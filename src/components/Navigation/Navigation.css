@@ -34,15 +34,34 @@
   min-width: 200px;
   background-color: rgb(140 141 135 / 40%);
   padding: 15px;
-  transform: translate(0px, 10%);
+ /*  transform: translate(0px, 10%); */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: 0.3s all ease;
+  transition: all 0.2s linear;
   list-style-type: none;
   z-index: 1;
-  display: none;
+  /* display: none; */
   border-radius: 7px;
+}
+
+/*Открытие под меню при наведении*/
+/* li:hover .menu__sub-ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+  display: block;
+} */
+
+.menu__ul > li._active .menu__sub-ul {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.menu__ul > li._active .menu__arrow {
+  transform: rotate(-45deg);
 }
 
 .menu__sub-li {
@@ -56,42 +75,22 @@
   opacity: 0.5;
 }
 
-/*Открытие под меню при наведении*/
-/* .menu__ul > li:hover .menu__sub-ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0px, 0px);
-  pointer-events: all;
-  display: block;
-} */
-
 .menu__arrow {
   display: block;
   transition: transform 0.3s ease;
   margin: 0 0 0 9px;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #5f5c5c;
-  border-right: 2px solid #5f5c5c;
+  width: 9px;
+  height: 9px;
+  border-top: 1px solid #5f5c5c;
+  border-right: 1px solid #5f5c5c;
   transform: rotate(135deg);
-
 }
+
+
 
 .menu__ul > li {
   display: flex;
   align-items: center;
-}
-
-.menu__ul > li._active .menu__sub-ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0px, 0px);
-  pointer-events: all;
-  display: block;
-}
-
-.menu__ul > li._active .menu__arrow {
-  transform: rotate(-45deg);
 }
 
 .menu__sub-ul > li {
@@ -101,7 +100,6 @@
 .menu__sub-ul > li:first-of-type {
   margin-top: 0;
 }
-
 
 @media (max-width: 767px) {
   .menu {
@@ -151,6 +149,24 @@
     position: relative;
     max-width: 50%;
     margin-left: 46px;
+    display: none;
+  }
+
+  .menu__ul > li._active .menu__sub-ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 11%);
+    pointer-events: all;
+    display: block;
+    top: 0;
+  }
+
+  .menu__ul > li._active .menu__arrow {
+    transform: rotate(-45deg);
+  }
+
+  .menu__sub-li {
+    color: #c5c5c5;
   }
 
   .burger {

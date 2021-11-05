@@ -19,9 +19,21 @@ function Navigation(props) {
     openedSubMenu ? SetOpenedSubMenu(false) : SetOpenedSubMenu(true);
   }
 
+  function handleMenuHover() {
+    SetOpenedSubMenu(true);
+  }
+
+  function handleMenuHoverOut() {
+    SetOpenedSubMenu(false);
+  }
+
   function handleTagClick(e) {
     const tagsName = e.target.textContent;
     props.onTagClick(tagsName);
+
+    SetOpenedSubMenu(false);
+
+    handleBurgerClick();
   }
 
   return (
@@ -36,16 +48,18 @@ function Navigation(props) {
             onClick={handleBurgerClick}>About</Link>
         </li>
 
-        <li className={liClass}>
+        <li className={liClass} onMouseOver={handleMenuHover} onMouseOut={handleMenuHoverOut}>
           <Link to="/" className={currentLocation === '/' || currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
-            onClick={handleBurgerClick}>Works</Link>
+            onClick={handleBurgerClick}  >Works</Link>
           <span className="menu__arrow" onClick={handleArrowClick}></span>
 
           <ul className="menu__sub-ul">
 
             {props.tags.map((tag) => {
               return (
-                <li className="menu__sub-li" onClick={handleTagClick} key={tag}>{tag}</li>
+                <li  onClick={handleTagClick} key={tag}>
+                  <Link to="/" className="menu__sub-li">{tag}</Link>
+                </li>
               )
             })}
 

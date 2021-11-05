@@ -35,13 +35,6 @@ function App() {
      setFilteredCards(filteredCards);
   }
 
-  function handleTagClicks(e) {
-    debugger
-    console.log(e)
- }
-
-
-
   const tags = pic.map((card) => {
     return card.tag;
   })
