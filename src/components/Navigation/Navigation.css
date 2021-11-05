@@ -77,8 +77,8 @@
   display: block;
   transition: transform 0.3s ease;
   margin: 0 0 0 9px;
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   border-top: 1px solid #5f5c5c;
   border-right: 1px solid #5f5c5c;
   transform: rotate(135deg);
@@ -95,24 +95,6 @@
 
 .menu__sub-ul > li:first-of-type {
   margin-top: 0;
-}
-
-.menu__btn {
-  position: fixed;
-  z-index: 5;
-  margin: 0;
-  background-color: rgb(35 35 35 / 90%);
-  color: white;
-  border-radius: 10px;
-  font-size: 13px;
-  top: 132px;
-  padding: 6px;
-  cursor: pointer;
-  display: none;
-}
-
-.menu__btn_active {
-  display: block;
 }
 
 @media (max-width: 767px) {

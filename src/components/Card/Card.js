@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 
 function Card(props) {
@@ -13,6 +14,8 @@ function Card(props) {
   function handleTagClick(e) {
     const tagsName = e.target.textContent;
     props.onTagClick(tagsName);
+
+    props.setClickedTag(true);
   }
 
   return (

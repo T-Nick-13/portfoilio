@@ -1,9 +1,6 @@
 .card {
-  cursor: pointer;
-}
-
-.card {
   position: relative;
+  cursor: pointer;
 }
 
 .card:hover .card__overlay {

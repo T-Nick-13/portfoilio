@@ -13,7 +13,7 @@ function Header(props) {
         <Navigation
           onTagClick={props.handleTagClick}
           tags={props.tags}
-          onBtnClick={props.handleFilterDropping}
+          setClickedTag={props.setClickedTag}
         />
       </div>
 

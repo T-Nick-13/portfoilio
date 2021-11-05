@@ -5,6 +5,29 @@
   min-height: 66vh;
 }
 
+.filter__btn {
+  position: fixed;
+  z-index: 5;
+  margin: 0;
+  background-color: rgb(35 35 35 / 70%);
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  top: 132px;
+  left: 24px;
+  padding: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.filter__btn:hover {
+  background-color: rgb(35 35 35 / 90%);
+}
+
+.filter__btn_active {
+  display: block;
+}
+
 @media (max-width: 884px) {
   .main {
     column-count: 2;

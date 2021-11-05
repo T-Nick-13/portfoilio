@@ -5,13 +5,13 @@ function Navigation(props) {
 
   const [openedMenu, setOpenMenu] = React.useState(false);
   const [openedSubMenu, SetOpenedSubMenu] = React.useState(false);
-  const [clickedTag, setClickedTag] = React.useState(false);
+
   const currentLocation = useLocation().pathname;
 
   const menuClass = openedMenu ? 'menu menu_active' : 'menu';
   const burgerClass = openedMenu ? 'burger burger_inactive' : 'burger';
   const liClass = openedSubMenu ? '_active' : '';
-  const menuBtnClass = clickedTag ? 'menu__btn_active' : '';
+
 
   function handleBurgerClick() {
     openedMenu ? setOpenMenu(false) : setOpenMenu(true);
@@ -34,16 +34,12 @@ function Navigation(props) {
     props.onTagClick(tagsName);
 
     SetOpenedSubMenu(false);
-    setClickedTag(true);
+    props.setClickedTag(true);
 
     handleBurgerClick();
   }
 
-  function handleFilterDropping() {
-    props.onBtnClick();
 
-    setClickedTag(false);
-  }
 
   return (
     <>
@@ -83,7 +79,7 @@ function Navigation(props) {
         </li>
       </ul>
     </nav>
-    <p className={`menu__btn ${menuBtnClass}`} onClick={handleFilterDropping}>Show all works</p>
+
     </>
   );
 }

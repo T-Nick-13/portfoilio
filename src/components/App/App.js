@@ -15,6 +15,7 @@ function App() {
 
   const [selectedCard, setSelectedCard] = React.useState({});
   const [filteredCards, setFilteredCards] = React.useState(pic);
+  const [clickedTag, setClickedTag] = React.useState(false);
 
 
   function handleCardClick(card) {
@@ -73,7 +74,7 @@ function App() {
         <Header
           handleTagClick={handleTagClick}
           tags={sortedTags}
-          handleFilterDropping={handleFilterDropping}
+          setClickedTag={setClickedTag}
         />
         <Switch>
           <Route exact path="/">
@@ -81,6 +82,9 @@ function App() {
               pic={filteredCards}
               handleCardClick={handleCardClick}
               handleTagClick={handleTagClick}
+              clickedTag={clickedTag}
+              setClickedTag={setClickedTag}
+              onBtnClick={handleFilterDropping}
             />
           </Route>
 
