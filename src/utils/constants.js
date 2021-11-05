@@ -11,7 +11,7 @@ export const pic = [
   {
     link: test,
     name: 'testy',
-    tag: '#advertising'
+    tag: '#test'
   },
   {
     link: img1,
@@ -26,12 +26,12 @@ export const pic = [
   {
     link: img3,
     name: 'delivers1',
-    tag: '#advertising'
+    tag: '#sticker'
   },
   {
     link: test1,
     name: 'delivers2',
-    tag: '#advertising'
+    tag: '#test2'
   },
   {
     link: test2,
@@ -46,7 +46,7 @@ export const pic = [
   {
     link: img1,
     name: 'delivers5',
-    tag: '#advertising'
+    tag: '#test4'
   },
   {
     link: test,

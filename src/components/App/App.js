@@ -43,6 +43,9 @@ function App() {
     return arr.indexOf(e, i+1) === -1;
   }).reverse();
 
+  function handleFilterDropping() {
+    setFilteredCards(pic);
+  }
 
   React.useEffect(() => {
     const ESC = 'Escape';
@@ -70,6 +73,7 @@ function App() {
         <Header
           handleTagClick={handleTagClick}
           tags={sortedTags}
+          handleFilterDropping={handleFilterDropping}
         />
         <Switch>
           <Route exact path="/">
