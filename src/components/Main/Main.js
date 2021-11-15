@@ -28,6 +28,7 @@ function Main(props) {
       })}
       <p className={`filter__btn ${menuBtnClass}`} onClick={handleFilterDropping}>Show all works</p>
     </main>
+
   );
 
 }
