@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import instPath from '../../images/free-icon-instagram-1077042.png';
 import asPath from '../../images/stock.png';
 
-import Navigation from '../Navigation/Navigation';
-
 function Footer() {
   return (
     <footer className="footer">

@@ -58,7 +58,7 @@ function Contact() {
         }
       }
       else {
-        if (input.value == '') {
+        if (input.value === '') {
           formAddError(input);
           error++;
         }

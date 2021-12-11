@@ -16,8 +16,7 @@ function Main(props) {
       {props.pic.map((card) =>{
         return (
           <Card
-            link={card.link}
-            name={card.name}
+            card={card}
             tag={card.tag}
             key={card.name}
             onCardClick={props.handleCardClick}
