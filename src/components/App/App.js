@@ -12,10 +12,11 @@ import { pic } from '../../utils/constants';
 
 function App() {
 
-  const [selectedCard, setSelectedCard] = React.useState();
+  const [selectedCard, setSelectedCard] = React.useState(0);
   const [filteredCards, setFilteredCards] = React.useState(pic);
   const [clickedTag, setClickedTag] = React.useState(false);
-  const [nextCard, setNextCard] = React.useState(0);
+  const [nextCard, setNextCard] = React.useState();
+  const [prevCard, setPrevCard] = React.useState();
 
 
   function handleCardClick(card) {
@@ -23,7 +24,7 @@ function App() {
   }
 
   function handlePopupClose() {
-    setSelectedCard({});
+    setSelectedCard(0);
   }
 
   function handleTagClick(e) {
@@ -46,16 +47,35 @@ function App() {
   }
 
   //Slider
-  function handlSliderClickNext() {
+/*   function handlSliderClickNext() {
     const indexSelectedCard = filteredCards.indexOf(selectedCard);
     const indexNextCard = filteredCards.indexOf(nextCard);
     const currentCard = indexSelectedCard === -1 ? indexNextCard : indexSelectedCard;
 
     const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
     const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
+    debugger
     setSelectedCard();
     setNextCard(nextPic);
+  } */
+
+  function handlSliderClickNext() {
+    const currentCard = filteredCards.indexOf(selectedCard);
+
+    //const indexNextCard = filteredCards.indexOf(nextCard);
+    //const currentCard = indexSelectedCard === -1 ? indexNextCard : indexSelectedCard;
+
+    const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
+    const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
+
+
+    setPrevCard(selectedCard);
+    setSelectedCard(nextPic);
+
+    //setNextCard(nextPic);
+
   }
+
 
   function handlSliderClickPrev() {
 
@@ -126,6 +146,7 @@ function App() {
           onNextClick={handlSliderClickNext}
           onPrevClick={handlSliderClickPrev}
           nextCard={nextCard}
+          prevCard={prevCard}
         />
       </div>
     </div>

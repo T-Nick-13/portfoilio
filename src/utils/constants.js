@@ -3,7 +3,6 @@ import salefriday from '../images/light/salefriday.jpg';
 import vaccine from '../images/light/vaccine.jpeg';
 import delivers from '../images/light/delivers.jpg';
 import ny2021 from '../images/light/12345.jpg';
-import SET2021 from '../images/light/SET.svg';
 import itsgirl from '../images/light/AdobeStock_446193555.jpeg';
 import ny2021b from '../images/light/Открытка2.jpg';
 
@@ -57,11 +56,6 @@ export const pic = [
     link: recycle,
     name: 'recycle',
     tag: '#sticker'
-  },
-  {
-    link: SET2021,
-    name: 'SET2021',
-    tag: '#holidays'
   },
   {
     link: salefriday,
