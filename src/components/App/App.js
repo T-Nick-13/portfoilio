@@ -16,8 +16,6 @@ function App() {
   const [filteredCards, setFilteredCards] = React.useState(pic);
   const [clickedTag, setClickedTag] = React.useState(false);
   const [nextCard, setNextCard] = React.useState();
-  const [prevCard, setPrevCard] = React.useState();
-
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -47,46 +45,20 @@ function App() {
   }
 
   //Slider
-/*   function handlSliderClickNext() {
-    const indexSelectedCard = filteredCards.indexOf(selectedCard);
-    const indexNextCard = filteredCards.indexOf(nextCard);
-    const currentCard = indexSelectedCard === -1 ? indexNextCard : indexSelectedCard;
-
-    const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
-    const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
-    debugger
-    setSelectedCard();
-    setNextCard(nextPic);
-  } */
-
   function handlSliderClickNext() {
     const currentCard = filteredCards.indexOf(selectedCard);
-
-    //const indexNextCard = filteredCards.indexOf(nextCard);
-    //const currentCard = indexSelectedCard === -1 ? indexNextCard : indexSelectedCard;
-
     const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
     const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
-
-
-    setPrevCard(selectedCard);
+    setNextCard(selectedCard);
     setSelectedCard(nextPic);
-
-    //setNextCard(nextPic);
-
   }
 
-
   function handlSliderClickPrev() {
-
-    const indexSelectedCard = filteredCards.indexOf(selectedCard);
-    const indexNextCard = filteredCards.indexOf(nextCard);
-    const currentCard = indexSelectedCard === -1 ? indexNextCard : indexSelectedCard;
-
+    const currentCard = filteredCards.indexOf(selectedCard);
     const prevIndex = currentCard ? currentCard - 1 : filteredCards.length - 1;
     const nextPic = filteredCards.find((el, idx) => idx === prevIndex);
-    setSelectedCard();
-    setNextCard(nextPic);
+    setNextCard(selectedCard);
+    setSelectedCard(nextPic);
   }
 
   React.useEffect(() => {
@@ -146,7 +118,6 @@ function App() {
           onNextClick={handlSliderClickNext}
           onPrevClick={handlSliderClickPrev}
           nextCard={nextCard}
-          prevCard={prevCard}
         />
       </div>
     </div>
