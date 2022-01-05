@@ -15,7 +15,6 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(0);
   const [filteredCards, setFilteredCards] = React.useState(pic);
   const [clickedTag, setClickedTag] = React.useState(false);
-  const [nextCard, setNextCard] = React.useState();
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -49,7 +48,6 @@ function App() {
     const currentCard = filteredCards.indexOf(selectedCard);
     const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
     const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
-    setNextCard(selectedCard);
     setSelectedCard(nextPic);
   }
 
@@ -57,7 +55,6 @@ function App() {
     const currentCard = filteredCards.indexOf(selectedCard);
     const prevIndex = currentCard ? currentCard - 1 : filteredCards.length - 1;
     const nextPic = filteredCards.find((el, idx) => idx === prevIndex);
-    setNextCard(selectedCard);
     setSelectedCard(nextPic);
   }
 
@@ -78,7 +75,6 @@ function App() {
     document.addEventListener('keyup', handleEscClose);
     document.addEventListener('click', handleOverlayClose);
   }, [])
-
 
   return (
     <div className="page">
@@ -117,7 +113,6 @@ function App() {
           onClose={handlePopupClose}
           onNextClick={handlSliderClickNext}
           onPrevClick={handlSliderClickPrev}
-          nextCard={nextCard}
         />
       </div>
     </div>

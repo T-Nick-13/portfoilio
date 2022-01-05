@@ -17,17 +17,16 @@ function Slider(props) {
     setTimeout(() => {
       setNextClass('popup-image__picture_active');
     });
+    debugger
     props.onPrevClick();
   }
 
-  const cardType = props.card === undefined ? props.nextCard : props.card;
-
   return (
-    <div className={`popup-image ${cardType ? 'popup_opened' : ''}`}>
+    <div className={`popup-image ${props.card ? 'popup_opened' : ''}`}>
       <div className="popup-image__container">
         <div className="popup-image__slider">
           <div className="arrow arrow-left" onClick={handlSliderClickPrev}></div>
-          <img className={nextClass} src={cardType.link} alt={cardType.tag} />
+          <img className={nextClass} src={props.card.link} alt={props.card.tag} />
           <div className="arrow arrow-right" onClick={handlSliderClickNext}></div>
         </div>
         <span className="close" onClick={props.onClose}></span>
