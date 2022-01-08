@@ -4,7 +4,6 @@ import vaccine from '../images/light/vaccine.jpeg';
 import delivers from '../images/light/delivers.jpg';
 import ny2021 from '../images/light/12345.jpg';
 import itsgirl from '../images/light/AdobeStock_446193555.jpeg';
-import ny2021b from '../images/light/Открытка2.jpg';
 
 import bigsale70 from '../images/light/bigsale.jpg';
 import veterans from '../images/light/veterans.jpg';
@@ -83,8 +82,8 @@ export const pic = [
     tag: '#advertising'
   },
   {
-    link: ny2021b,
-    name: 'ny2021b',
+    link: hallSale,
+    name: 'hallSale',
     tag: '#holidays'
   },
   {
