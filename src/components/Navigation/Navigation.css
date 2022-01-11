@@ -113,10 +113,12 @@
     z-index: 4;
     overflow: hidden;
     max-width: 70%;
+    visibility: hidden;
   }
 
   .menu_active {
     top: 0;
+    visibility: visible;
   }
 
   .menu__ul {

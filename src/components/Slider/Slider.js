@@ -17,7 +17,6 @@ function Slider(props) {
     setTimeout(() => {
       setNextClass('popup-image__picture_active');
     });
-    debugger
     props.onPrevClick();
   }
 

@@ -18,13 +18,13 @@ function Header(props) {
         setHeaderClass('header__container');
         return;
       }
-      if (currentScroll > lastScroll && scrollDown == false) {
+      if (currentScroll > lastScroll && scrollDown == false && !document.body.classList.contains('body_unscrolled')) {
         setScrollDown(true);
         setHeaderClass('header__container_up');
       }
       else if (currentScroll < lastScroll) {
         setScrollDown(false);
-        setHeaderClass('header__container_fixed')
+        setHeaderClass('header__container_fixed');
       }
       lastScroll = currentScroll;
     });

@@ -18,10 +18,12 @@ function App() {
 
   function handleCardClick(card) {
     setSelectedCard(card);
+    document.body.classList.add('body_unscrolled');
   }
 
   function handlePopupClose() {
     setSelectedCard(0);
+    document.body.classList.remove('body_unscrolled');
   }
 
   function handleTagClick(e) {
@@ -65,13 +67,11 @@ function App() {
         handlePopupClose();
       }
     }
-
     function handleOverlayClose (evt) {
       if (evt.target.classList.contains('popup_opened')) {
         handlePopupClose();
       }
     }
-
     document.addEventListener('keyup', handleEscClose);
     document.addEventListener('click', handleOverlayClose);
   }, [])

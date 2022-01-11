@@ -83,7 +83,7 @@ export const pic = [
   },
   {
     link: hallSale,
-    name: 'hallSale',
+    name: 'hallSale1',
     tag: '#holidays'
   },
   {

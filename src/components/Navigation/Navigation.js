@@ -14,7 +14,14 @@ function Navigation(props) {
 
 
   function handleBurgerClick() {
-    openedMenu ? setOpenMenu(false) : setOpenMenu(true);
+    if (openedMenu) {
+      setOpenMenu(false);
+      document.body.classList.remove('body_unscrolled');
+    }
+    else {
+      setOpenMenu(true);
+      document.body.classList.add('body_unscrolled');
+    }
   }
 
   function handleArrowClick() {
