@@ -6,7 +6,7 @@ import Navigation from '../Navigation/Navigation';
 
 function Header(props) {
 
-  const [headerClass, setHeaderClass] = React.useState('header__container');
+  const [headerClass, setHeaderClass] = React.useState('');
   const [scrollDown, setScrollDown] = React.useState(false);
 
   let lastScroll = 0;
@@ -15,7 +15,7 @@ function Header(props) {
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
       if (currentScroll <= 0) {
-        setHeaderClass('header__container');
+        setHeaderClass('');
         return;
       }
       if (currentScroll > lastScroll && scrollDown == false && !document.body.classList.contains('body_unscrolled')) {
@@ -32,7 +32,7 @@ function Header(props) {
 
   return (
     <header className="header">
-      <div className={headerClass}>
+      <div className={`header__container ${headerClass}`}>
         <Link to="/">
           <img className="header__logo" src={logoPath} alt="logo"/>
         </Link>
