@@ -52,7 +52,6 @@
   transform: translateX(0);
   visibility: visible;
   pointer-events: none;
-
 }
 
 .arrow {
@@ -61,7 +60,7 @@
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
@@ -69,7 +68,6 @@
   width: 27px;
   height: 27px;
   background-color: red;
-
 }
 
 .arrow:hover {
@@ -91,7 +89,7 @@
   width: 32px;
   height: 32px;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
   }
 
 .close:hover {
@@ -114,5 +112,63 @@
 
 .close:after {
   transform: rotate(-45deg);
+}
+
+.arrow__container {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .popup-image__slider {
+    width: 100%;
+  }
+
+  .popup-image__picture_active {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .arrow__container {
+    height: 71px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    background: rgba(1,1,1,0.2);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+    transition: background 0.3s;
+  }
+
+  .arrow__container:hover {
+    background: rgba(1,1,1,0.6);
+  }
+
+  .arrow__container_right {
+    right: 0;
+  }
+
+  .arrow__container_left {
+
+  }
+
+  .arrow-right {
+    margin-left: 4px;
+  }
+
+  .arrow-left {
+    margin-left: 10px;
+  }
+
+  .close {
+    top: -40px;
+    right: 9px;
+    }
+
 }
 

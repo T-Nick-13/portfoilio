@@ -7,23 +7,24 @@ import Navigation from '../Navigation/Navigation';
 function Header(props) {
 
   const [headerClass, setHeaderClass] = React.useState('');
-  const [scrollDown, setScrollDown] = React.useState(false);
 
   let lastScroll = 0;
+  let scrollUp = '';
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
       if (currentScroll <= 0) {
         setHeaderClass('');
+        scrollUp = false;
         return;
       }
-      if (currentScroll > lastScroll && scrollDown == false && !document.body.classList.contains('body_unscrolled')) {
-        setScrollDown(true);
+      if (currentScroll > lastScroll && scrollUp == true && !document.body.classList.contains('body_unscrolled')) {
         setHeaderClass('header__container_up');
+        scrollUp = false;
       }
       else if (currentScroll < lastScroll) {
-        setScrollDown(false);
+        scrollUp = true;
         setHeaderClass('header__container_fixed');
       }
       lastScroll = currentScroll;

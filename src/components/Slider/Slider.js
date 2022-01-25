@@ -28,9 +28,13 @@ function Slider(props) {
     <div className={`popup-image ${props.card ? 'popup_opened' : ''}`}>
       <div className="popup-image__container">
         <div className="popup-image__slider">
-          <div className="arrow arrow-left" onClick={handlSliderClickPrev}></div>
+          <div className="arrow__container arrow__container_left" onClick={handlSliderClickPrev}>
+            <div className="arrow arrow-left" ></div>
+          </div>
           <img className={nextClass} src={props.card.link} alt={props.card.tag} onContextMenu={handleContextMenu} />
-          <div className="arrow arrow-right" onClick={handlSliderClickNext}></div>
+          <div className="arrow__container arrow__container_right" onClick={handlSliderClickNext}>
+            <div className="arrow arrow-right"></div>
+          </div>
         </div>
         <span className="close" onClick={props.onClose}></span>
       </div>
