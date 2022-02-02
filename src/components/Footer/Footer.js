@@ -7,15 +7,13 @@ function Footer() {
     <footer className="footer">
       <p className="footer__copyright">&copy; 2021 </p>
       <div className="footer__contacts">
-        <Link to="/">
+        <a href="https://www.instagram.com/natalyastafeeva/">
           <img src={instPath} alt="logo inst" className="footer__img"></img>
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://stock.adobe.com/ru/contributor/209632961/stafeeva">
           <img src={asPath} alt="logo as" className="footer__img"></img>
-        </Link>
-
+        </a>
       </div>
-
     </footer>
   );
 }
