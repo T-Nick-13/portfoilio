@@ -47,15 +47,6 @@
   border-radius: 7px;
 }
 
-/*Открытие под меню при наведении*/
-/* li:hover .menu__sub-ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0px, 0px);
-  pointer-events: all;
-  display: block;
-} */
-
 .menu__ul > li._active .menu__sub-ul {
   opacity: 1;
   visibility: visible;

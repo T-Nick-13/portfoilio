@@ -3,24 +3,23 @@
 }
 
 .popup-image {
+  visibility: hidden;
+  transition: background-color 1s;
+}
+
+.popup_opened {
   display: flex;
+  visibility: visible;
+  background-color: rgba(1,1,1,.8);
+  z-index: 5;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   width: 100%;
   height: 100%;
-  background-color: rgba(1,1,1,0);
   position: fixed;
   top: 0;
   left: 0;
   margin: 0;
-  transition: background-color 0.3s linear;
-}
-
-.popup_opened {
-  visibility: visible;
-  background-color: rgba(1,1,1,.8);
-  z-index: 5;
 }
 
 .popup-image__slider {
@@ -62,12 +61,6 @@
   opacity: 0.5;
   transition: opacity 0.3s ease;
   cursor: pointer;
-}
-
-.arrow_test {
-  width: 27px;
-  height: 27px;
-  background-color: red;
 }
 
 .arrow:hover {
