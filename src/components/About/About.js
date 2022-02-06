@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-import logoPath from '../../images/testpic.jpg';
+import logoPath from '../../images/light/logo.svg';
 
 function About() {
 

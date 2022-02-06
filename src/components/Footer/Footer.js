@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-import instPath from '../../images/free-icon-instagram-1077042.png';
-import asPath from '../../images/stock.png';
+import instPath from '../../images/light/free-icon-instagram-1077042.png';
+import asPath from '../../images/light/stock-min.png';
 
 function Footer() {
   return (
