@@ -19,14 +19,19 @@ function Header(props) {
         scrollUp = false;
         return;
       }
+      if (currentScroll > lastScroll && lastScroll < 1) {
+        setHeaderClass('header__container_first-scroll');
+      }
+
       if (currentScroll > lastScroll && scrollUp == true && !document.body.classList.contains('body_unscrolled')) {
-        setHeaderClass('header__container_up');
+        setHeaderClass('header__container_first-scroll header__container_up');
         scrollUp = false;
       }
       else if (currentScroll < lastScroll) {
         scrollUp = true;
         setHeaderClass('header__container_fixed');
       }
+      console.log(`current: ${currentScroll}, last: ${lastScroll}`)
       lastScroll = currentScroll;
     });
   },[])
