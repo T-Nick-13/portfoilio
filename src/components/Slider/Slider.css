@@ -4,7 +4,8 @@
 
 .popup-image {
   visibility: hidden;
-  transition: background-color 1s;
+  transition: background-color 0.3s;
+  position: absolute;
 }
 
 .popup_opened {

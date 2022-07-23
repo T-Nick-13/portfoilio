@@ -31,7 +31,7 @@ function Header(props) {
         scrollUp = true;
         setHeaderClass('header__container_fixed');
       }
-      console.log(`current: ${currentScroll}, last: ${lastScroll}`)
+      //console.log(`current: ${currentScroll}, last: ${lastScroll}`)
       lastScroll = currentScroll;
     });
   },[])

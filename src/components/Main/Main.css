@@ -7,18 +7,19 @@
 
 .filter__btn {
   position: fixed;
-  z-index: 5;
+  /* z-index: 5; */
   margin: 0;
   background-color: rgb(35 35 35 / 70%);
   color: white;
   border-radius: 10px;
   font-size: 13px;
   transform: translate(-50%);
-  top: 18%;
+  top: 14%;
   left: 50%;
   padding: 6px;
   cursor: pointer;
   display: none;
+  transition: all 0.3s;
 }
 
 .filter__btn:hover {

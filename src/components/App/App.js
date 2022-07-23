@@ -7,14 +7,38 @@ import Footer from '../Footer/Footer';
 import Slider from '../Slider/Slider';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import { MAIN_API } from '../../utils/config';
+import Api from '../../utils/Api';
 
 import { pic } from '../../utils/constants';
 
 function App() {
 
   const [selectedCard, setSelectedCard] = React.useState(0);
-  const [filteredCards, setFilteredCards] = React.useState(pic);
+  const [allCards, setAllCards] = React.useState([]);
+  const [filteredCards, setFilteredCards] = React.useState([]);
   const [clickedTag, setClickedTag] = React.useState(false);
+
+  const api = new Api ({
+    baseUrl: MAIN_API,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
+
+  React.useEffect(() => {
+    Promise.all([
+      api.getCards()
+    ])
+    .then(([cards]) => {
+      localStorage.setItem('cards', JSON.stringify(cards));
+      setFilteredCards(JSON.parse(localStorage.getItem('cards')));
+      setAllCards(JSON.parse(localStorage.getItem('cards')));
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, [])
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -27,13 +51,13 @@ function App() {
   }
 
   function handleTagClick(e) {
-     const filteredCards = pic.filter((card) => {
+     const cards = allCards.filter((card) => {
       return card.tag.includes(e);
     });
-     setFilteredCards(filteredCards);
+     setFilteredCards(cards);
   }
 
-  const tags = pic.map((card) => {
+  const tags = allCards.map((card) => {
     return card.tag;
   })
 
@@ -42,7 +66,7 @@ function App() {
   }).reverse();
 
   function handleFilterDropping() {
-    setFilteredCards(pic);
+    setFilteredCards(allCards);//pic
   }
 
   //Slider

@@ -124,22 +124,22 @@ function Contact() {
           <h1 className="form__title">Title of the form</h1>
 
           <div className="form__item">
-            <label for="formName" className="form__label">Name*:</label>
+            <label htmlFor="formName" className="form__label">Name*:</label>
             <input id="formName" type="text" name="name" className="form__input _req"
               /* onChange={handleChange} */ /* minLength="2" */ maxLength="30"></input>
             <p className="form__error">{/* {error.name} */}</p>
           </div>
 
           <div className="form__item">
-            <label for="formEmail" className="form__label">E-mail*:</label>
+            <label htmlFor="formEmail" className="form__label">E-mail*:</label>
             <input id="email" type="email" required name="email" className="form__input _req _email"
             /* onChange={handleChange} */></input>
             <p className="form__error">{/* {error.email} */}</p>
           </div>
 
           <div className="form__item">
-            <label for="formMessage" className="form__label">Message*:</label>
-            <textarea className="" id="formMessage" name="message" required className="form__input _req"
+            <label htmlFor="formMessage" className="form__label">Message*:</label>
+            <textarea id="formMessage" name="message" required className="form__input _req"
               minLength="2" /* onChange={handleChange} */></textarea>
               <p className="form__error">{/* {error.message} */}</p>
           </div>

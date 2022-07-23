@@ -18,7 +18,7 @@ function Main(props) {
           <Card
             card={card}
             tag={card.tag}
-            key={card.name}
+            key={card._id}
             onCardClick={props.handleCardClick}
             onTagClick={props.handleTagClick}
             setClickedTag={props.setClickedTag}
