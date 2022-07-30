@@ -5,30 +5,7 @@
   position: relative;
   margin: 25px 0px;
   z-index: 5;
-}
-
-.header__container_first-scroll {
-  position: fixed;
-  transform: translateY(-100%);
-  width: calc(100% - 40px);
-  max-width: 1280px;
-  margin: 0;
-}
-
-.header__container_up {
-  background: rgb(31 31 31 / 90%);
-  box-shadow: 5px 2px 20px black;
-  border-radius: 10px;
-}
-
-.header__container_fixed {
-  position: fixed;
-  background: rgb(31 31 31 / 90%);
-  width: calc(100% - 40px);
-  margin: 0;
-  max-width: 1280px;
-  box-shadow: 5px 2px 20px black;
-  border-radius: 10px;
+  animation: headerFix 0.5s;
 }
 
 .header__logo {
@@ -46,5 +23,15 @@
   }
   .header__logo {
     max-width: 120px;
+  }
+}
+
+@keyframes headerFix {
+  from {
+    transform: translateY(-100%);
+  }
+
+  top {
+    transform: translateY(0);
   }
 }

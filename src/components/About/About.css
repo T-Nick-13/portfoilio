@@ -1,6 +1,6 @@
 .about {
   margin-bottom: 40px;
-
+  animation: opaccity 1s;
 }
 
 .about__container {
@@ -14,8 +14,8 @@
 .about__photo {
   height: 170px;
   max-width: 170px;
-  border-radius: 148px;
-  object-fit: cover;
+  /* border-radius: 148px;
+  object-fit: cover; */
 }
 
 .about__info {
@@ -106,7 +106,6 @@
   .about__container {
     align-self: center;
   }
-
 }
 
 @media (max-width: 438px) {
@@ -120,6 +119,15 @@
 
   .about__info {
     text-align: center;
+  }
+}
+
+@keyframes opaccity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

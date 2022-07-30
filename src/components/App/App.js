@@ -66,7 +66,7 @@ function App() {
   }).reverse();
 
   function handleFilterDropping() {
-    setFilteredCards(allCards);//pic
+    setFilteredCards(allCards);
   }
 
   //Slider

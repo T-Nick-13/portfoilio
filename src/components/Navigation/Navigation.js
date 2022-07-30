@@ -14,13 +14,15 @@ function Navigation(props) {
 
 
   function handleBurgerClick() {
-    if (openedMenu) {
-      setOpenMenu(false);
-      document.body.classList.remove('body_unscrolled');
-    }
-    else {
-      setOpenMenu(true);
-      document.body.classList.add('body_unscrolled');
+    if (window.innerWidth < 767) {
+      if (openedMenu) {
+        setOpenMenu(false);
+        document.body.classList.remove('body_unscrolled');
+      }
+      else {
+        setOpenMenu(true);
+        document.body.classList.add('body_unscrolled');
+      }
     }
   }
 
@@ -39,10 +41,8 @@ function Navigation(props) {
   function handleTagClick(e) {
     const tagsName = e.target.textContent;
     props.onTagClick(tagsName);
-
     SetOpenedSubMenu(false);
     props.setClickedTag(true);
-
     handleBurgerClick();
   }
 
