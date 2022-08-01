@@ -25,3 +25,14 @@
 .body_unscrolled {
   overflow: hidden;
 }
+
+@media (max-width: 580px) {
+  .page {
+    padding: 0;
+  }
+
+  .page__wrapper {
+    padding: 0 10px;
+  }
+
+}

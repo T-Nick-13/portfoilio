@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+require('dotenv').config();
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -7,10 +9,11 @@ import Footer from '../Footer/Footer';
 import Slider from '../Slider/Slider';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import PopupResult from '../PopupResult/PopupResult';
+
 import { MAIN_API } from '../../utils/config';
 import Api from '../../utils/Api';
 
-import { pic } from '../../utils/constants';
 
 function App() {
 
@@ -18,6 +21,10 @@ function App() {
   const [allCards, setAllCards] = React.useState([]);
   const [filteredCards, setFilteredCards] = React.useState([]);
   const [clickedTag, setClickedTag] = React.useState(false);
+  const [inSend, setInSend] = React.useState(false);
+  const [isSent, setIsSent] = React.useState(false);
+
+  const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
   const api = new Api ({
     baseUrl: MAIN_API,
@@ -48,6 +55,10 @@ function App() {
   function handlePopupClose() {
     setSelectedCard(0);
     document.body.classList.remove('body_unscrolled');
+  }
+
+  function closePopupResult() {
+    setIsSent(false);
   }
 
   function handleTagClick(e) {
@@ -84,16 +95,36 @@ function App() {
     setSelectedCard(nextPic);
   }
 
+  function sendEmail(data) {
+    setInSend(true);
+    emailjs.send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, data, REACT_APP_PUBLIC_KEY)
+    .then((result) => {
+      setInSend(false);
+      setIsSent(true);
+    }, (error) => {
+        console.log(error.text);
+        setIsSent(false);
+        setInSend(false);
+    });
+  }
+
   React.useEffect(() => {
 
     function handleEscClose(evt) {
       if (evt.key === 'Escape') {
         handlePopupClose();
+        closePopupResult();
       }
     }
     function handleOverlayClose (evt) {
       if (evt.target.classList.contains('popup_opened')) {
         handlePopupClose();
+      }
+      if (evt.target.className == 'popupResult') {
+        debugger
+        console.log(evt.target)
+        debugger
+        closePopupResult();
       }
     }
     document.addEventListener('keyup', handleEscClose);
@@ -125,18 +156,24 @@ function App() {
           </Route>
 
           <Route exact path="/contact">
-            <Contact />
+            <Contact
+              sendEmail={sendEmail}
+              inSend={inSend}
+              isSent={isSent}
+            />
           </Route>
 
         </Switch>
-
         <Footer />
-
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}
           onNextClick={handlSliderClickNext}
           onPrevClick={handlSliderClickPrev}
+        />
+        <PopupResult
+          isSent={isSent}
+          closePopup={closePopupResult}
         />
       </div>
     </div>

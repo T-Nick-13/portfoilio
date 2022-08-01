@@ -12,6 +12,7 @@
   justify-content: center;
   box-shadow: 0 0 6px #0e0e0e2e;
   border-radius: 15px;
+  position: relative;
 }
 
 .form *{
@@ -121,18 +122,16 @@ textarea.form__input {
 }
 
 
+@media (max-width: 580px) {
+  .form {
+    width: 95%;
+  }
 
-/* textarea.form__input:focus ~ label, textarea.form__input:valid ~ label {
-  top: -20px;
-  color: #919191;
-  font-size: 14px;
-} */
-
-/* textarea.form__input:focus ~ .form__label_active {
-  top: -20px;
-  color: #ff0000;
-  font-size: 14px;
-} */
+  .form__title {
+    margin: 15px 0 35px;
+    font-size: 25px;
+  }
+}
 
 @keyframes opaccity {
   from {

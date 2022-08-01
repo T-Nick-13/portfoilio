@@ -1,48 +1,64 @@
-import React from "react";
+import React from 'react';
 
+import Preloader from '../Preloader/Preloader';
 
-function Contact() {
+function Contact(props) {
 
   const [isValid, setIsValid] = React.useState(false);
   const [error, setError] = React.useState({undefined});
   const [data, setData] = React.useState({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
+    message: ''
   });
+  const [form, setForm] = React.useState();
 
   function handleChange(e) {
     const {name, value} = e.target;
+    setForm(e.target.closest('form'));
 
     const checkValidation = () => {
-      if (name == "email" && value != "" && e.target.validationMessage != "") {
-        return "invalid email. Pleasy try again";
+      if (name == 'email' && value != '' && e.target.validationMessage != '') {
+        return 'invalid email. Pleasy try again';
       }
-      if (value == "") {
-        return "please fill in this field";
+      if (value == '') {
+        return 'please fill in this field';
       } else {
-        return "";
+        return '';
       }
     }
     setError({ ...error, [name]: checkValidation() })
-
     setData({
       ...data,
       [name]: value
     });
-    setIsValid(e.target.closest("form").checkValidity());
+    setIsValid(e.target.closest('form').checkValidity());
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.sendEmail(data);
+  }
+
+  React.useEffect(() => {
+    function resetForm() {
+      if (props.isSent) {
+        setIsValid(false);
+        form.reset();
+      }
+    }
+    resetForm();
+  }, [props.isSent]);
 
   return (
     <div className="contact">
       <div className="form">
-        <form className="form__body" /* onSubmit={formSend} */ id="form">
+        <form className="form__body" onSubmit={handleSubmit} id="form">
           <h1 className="form__title">Contact form</h1>
 
           <div className="form__item">
-
             <input id="formName" type="text" name="name" className="form__input _req"
-              onBlur={handleChange} required maxLength="30">
+              onChange={handleChange} required maxLength="30">
             </input>
             <label htmlFor="formName"
               className={error.name != "" && error.name != undefined  ? "form__label form__label_active" : "form__label"}>
@@ -51,9 +67,8 @@ function Contact() {
           </div>
 
           <div className="form__item">
-
             <input id="formEmail" type="email" required name="email"
-              className="form__input _req _email" onBlur={handleChange}></input>
+              className="form__input _req _email" onChange={handleChange}></input>
             <label htmlFor="formEmail"
               className={error.email != "" && error.email != undefined  ? "form__label form__label_active" : "form__label"}>
               E-mail*: {error.email}
@@ -61,9 +76,8 @@ function Contact() {
           </div>
 
           <div className="form__item">
-
             <textarea id="formMessage" name="message" required className="form__input form__area _req"
-              onBlur={handleChange}></textarea>
+              onChange={handleChange}></textarea>
             <label htmlFor="formMessage"
               className={
                 error.message != "" && error.message != undefined  ? "form__label form__label-area form__label-area_active"
@@ -74,11 +88,11 @@ function Contact() {
           <button type="submit" className={isValid ? "form__button form__button_active" : "form__button"}>Send</button>
 
         </form>
+        <Preloader inSend={props.inSend}/>
       </div>
 
     </div>
   );
 }
-
 
 export default Contact;
