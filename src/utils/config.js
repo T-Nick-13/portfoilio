@@ -1,3 +1,3 @@
-export const MAIN_API = "http://api.stafeeva.site";
+export const MAIN_API = "https://api.stafeeva.site";
 
 
