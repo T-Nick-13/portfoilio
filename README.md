@@ -1,6 +1,6 @@
 # Portfolio
 
-Ссылка на проект: <http://stafeeva.site/>
+Ссылка на проект: <https://stafeeva.site/>
 
 ## Для чего используется
 
