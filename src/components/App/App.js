@@ -86,6 +86,7 @@ function App() {
     const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
     const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
     setSelectedCard(nextPic);
+
   }
 
   function handlSliderClickPrev() {

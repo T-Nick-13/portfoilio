@@ -2,21 +2,11 @@ import React from 'react';
 
 function Slider(props) {
 
-  const [nextClass, setNextClass] = React.useState('popup-image__picture_active');
-
   function handlSliderClickNext() {
-    setNextClass('popup-image__picture_next');
-    setTimeout(() => {
-      setNextClass('popup-image__picture_active');
-    });
     props.onNextClick();
   }
 
   function handlSliderClickPrev() {
-    setNextClass('popup-image__picture_prev');
-    setTimeout(() => {
-      setNextClass('popup-image__picture_active');
-    });
     props.onPrevClick();
   }
 
@@ -31,12 +21,18 @@ function Slider(props) {
           <div className="arrow__container arrow__container_left" onClick={handlSliderClickPrev}>
             <div className="arrow arrow-left" ></div>
           </div>
-          <img className={nextClass} src={props.card.link} alt={props.card.tag} onContextMenu={handleContextMenu} />
+          <img className="popup-image__picture" src={props.card.link} alt={props.card.tag}
+            onContextMenu={handleContextMenu} />
           <div className="arrow__container arrow__container_right" onClick={handlSliderClickNext}>
             <div className="arrow arrow-right"></div>
           </div>
         </div>
-        <span className="close" onClick={props.onClose}></span>
+        <button className="popup__close-btn btn-cross" type="button" onClick={props.onClose}>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" x2="100" y1="0" y2="100" />
+            <line x1="0" x2="100" y1="100" y2="0" />
+          </svg>
+        </button>
       </div>
     </div>
   );
