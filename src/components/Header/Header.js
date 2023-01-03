@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import logoPath from '../../images/Video.svg';
+import logoPath from '../../images/light/Stafeeva.svg';
 
 import Navigation from '../Navigation/Navigation';
 

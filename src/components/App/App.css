@@ -13,7 +13,8 @@
 
 
 .page {
-  font-family: 'Inter', Arial, Helvetica, Sans-serif;
+  font-family: 'Raleway', Sans-serif, Arial, Helvetica;
+  font-weight: 300;
   background: rgb(102, 140, 123, 0.1);
   padding: 0 calc(20px - (100vw - 100%)) 0 0;
 }
