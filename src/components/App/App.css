@@ -3,26 +3,32 @@
   --header-font-color: #bdc1c6;
   --page-font-color: #343434;
   --standart-transition: all 0.3s linear;
-  --content-width: 90%;
+  --content-width: 97%;
   --header-height: 50px;
   --task-text-color: #8B8B8B;
   --task-background: #3c3c3c;
   --task-main-font-color: #e4e4e4;
   --link-color: #4685de;
+
+  --max-width: 1200px;
+  --section-margin: 40px;
+  --header-height: 180px;
+  --mouse-width: 50px;
 }
 
 
 .page {
   font-family: 'Raleway', Sans-serif, Arial, Helvetica;
   font-weight: 300;
-  background: rgb(102, 140, 123, 0.1);
-  padding: 0 calc(20px - (100vw - 100%)) 0 0;
+  columns: var(--page-font-color);
+  /* background: rgb(102, 140, 123, 0.1); */
+  /* padding: 0 calc(20px - (100vw - 100%)) 0 0; */
 }
 
 .page__wrapper {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   min-height: 100vh;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -42,12 +48,12 @@
 }
 
 @media (max-width: 580px) {
-  .page {
+  /* .page {
     padding: 0;
   }
 
   .page__wrapper {
     padding: 0 10px;
-  }
+  } */
 
 }

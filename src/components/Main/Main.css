@@ -1,9 +1,18 @@
 .main {
-  column-count: 3;
+  /* column-count: 3;
   column-gap: 4px;
   max-width: 1280px;
-  min-height: 66vh;
+  min-height: 66vh; */
   animation: opaccity 1s;
+}
+
+.main__pictures {
+  column-count: 3;
+  column-gap: 4px;
+  max-width: var(--max-width);
+  width: var(--content-width);
+  /* min-height: 66vh; */
+  margin: auto;
 }
 
 .filter__btn {
@@ -32,13 +41,13 @@
 }
 
 @media (max-width: 884px) {
-  .main {
+  .main__pictures {
     column-count: 2;
   }
 }
 
 @media (max-width: 580px) {
-  .main {
+  .main__pictures {
     column-count: 1;
   }
 

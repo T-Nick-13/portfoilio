@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
+  max-width: var(--max-width);
+  width: var(--content-width);
+  margin: auto;
 }
 
 .footer__contacts {
