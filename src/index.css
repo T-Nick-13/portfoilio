@@ -1,7 +1,6 @@
 @import url(./vendor/normalize.css);
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
-@import url(./vendor/inter.css);
 @import url(./components/App/App.css);
 @import url(./components/Header/Header.css);
 @import url(./components/Navigation/Navigation.css);
@@ -9,10 +8,11 @@
 @import url(./components/Footer/Footer.css);
 @import url(./components/Slider/Slider.css);
 @import url(./components/Card/Card.css);
+@import url(./components/Promo/Promo.css);
 @import url(./components/About/About.css);
 @import url(./components/Contact/Contact.css);
 @import url(./components/Preloader/Preloader.css);
 @import url(./components/PopupResult/PopupResult.css);
-@import url(./components/Promo/Promo.css);
+
 
 

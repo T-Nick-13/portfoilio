@@ -1,7 +1,7 @@
 :root {
   --page-background: rgb(231 229 229);
   --header-font-color: #bdc1c6;
-  --page-font-color: #343434;
+  --page-font-color: #5f5c5c;
   --standart-transition: all 0.3s linear;
   --content-width: 97%;
   --header-height: 50px;
@@ -13,14 +13,14 @@
   --max-width: 1200px;
   --section-margin: 40px;
   --header-height: 180px;
-  --mouse-width: 50px;
+  --mouse-width: 45px;
 }
 
 
 .page {
   font-family: 'Raleway', Sans-serif, Arial, Helvetica;
   font-weight: 300;
-  columns: var(--page-font-color);
+  color: var(--page-font-color);
   /* background: rgb(102, 140, 123, 0.1); */
   /* padding: 0 calc(20px - (100vw - 100%)) 0 0; */
 }
