@@ -1,6 +1,5 @@
-import Card from '../Card/Card';
 import Promo from '../Promo/Promo';
-
+import CardList from '../CardList/CardList';
 
 function Main(props) {
 
@@ -15,20 +14,13 @@ function Main(props) {
   return (
     <main className="main">
       <Promo />
-      <section className="main__pictures">
-        {props.pic.map((card) =>{
-          return (
-            <Card
-              card={card}
-              tag={card.tag}
-              key={card._id}
-              onCardClick={props.handleCardClick}
-              onTagClick={props.handleTagClick}
-              setClickedTag={props.setClickedTag}
-            />
-          )
-        })}
-      </section>
+      <CardList
+        pic={props.pic}
+        onCardClick={props.handleCardClick}
+        onTagClick={props.handleTagClick}
+        setClickedTag={props.setClickedTag}
+        btnActive={true}
+      />
       <p className={`filter__btn ${menuBtnClass}`} onClick={handleFilterDropping}>Show all works</p>
     </main>
 

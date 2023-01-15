@@ -8,6 +8,7 @@
 .menu__li {
   text-decoration: none;
   color: #5f5c5c;
+  padding-bottom: 5px;
 
   transition: opacity 0.3s linear;
   font-size: 22px;
@@ -20,7 +21,6 @@
 .menu__li_active {
   color: #000;
   border-bottom: 1px solid;
-  padding-bottom: 5px;
 }
 
 .menu__li:hover {

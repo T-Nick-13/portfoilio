@@ -10,6 +10,7 @@ import Slider from '../Slider/Slider';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import PopupResult from '../PopupResult/PopupResult';
+import CardList from '../CardList/CardList';
 
 import { MAIN_API } from '../../utils/config';
 import Api from '../../utils/Api';
@@ -20,6 +21,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(0);
   const [allCards, setAllCards] = React.useState([]);
   const [filteredCards, setFilteredCards] = React.useState([]);
+  const [mainCards, setMainCards] = React.useState([]);
   const [clickedTag, setClickedTag] = React.useState(false);
   const [inSend, setInSend] = React.useState(false);
   const [isSent, setIsSent] = React.useState(false);
@@ -41,6 +43,9 @@ function App() {
       localStorage.setItem('cards', JSON.stringify(cards));
       setFilteredCards(JSON.parse(localStorage.getItem('cards')));
       setAllCards(JSON.parse(localStorage.getItem('cards')));
+      setMainCards(JSON.parse(localStorage.getItem('cards')).filter((i) => i.mainPage === true).sort(function(a, b){
+        return a.index-b.index
+      }));
     })
     .catch((err) => {
       console.log(err);
@@ -143,6 +148,19 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main
+              /* pic={filteredCards} */
+              pic={mainCards}
+              handleCardClick={handleCardClick}
+              handleTagClick={handleTagClick}
+              clickedTag={clickedTag}
+              setClickedTag={setClickedTag}
+              onBtnClick={handleFilterDropping}
+            />
+          </Route>
+
+          <Route exact path="/works">
+            <CardList
+              /* pic={filteredCards} */
               pic={filteredCards}
               handleCardClick={handleCardClick}
               handleTagClick={handleTagClick}
