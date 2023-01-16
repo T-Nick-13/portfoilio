@@ -3,7 +3,7 @@
   --header-font-color: #bdc1c6;
   --page-font-color: #5f5c5c;
   --standart-transition: all 0.3s linear;
-  --content-width: 97%;
+  --content-width: 97vw;
   --header-height: 50px;
   --task-text-color: #8B8B8B;
   --task-background: #3c3c3c;
@@ -14,6 +14,7 @@
   --section-margin: 40px;
   --header-height: 180px;
   --mouse-width: 45px;
+  --site-gap: 22px;
 }
 
 

@@ -1,4 +1,38 @@
-import recycle from '../images/light/recycle.jpeg';
+import site1 from '../images/light/sites/site1.jpg';
+import site2 from '../images/light/sites/site2.jpg';
+import site3 from '../images/light/sites/site3.jpg';
+import site4 from '../images/light/sites/site4.jpg';
+import site5 from '../images/light/sites/site5.jpg';
+
+export const sites = [
+  {
+    link: site1,
+    name: 'site1',
+    src: 'https://www.lacers.org/article/mayor-proclaims-juneteenth-official-city-holiday'
+  },
+  {
+    link: site2,
+    name: 'site2',
+    src: 'https://www.stl.tech/blog/diversity-equality-and-inclusion-a-willful-action-not-a-mandate-stl/'
+  },
+  {
+    link: site3,
+    name: 'site3',
+    src: 'https://thesource.metro.net/2022/06/16/go-metro-to-celebrate-juneteenth/'
+  },
+  {
+    link: site4,
+    name: 'site4',
+    src: 'https://premedinc.com/2022/10/05/breast-cancer-awareness-month/'
+  },
+  {
+    link: site5,
+    name: 'site5',
+    src: 'https://eu.daad.de/service/medien-und-publikationen/DAADeuroletter/de/47352-daadeuroletter/'
+  },
+]
+
+/* import recycle from '../images/light/recycle.jpeg';
 import salefriday from '../images/light/salefriday.jpg';
 import vaccine from '../images/light/vaccine.jpeg';
 import delivers from '../images/light/delivers.jpg';
@@ -12,10 +46,10 @@ import peopleGreen from '../images/light/St-min.jpg';
 import vaccineSet from '../images/light/new-min.jpg';
 import ThanksPeople from '../images/light/thanks-min.jpg';
 import hallSale from '../images/light/againhalloween-min.jpg';
-import familyPeople from '../images/light/families-min.jpg';
+import familyPeople from '../images/light/families-min.jpg'; */
 
 
-export const pic = [
+/* export const pic = [
   {
     link: vaccineSet,
     name: 'vaccineSet',
@@ -92,3 +126,4 @@ export const pic = [
     tag: '#people'
   }
 ];
+ */

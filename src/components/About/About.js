@@ -1,6 +1,7 @@
 import React from 'react';
 
 import me from '../../images/light/Me.svg';
+import SiteList from '../SiteList/SiteList';
 
 function About() {
 
@@ -23,8 +24,8 @@ function About() {
         If you need beautiful modern<br></br>
         vector design, just let me know:)
       </p>
-
-
+      <h3 className="about__title">Some of my works usage</h3>
+      <SiteList />
     </section>
   );
 }
