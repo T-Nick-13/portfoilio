@@ -162,8 +162,8 @@ function App() {
             <CardList
               /* pic={filteredCards} */
               pic={filteredCards}
-              handleCardClick={handleCardClick}
-              handleTagClick={handleTagClick}
+              onCardClick={handleCardClick}
+              onTagClick={handleTagClick}
               clickedTag={clickedTag}
               setClickedTag={setClickedTag}
               onBtnClick={handleFilterDropping}

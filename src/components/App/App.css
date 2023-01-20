@@ -3,11 +3,11 @@
   --header-font-color: #bdc1c6;
   --page-font-color: #5f5c5c;
   --standart-transition: all 0.3s linear;
-  --content-width: 97vw;
+  --content-width: 97%;
   --header-height: 50px;
   --task-text-color: #8B8B8B;
   --task-background: #3c3c3c;
-  --task-main-font-color: #e4e4e4;
+  --light-grey: #e4e4e4;
   --link-color: #4685de;
 
   --max-width: 1200px;

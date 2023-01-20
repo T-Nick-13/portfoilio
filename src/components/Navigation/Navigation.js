@@ -60,11 +60,11 @@ function Navigation(props) {
             onClick={handleBurgerClick}>About</Link>
         </li>
 
-        <li className={liClass} onMouseOver={handleMenuHover} onMouseOut={handleMenuHoverOut}>
+        <li className={liClass} /* onMouseOver={handleMenuHover} onMouseOut={handleMenuHoverOut} */>
           <Link to="/works" className={/* currentLocation === '/' ||  */currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
             onClick={handleBurgerClick}>Works</Link>
-          <span className="menu__arrow" onClick={handleArrowClick}></span>
-          <ul className="menu__sub-ul">
+          {/* <span className="menu__arrow" onClick={handleArrowClick}></span> */}
+          {/* <ul className="menu__sub-ul">
             {props.tags.map((tag) => {
               return (
                 <li  onClick={handleTagClick} key={tag}>
@@ -72,7 +72,7 @@ function Navigation(props) {
                 </li>
               )
             })}
-          </ul>
+          </ul> */}
         </li>
 
         <li>

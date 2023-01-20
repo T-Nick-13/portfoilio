@@ -85,9 +85,9 @@
   margin-left: 50px;
 }
 
-.menu__ul > li:first-of-type {
+/* .menu__ul > li:first-of-type {
   margin-left: 0;
-}
+} */
 
 .menu__sub-ul > li {
   margin-top: 10px;
@@ -134,7 +134,7 @@
   }
 
   .menu__li {
-    color: #fff;
+    color: var(--light-grey);
   }
 
   .menu__arrow {
@@ -171,7 +171,7 @@
     z-index: 5;
     display: block;
     position: relative;
-    width: 35px;
+    width: 34px;
     height: 24px;
     cursor: pointer;
     margin-right: 3%;
@@ -182,7 +182,7 @@
   .burger::after {
     position: absolute;
     left: 0;
-    height: 10%;
+    height: 8%;
     width: 100%;
     transition: all 0.3s linear;
     background-color: #919391;
@@ -209,7 +209,7 @@
   .burger_inactive span,
   .burger_inactive::before,
   .burger_inactive::after {
-    background-color: #fff;
+    background-color: var(--light-grey);
   }
 
   .burger_inactive span {
