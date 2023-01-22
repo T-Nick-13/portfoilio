@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-bottom: 20px;
   max-width: var(--max-width);
@@ -12,7 +12,15 @@
 
 }
 
+.footer__link {
+  transition: var(--standart-transition);
+}
+
+.footer__link:hover {
+  opacity: 0.6;
+}
+
 .footer__img {
-  width: 30px;
+  width: 28px;
   margin-left: 10px;
 }
