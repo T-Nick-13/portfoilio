@@ -44,6 +44,7 @@
 
 .promo__img-container {
   position: relative;
+  display: flex;
 }
 
 .promo__img {
@@ -55,6 +56,14 @@
   position: absolute;
   width: var(--mouse-width);
   top: 86%;
+  left: 13%;
+}
+
+.promo__img-link {
+  position: absolute;
+  width: 27px;
+  height: 48px;
+  top: 131%;
   left: 13%;
 }
 

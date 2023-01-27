@@ -15,7 +15,11 @@ function Promo(props) {
           </div>
           <div className="promo__img-container">
             <img className="promo__img" src={promoPath} alt="promo"></img>
-            <img className="promo__img-mouse" src={mouse} alt="mouse"></img>
+            <div>
+              <img className="promo__img-mouse" src={mouse} alt="mouse"></img>
+              <a className="promo__img-link" id="link1" href="/1"></a>
+            </div>
+
           </div>
 
         </div>

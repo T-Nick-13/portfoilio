@@ -11,7 +11,7 @@ function CardList(props) {
 
   return (
       <section className="main__pictures">
-        <ResponsiveMasonry
+        {/* <ResponsiveMasonry
           columnsCountBreakPoints={{350: 1, 580: 2, 900: 3}}
         >
           <Masonry className="masonry" gutter="5px">
@@ -29,7 +29,22 @@ function CardList(props) {
               )
             })}
           </Masonry>
-        </ResponsiveMasonry>
+        </ResponsiveMasonry> */}
+        <div className="cards-container">
+          {props.pic.map((card) =>{
+              return (
+                <Card
+                  card={card}
+                  tag={card.tag}
+                  key={card._id}
+                  onCardClick={props.onCardClick}
+                  onTagClick={props.onTagClick}
+                  setClickedTag={props.setClickedTag}
+                  btnActive={props.btnActive}
+                />
+              )
+            })}
+        </div>
         <Link to="/works" className={`main__btn${props.btnActive ? ' main__btn_active' : ''}`}>Other works</Link>
       </section>
 
