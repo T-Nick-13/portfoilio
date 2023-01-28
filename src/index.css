@@ -10,10 +10,11 @@
 @import url(./components/Card/Card.css);
 @import url(./components/Promo/Promo.css);
 @import url(./components/About/About.css);
-@import url(./components/Contact/Contact.css);
+@import url(./components/ContactForm/ContactForm.css);
 @import url(./components/Preloader/Preloader.css);
 @import url(./components/PopupResult/PopupResult.css);
 @import url(./components/SiteList/SiteList.css);
-
+@import url(./components/PhotoPopup/PhotoPopup.css);
+@import url(./components/Contacts/Contacts.css);
 
 

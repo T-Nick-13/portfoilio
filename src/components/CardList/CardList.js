@@ -31,6 +31,7 @@ function CardList(props) {
           </Masonry>
         </ResponsiveMasonry> */}
         <div className="cards-container">
+          <a name="cards" id="cards"></a>
           {props.pic.map((card) =>{
               return (
                 <Card

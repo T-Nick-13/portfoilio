@@ -1,0 +1,17 @@
+.contacts {
+
+}
+
+.contacts__link {
+  transition: var(--standart-transition);
+}
+
+.contacts__link:hover {
+  opacity: 0.6;
+}
+
+.contacts__img {
+  width: 28px;
+  margin-left: 10px;
+}
+

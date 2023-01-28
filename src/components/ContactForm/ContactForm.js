@@ -2,7 +2,7 @@ import React from 'react';
 
 import Preloader from '../Preloader/Preloader';
 
-function Contact(props) {
+function ContactForm(props) {
 
   const [isValid, setIsValid] = React.useState(false);
   const [error, setError] = React.useState({undefined});
@@ -95,4 +95,4 @@ function Contact(props) {
   );
 }
 
-export default Contact;
+export default ContactForm;

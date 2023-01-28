@@ -3,7 +3,13 @@ import promoPath from '../../images/light/Безымянный-6.svg';
 import mouse from '../../images/light/Pero.svg';
 
 
-function Promo(props) {
+function Promo() {
+
+  function scrollToCards(e) {
+    e.preventDefault();
+    const element = document.getElementById('cards');
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   return (
     <section className="promo">
@@ -17,7 +23,7 @@ function Promo(props) {
             <img className="promo__img" src={promoPath} alt="promo"></img>
             <div>
               <img className="promo__img-mouse" src={mouse} alt="mouse"></img>
-              <a className="promo__img-link" id="link1" href="/1"></a>
+              <a className="promo__img-link" href="#cards" onClick={scrollToCards}></a>
             </div>
 
           </div>

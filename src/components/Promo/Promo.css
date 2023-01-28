@@ -61,10 +61,16 @@
 
 .promo__img-link {
   position: absolute;
-  width: 27px;
-  height: 48px;
+  width: 7%;
+  height: 20%;
   top: 131%;
-  left: 13%;
+  left: 12%;
+  background: #ffffff54;
+  transition: var(--standart-transition);
+}
+
+.promo__img-link:hover {
+  background: #ffffff00;
 }
 
 @media (max-width: 580px) {

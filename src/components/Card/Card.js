@@ -34,7 +34,7 @@ function Card(props) {
       }
 
       if (props.card.index === 2) {
-        setImgWidth('35.19');
+        setImgWidth('34');
       }
 
       if (props.card.index === 4 || props.card.index === 5) {
@@ -56,10 +56,10 @@ function Card(props) {
 
 
   return (
-    <div className="card" style={{width: imgWidth + '%'}}>
+    <div className="card" style={{width: imgWidth + '%'}} onClick={handlCardClick}>
       <img src={props.card.link} alt={props.card.name} className="card__img"  ></img>
 
-      <div className="card__overlay" onClick={handlCardClick}></div>
+      <div className="card__overlay"></div>
       {/* <p className="card__tag" onClick={handleTagClick}>{props.tag}</p> */}
     </div>
   );

@@ -8,9 +8,10 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Slider from '../Slider/Slider';
 import About from '../About/About';
-import Contact from '../Contact/Contact';
+import ContactForm from '../ContactForm/ContactForm';
 import PopupResult from '../PopupResult/PopupResult';
 import CardList from '../CardList/CardList';
+import PhotoPopup from '../PhotoPopup/PhotoPopup';
 
 import { MAIN_API } from '../../utils/config';
 import Api from '../../utils/Api';
@@ -25,6 +26,8 @@ function App() {
   const [clickedTag, setClickedTag] = React.useState(false);
   const [inSend, setInSend] = React.useState(false);
   const [isSent, setIsSent] = React.useState(false);
+  const [photoIsOpened, setPhotoIsOpened] = React.useState(false);
+
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
@@ -59,6 +62,7 @@ function App() {
 
   function handlePopupClose() {
     setSelectedCard(0);
+    setPhotoIsOpened(false);
     document.body.classList.remove('body_unscrolled');
   }
 
@@ -112,6 +116,11 @@ function App() {
         setIsSent(false);
         setInSend(false);
     });
+  }
+
+  function openPhoto() {
+    setPhotoIsOpened(true);
+
   }
 
   React.useEffect(() => {
@@ -171,11 +180,13 @@ function App() {
           </Route>
 
           <Route exact path="/about">
-            <About />
+            <About
+              openPhoto={openPhoto}
+            />
           </Route>
 
           <Route exact path="/contact">
-            <Contact
+            <ContactForm
               sendEmail={sendEmail}
               inSend={inSend}
               isSent={isSent}
@@ -193,6 +204,10 @@ function App() {
         <PopupResult
           isSent={isSent}
           closePopup={closePopupResult}
+        />
+        <PhotoPopup
+          onClose={handlePopupClose}
+          isOpened={photoIsOpened}
         />
       </div>
     </div>

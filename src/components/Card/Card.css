@@ -4,10 +4,6 @@
   /* margin-bottom: 4px; */
 }
 
-.card:hover .card__overlay {
-  opacity: 0.4;
-  width: 100%;
-}
 
 .card:hover .card__tag{
   opacity: 1;
@@ -46,4 +42,12 @@
 
 .card__tag:hover {
   text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card__overlay {
+    opacity: 0.4;
+    width: 100%;
+  }
+
 }

@@ -1,14 +1,23 @@
 import React from 'react';
 
 import me from '../../images/light/Me.svg';
+import zoom from '../../images/light/icons8-расширить-25.png';
 import SiteList from '../SiteList/SiteList';
 
-function About() {
+function About(props) {
+
+  function onOpenClick() {
+    props.openPhoto();
+  }
 
   return (
     <section className="about">
       <div className="about__block promo__block">
-        <img className="about__img promo__img" src={me} alt="workplace"></img>
+        <div className="about__img-container">
+          <img className="about__img promo__img" src={me} alt="workplace"></img>
+          <img className="about__zoom" src={zoom} alt="zoom" onClick={onOpenClick} title="open a photo"></img>
+        </div>
+
         <p className="about__info">
           My name is Stafeeva Natalia.<br></br>
           I'm a vector Illustrator with 3 years background

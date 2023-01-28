@@ -1,0 +1,112 @@
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+  }
+}
+
+.photo-popup {
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.photo-popup__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-gap: 20px;
+}
+
+.photo-popup__image {
+  width: 300px;
+  border-radius: 10%;
+  max-width: 65%;
+}
+
+.photo-popup__text {
+  color: #fff;
+  opacity: 0;
+}
+
+.photo-popup__text:first-of-type {
+  animation: slide-right 0.5s ease-in 0.1s forwards;
+  -webkit-animation: slide-right 0.5s ease-in 0.1s forwards;
+}
+
+.photo-popup__text:nth-of-type(2) {
+  animation: slide-right 0.5s ease-in 0.4s forwards;
+  -webkit-animation: slide-right 0.5s ease-in 0.4s forwards;
+}
+
+.photo-popup__text:nth-of-type(3) {
+  animation: slide-right 0.5s ease-in 0.7s forwards;
+  -webkit-animation: slide-right 0.5s ease-in 0.7s forwards;
+}
+
+.photo-popup__contacts {
+  display: flex;
+}
+
+.photo-popup__contacts a {
+  display: flex;
+  opacity: 0;
+}
+
+.photo-popup__contacts a:first-of-type {
+  animation: slide-left 0.5s ease-in 0.8s forwards;
+  -webkit-animation: slide-left 0.5s ease-in 0.8s forwards;
+}
+
+.photo-popup__contacts a:nth-of-type(2) {
+  animation: slide-left 0.5s ease-in 0.9s forwards;
+  -webkit-animation: slide-left 0.5s ease-in 0.9s forwards;
+}
+
+.photo-popup__contacts a:nth-of-type(3) {
+  animation: slide-left 0.5s ease-in 1s forwards;
+  -webkit-animation: slide-left 0.5s ease-in 1s forwards;
+}
+
+.photo-popup__contacts a:nth-of-type(4) {
+  animation: slide-left 0.5s ease-in 1.1s forwards;
+  -webkit-animation: slide-left 0.5s ease-in 1.1s forwards;
+}
+
+
+
+
+

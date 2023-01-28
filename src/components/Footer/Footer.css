@@ -7,20 +7,3 @@
   width: var(--content-width);
   margin: 0 auto 0;
 }
-
-.footer__contacts {
-
-}
-
-.footer__link {
-  transition: var(--standart-transition);
-}
-
-.footer__link:hover {
-  opacity: 0.6;
-}
-
-.footer__img {
-  width: 28px;
-  margin-left: 10px;
-}
