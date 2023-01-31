@@ -21,7 +21,7 @@ function App() {
 
   const [selectedCard, setSelectedCard] = React.useState(0);
   const [allCards, setAllCards] = React.useState([]);
-  const [filteredCards, setFilteredCards] = React.useState([]);
+  //const [filteredCards, setFilteredCards] = React.useState([]);
   const [mainCards, setMainCards] = React.useState([]);
   const [clickedTag, setClickedTag] = React.useState(false);
   const [inSend, setInSend] = React.useState(false);
@@ -44,7 +44,9 @@ function App() {
     ])
     .then(([cards]) => {
       localStorage.setItem('cards', JSON.stringify(cards));
-      setFilteredCards(JSON.parse(localStorage.getItem('cards')));
+      /* setFilteredCards(JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
+        return a.index-b.index
+      })); */
       setAllCards(JSON.parse(localStorage.getItem('cards')));
       setMainCards(JSON.parse(localStorage.getItem('cards')).filter((i) => i.mainPage === true).sort(function(a, b){
         return a.index-b.index
@@ -70,7 +72,7 @@ function App() {
     setIsSent(false);
   }
 
-  function handleTagClick(e) {
+  /* function handleTagClick(e) {
      const cards = allCards.filter((card) => {
       return card.tag.includes(e);
     });
@@ -87,23 +89,24 @@ function App() {
 
   function handleFilterDropping() {
     setFilteredCards(allCards);
-  }
+  } */
 
   //Slider
-  function handlSliderClickNext() {
-    const currentCard = filteredCards.indexOf(selectedCard);
-    const nextIndex = currentCard === filteredCards.length - 1 ? 0 : currentCard + 1;
-    const nextPic = filteredCards.find((el, idx) => idx === nextIndex);
+  /* function handlSliderClickNext() {
+    const cards = location.pathname === '/works' ? allCards : mainCards;
+    const currentCard = cards.indexOf(selectedCard);
+    const nextIndex = currentCard === cards.length - 1 ? 0 : currentCard + 1;
+    const nextPic = cards.find((el, idx) => idx === nextIndex);
     setSelectedCard(nextPic);
-
   }
 
   function handlSliderClickPrev() {
-    const currentCard = filteredCards.indexOf(selectedCard);
-    const prevIndex = currentCard ? currentCard - 1 : filteredCards.length - 1;
-    const nextPic = filteredCards.find((el, idx) => idx === prevIndex);
+    const cards = location.pathname === '/works' ? allCards : mainCards;
+    const currentCard = cards.indexOf(selectedCard);
+    const prevIndex = currentCard ? currentCard - 1 : cards.length - 1;
+    const nextPic = cards.find((el, idx) => idx === prevIndex);
     setSelectedCard(nextPic);
-  }
+  } */
 
   function sendEmail(data) {
     setInSend(true);
@@ -150,8 +153,8 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header
-          handleTagClick={handleTagClick}
-          tags={sortedTags}
+          //handleTagClick={handleTagClick}
+          //tags={sortedTags}
           setClickedTag={setClickedTag}
         />
         <Switch>
@@ -160,22 +163,20 @@ function App() {
               /* pic={filteredCards} */
               pic={mainCards}
               handleCardClick={handleCardClick}
-              handleTagClick={handleTagClick}
               clickedTag={clickedTag}
               setClickedTag={setClickedTag}
-              onBtnClick={handleFilterDropping}
             />
           </Route>
 
           <Route exact path="/works">
             <CardList
               /* pic={filteredCards} */
-              pic={filteredCards}
+              pic={allCards}
               onCardClick={handleCardClick}
-              onTagClick={handleTagClick}
+              //onTagClick={handleTagClick}
               clickedTag={clickedTag}
               setClickedTag={setClickedTag}
-              onBtnClick={handleFilterDropping}
+              //onBtnClick={handleFilterDropping}
             />
           </Route>
 
@@ -198,8 +199,9 @@ function App() {
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}
-          onNextClick={handlSliderClickNext}
-          onPrevClick={handlSliderClickPrev}
+          //onNextClick={handlSliderClickNext}
+          //onPrevClick={handlSliderClickPrev}
+          pic={mainCards}
         />
         <PopupResult
           isSent={isSent}

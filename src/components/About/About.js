@@ -13,9 +13,9 @@ function About(props) {
   return (
     <section className="about">
       <div className="about__block promo__block">
-        <div className="about__img-container">
-          <img className="about__img promo__img" src={me} alt="workplace"></img>
-          <img className="about__zoom" src={zoom} alt="zoom" onClick={onOpenClick} title="open a photo"></img>
+        <div className="about__img-container" onClick={onOpenClick}>
+          <img className="about__img promo__img" src={me} alt="workplace" ></img>
+          <img className="about__zoom" src={zoom} alt="zoom" title="open a photo"></img>
         </div>
 
         <p className="about__info">

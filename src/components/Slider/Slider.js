@@ -1,32 +1,45 @@
 import React from 'react';
+import SlickSilder from "react-slick";
+import Card from '../Card/Card';
+import SliderArrow from '../SliderArrow/SliderArrow';
 
 function Slider(props) {
 
-  function handlSliderClickNext() {
-    props.onNextClick();
-  }
+  const sliderRef = React.useRef();
 
-  function handlSliderClickPrev() {
-    props.onPrevClick();
-  }
-
-  function handleContextMenu() {
-    return false;
-  }
+  React.useEffect(() => {
+    sliderRef.current.slickGoTo(props.pic.indexOf(props.card));
+  }, [props.card])
 
   return (
     <div className={`popup-image ${props.card ? 'popup_opened' : ''}`}>
       <div className="popup-image__container">
-        <div className="popup-image__slider">
-          <div className="arrow__container arrow__container_left" onClick={handlSliderClickPrev}>
-            <div className="arrow arrow-left" ></div>
-          </div>
-          <img className="popup-image__picture" src={props.card.link} alt={props.card.tag}
-            onContextMenu={handleContextMenu} />
-          <div className="arrow__container arrow__container_right" onClick={handlSliderClickNext}>
-            <div className="arrow arrow-right"></div>
-          </div>
-        </div>
+
+            <SlickSilder
+              focusOnSelect={true}
+              ref={sliderRef}
+              nextArrow={
+                <SliderArrow
+                  arrowContainerClass="arrow__container_right"
+                  arrowClass="arrow-right"
+              />}
+              prevArrow={
+                  <SliderArrow
+                  arrowContainerClass="arrow__container_left"
+                  arrowClass="arrow-left"
+              />}
+            >
+              {props.pic.map((card) =>{
+                return (
+                  <Card
+                    sliderImgClass="slider__img"
+                    card={card}
+                    key={card._id}
+                   />
+                )
+              })}
+            </SlickSilder>
+
         <button className="popup__close-btn btn-cross" type="button" onClick={props.onClose}>
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <line x1="0" x2="100" y1="0" y2="100" />

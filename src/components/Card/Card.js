@@ -5,7 +5,9 @@ function Card(props) {
   const [imgWidth, setImgWidth] = React.useState('');
 
   function handlCardClick() {
-    props.onCardClick(props.card);
+    if (!props.sliderImgClass) {
+     props.onCardClick(props.card);
+    }
   }
 
   function handleTagClick(e) {
@@ -56,10 +58,11 @@ function Card(props) {
 
 
   return (
-    <div className="card" style={{width: imgWidth + '%'}} onClick={handlCardClick}>
-      <img src={props.card.link} alt={props.card.name} className="card__img"  ></img>
+    <div className="card" style={!props.sliderImgClass ? {width: imgWidth + '%'} : {width: 'auto', cursor: 'auto'}}
+      onClick={handlCardClick}>
+      <img src={props.card.link} alt={props.card.name} className={`card__img ${props.sliderImgClass}`}  ></img>
 
-      <div className="card__overlay"></div>
+      <div className="card__overlay" style={props.sliderImgClass ? {display: 'none'} : {display: 'block'}}></div>
       {/* <p className="card__tag" onClick={handleTagClick}>{props.tag}</p> */}
     </div>
   );
