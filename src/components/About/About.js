@@ -26,7 +26,7 @@ function About(props) {
       <h3 className="about__title">Some of my works usage</h3>
       <SiteList />
       <p className="about__afterwords">
-        I really like minimal design, if like too, let me know
+        I like minimal design, if you like too, let me know :)
       </p>
     </section>
   );

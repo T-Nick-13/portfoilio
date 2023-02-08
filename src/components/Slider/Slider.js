@@ -12,23 +12,23 @@ function Slider(props) {
   }, [props.card])
 
   return (
-    <div className={`popup-image ${props.card ? 'popup_opened' : ''}`}>
+    <div className={`popup-image ${props.card ? 'popup_opened' : ''}`} style={{paddingRight: 17 +'px'}}>
       <div className="popup-image__container">
 
-            <SlickSilder
-              focusOnSelect={true}
-              ref={sliderRef}
-              nextArrow={
-                <SliderArrow
-                  arrowContainerClass="arrow__container_right"
-                  arrowClass="arrow-right"
-              />}
-              prevArrow={
-                  <SliderArrow
-                  arrowContainerClass="arrow__container_left"
-                  arrowClass="arrow-left"
-              />}
-            >
+        <SlickSilder
+          focusOnSelect={true}
+          ref={sliderRef}
+          nextArrow={
+            <SliderArrow
+              arrowContainerClass="arrow__container_right"
+              arrowClass="arrow-right"
+            />}
+          prevArrow={
+            <SliderArrow
+              arrowContainerClass="arrow__container_left"
+              arrowClass="arrow-left"
+            />}
+          >
               {props.pic.map((card) =>{
                 return (
                   <Card

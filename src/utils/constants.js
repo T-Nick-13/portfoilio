@@ -2,7 +2,7 @@ import site1 from '../images/light/sites/site1.jpg';
 import site2 from '../images/light/sites/site2.jpg';
 import site3 from '../images/light/sites/site3.jpg';
 import site4 from '../images/light/sites/site4.jpg';
-import site5 from '../images/light/sites/site5.jpg';
+import site5 from '../images/light/sites/site5(1).jpg';
 
 export const sites = [
   {
@@ -28,7 +28,7 @@ export const sites = [
   {
     link: site5,
     name: 'site5',
-    src: 'https://eu.daad.de/service/medien-und-publikationen/DAADeuroletter/de/47352-daadeuroletter/'
+    src: 'https://alumni.ubc.ca/event/international-womens-day-embrace-equity/'
   },
 ]
 

@@ -42,15 +42,16 @@ function App() {
     Promise.all([
       api.getCards()
     ])
-    .then(([cards]) => {
-      localStorage.setItem('cards', JSON.stringify(cards));
+    .then(([data]) => {
+      localStorage.setItem('cards', JSON.stringify(data));
       /* setFilteredCards(JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
         return a.index-b.index
       })); */
-      setAllCards(JSON.parse(localStorage.getItem('cards')));
-      setMainCards(JSON.parse(localStorage.getItem('cards')).filter((i) => i.mainPage === true).sort(function(a, b){
+      const cards = JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
         return a.index-b.index
-      }));
+      });
+      setAllCards(cards);
+      setMainCards(cards.filter((i) => i.mainPage === true));
     })
     .catch((err) => {
       console.log(err);
@@ -128,20 +129,17 @@ function App() {
 
   React.useEffect(() => {
 
-    function handleEscClose(evt) {
-      if (evt.key === 'Escape') {
+    function handleEscClose(e) {
+      if (e.key === 'Escape') {
         handlePopupClose();
         closePopupResult();
       }
     }
-    function handleOverlayClose (evt) {
-      if (evt.target.classList.contains('popup_opened')) {
+    function handleOverlayClose (e) {
+      if (e.target.classList.contains('popup_opened') || e.target.classList.contains('slick-track')) {
         handlePopupClose();
       }
-      if (evt.target.className == 'popupResult') {
-        debugger
-        console.log(evt.target)
-        debugger
+      if (e.target.className == 'popupResult') {
         closePopupResult();
       }
     }
@@ -201,7 +199,7 @@ function App() {
           onClose={handlePopupClose}
           //onNextClick={handlSliderClickNext}
           //onPrevClick={handlSliderClickPrev}
-          pic={mainCards}
+          pic={location.pathname === '/works' ? allCards : mainCards}
         />
         <PopupResult
           isSent={isSent}
