@@ -1,14 +1,8 @@
 .main {
-  /* column-count: 3;
-  column-gap: 4px;
-  max-width: 1280px;
-  min-height: 66vh; */
-  animation: opaccity 1s;
+  animation: opaccity 0.5s;
 }
 
 .main__pictures {
-  /* column-count: 3;
-  column-gap: 4px; */
   max-width: var(--max-width);
   width: var(--content-width);
   margin: 0 auto 30px;
@@ -26,7 +20,6 @@
   max-width: 130px;
   box-sizing: border-box;
   padding: 5px;
-  /* border: 1px solid var(--page-font-color); */
   border-radius: 7px;
   transition: var(--standart-transition);
   background: #eff3f2;

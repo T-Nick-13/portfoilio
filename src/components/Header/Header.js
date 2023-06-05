@@ -9,9 +9,9 @@ function Header(props) {
   return (
     <header className="header">
       <div className="header__container">
-        <Link to="/">
+        {/* <Link to="/">
           <img className="header__logo" src={logoPath} alt="logo"/>
-        </Link>
+        </Link> */}
         <Navigation
           onTagClick={props.handleTagClick}
           tags={props.tags}

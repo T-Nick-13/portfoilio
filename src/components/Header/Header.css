@@ -1,25 +1,25 @@
 .header {
-  min-height: var(--header-height);
+  position: absolute;
+  width: 100%;
+  top: 8%;
 }
 
 .header__container {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   position: relative;
   margin: 0 auto 0;
-  padding-top: 80px;
   z-index: 5;
-  animation: headerFix 0.5s;
+  animation: headerFix 0.3s;
   max-width: var(--max-width);
   width: var(--content-width);
+  color: #fff;
 }
 
 .header__logo {
-  /* width: 100%; */
   width: 150px;
-  /* max-height: 80px; */
   margin-right: 5px;
 }
 

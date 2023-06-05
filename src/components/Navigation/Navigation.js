@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
+import logo from '../../images//light/logo-main.svg';
 
 function Navigation(props) {
 
@@ -60,19 +61,21 @@ function Navigation(props) {
             onClick={handleBurgerClick}>About</Link>
         </li>
 
-        <li className={liClass} /* onMouseOver={handleMenuHover} onMouseOut={handleMenuHoverOut} */>
-          <Link to="/works" className={/* currentLocation === '/' ||  */currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
+        <li className={liClass}>
+          <Link to="/works" className={currentLocation ==='/works' ? 'menu__li menu__li_active' : 'menu__li'}
             onClick={handleBurgerClick}>Works</Link>
-          {/* <span className="menu__arrow" onClick={handleArrowClick}></span> */}
-          {/* <ul className="menu__sub-ul">
-            {props.tags.map((tag) => {
-              return (
-                <li  onClick={handleTagClick} key={tag}>
-                  <Link to="/" className="menu__sub-li">{tag}</Link>
-                </li>
-              )
-            })}
-          </ul> */}
+        </li>
+
+        <li>
+          <Link to="/" className={currentLocation === '/' ? 'menu__li' : 'menu__li'}
+          onClick={handleBurgerClick}>
+            <img src={logo} alt="Stafeeva"></img>
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/usage" className={currentLocation === '/usage' ? 'menu__li menu__li_active' : 'menu__li'}
+          onClick={handleBurgerClick}>Usage</Link>
         </li>
 
         <li>

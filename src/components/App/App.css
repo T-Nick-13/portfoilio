@@ -2,6 +2,7 @@
   --page-background: rgb(231 229 229);
   --header-font-color: #bdc1c6;
   --page-font-color: #5f5c5c;
+  --main-font: 15px;
   --standart-transition: all 0.3s linear;
   --content-width: 97%;
   --header-height: 50px;
@@ -9,6 +10,7 @@
   --task-background: #3c3c3c;
   --light-grey: #e4e4e4;
   --link-color: #4685de;
+  --header-width: 760px;
 
   --max-width: 1200px;
   --section-margin: 40px;
@@ -19,11 +21,9 @@
 
 
 .page {
-  font-family: 'Raleway', Sans-serif, Arial, Helvetica;
-  font-weight: 300;
-  color: var(--page-font-color);
-  /* background: rgb(102, 140, 123, 0.1); */
-  /* padding: 0 calc(20px - (100vw - 100%)) 0 0; */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: var(--main-font);
 }
 
 .page__wrapper {

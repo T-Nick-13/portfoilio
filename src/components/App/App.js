@@ -21,13 +21,11 @@ function App() {
 
   const [selectedCard, setSelectedCard] = React.useState(0);
   const [allCards, setAllCards] = React.useState([]);
-  //const [filteredCards, setFilteredCards] = React.useState([]);
   const [mainCards, setMainCards] = React.useState([]);
   const [clickedTag, setClickedTag] = React.useState(false);
   const [inSend, setInSend] = React.useState(false);
   const [isSent, setIsSent] = React.useState(false);
   const [photoIsOpened, setPhotoIsOpened] = React.useState(false);
-
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
@@ -44,9 +42,6 @@ function App() {
     ])
     .then(([data]) => {
       localStorage.setItem('cards', JSON.stringify(data));
-      /* setFilteredCards(JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
-        return a.index-b.index
-      })); */
       const cards = JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
         return a.index-b.index
       });
@@ -72,42 +67,6 @@ function App() {
   function closePopupResult() {
     setIsSent(false);
   }
-
-  /* function handleTagClick(e) {
-     const cards = allCards.filter((card) => {
-      return card.tag.includes(e);
-    });
-     setFilteredCards(cards);
-  }
-
-  const tags = allCards.map((card) => {
-    return card.tag;
-  })
-
-  const sortedTags = tags.reverse().filter((e, i, arr) => {
-    return arr.indexOf(e, i+1) === -1;
-  }).reverse();
-
-  function handleFilterDropping() {
-    setFilteredCards(allCards);
-  } */
-
-  //Slider
-  /* function handlSliderClickNext() {
-    const cards = location.pathname === '/works' ? allCards : mainCards;
-    const currentCard = cards.indexOf(selectedCard);
-    const nextIndex = currentCard === cards.length - 1 ? 0 : currentCard + 1;
-    const nextPic = cards.find((el, idx) => idx === nextIndex);
-    setSelectedCard(nextPic);
-  }
-
-  function handlSliderClickPrev() {
-    const cards = location.pathname === '/works' ? allCards : mainCards;
-    const currentCard = cards.indexOf(selectedCard);
-    const prevIndex = currentCard ? currentCard - 1 : cards.length - 1;
-    const nextPic = cards.find((el, idx) => idx === prevIndex);
-    setSelectedCard(nextPic);
-  } */
 
   function sendEmail(data) {
     setInSend(true);
@@ -151,14 +110,11 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header
-          //handleTagClick={handleTagClick}
-          //tags={sortedTags}
           setClickedTag={setClickedTag}
         />
         <Switch>
           <Route exact path="/">
             <Main
-              /* pic={filteredCards} */
               pic={mainCards}
               handleCardClick={handleCardClick}
               clickedTag={clickedTag}
@@ -168,13 +124,10 @@ function App() {
 
           <Route exact path="/works">
             <CardList
-              /* pic={filteredCards} */
               pic={allCards}
               onCardClick={handleCardClick}
-              //onTagClick={handleTagClick}
               clickedTag={clickedTag}
               setClickedTag={setClickedTag}
-              //onBtnClick={handleFilterDropping}
             />
           </Route>
 
@@ -197,8 +150,6 @@ function App() {
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}
-          //onNextClick={handlSliderClickNext}
-          //onPrevClick={handlSliderClickPrev}
           pic={location.pathname === '/works' ? allCards : mainCards}
         />
         <PopupResult
