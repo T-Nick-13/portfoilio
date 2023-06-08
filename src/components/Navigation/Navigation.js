@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
-import logo from '../../images//light/logo-main.svg';
+import logo from '../../images//light/logo.svg';
 
 function Navigation(props) {
 

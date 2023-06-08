@@ -1,6 +1,7 @@
 import React from 'react';
 import promo from '../../images/light/promo.png';
 
+
 function Promo() {
 
   return (

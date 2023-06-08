@@ -1,7 +1,16 @@
 .card {
   position: relative;
   cursor: pointer;
-  /* margin-bottom: 4px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_scaled {
+  padding: 20px;
+  transform: scale(1.5);
+  background: #000000b3;
+  z-index: 1;
 }
 
 
@@ -18,7 +27,6 @@
   top: 0;
   left: 0;
   transition: 0.2s all linear;
-  border-radius: 5px;
 }
 
 .card__img {
@@ -44,10 +52,152 @@
   text-decoration: underline;
 }
 
+.card > p {
+  /* font-size: 1.5em;
+  line-height: 1.3em;
+  width: 100%;
+  margin: 0; */
+}
+
+.card > p > span {
+  font-weight: 600;
+  font-family: "Archivo Black", "Raleway", Sans-serif, Arial;
+  color: #dfd7a3;
+}
+
+.card__circle-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.card__circle {
+  animation: rotate 8s infinite linear;
+  width: 210px;
+}
+
+.card__circle-text {
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.card__circle-title {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(15deg);
+  left: 50%;
+  top: 50%;
+  font-size: 2.4em;
+  font-family: "Archivo Black", "Raleway", Sans-serif, Arial;
+  color: #dfd7a3;
+  transition: var(--standart-transition);
+}
+
+.card__circle-wrapper:hover .card__circle-title {
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.card__vertical-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Archivo Black", "Raleway", Sans-serif, Arial;
+}
+
+.card__vertical-text > span {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-right: 10px;
+  letter-spacing: -4px;
+}
+
+.card__vertical-text > p {
+  font-size: 1.6em;
+}
+
+.card__text {
+  font-size: 1.5em;
+  line-height: 1.3em;
+  width: 100%;
+  margin: 0;
+  width: auto;
+}
+
+.card__inside-text {
+  font-size: 1.3em;
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  text-align: center;
+  background: #f7f7f58f;
+}
+
+.card__large-text {
+  position: relative;
+}
+
+.card__large-text > p {
+  text-align: center;
+  margin: 0;
+  font-family: "Archivo Black", "Raleway", Sans-serif, Arial;
+  color: #dfd7a3;
+  font-size: 2.7em;
+}
+
+.card__large-text > span {
+  position: absolute;
+  writing-mode: vertical-rl;
+  transform: translateX(-50%) rotate(180deg);
+  font-size: 1.1em;
+  font-weight: 300;
+  left: 50%;
+}
+
+.card__large-text > p > span {
+  display: block;
+  overflow: hidden;
+  animation: typing 3s steps(35) infinite, blink-caret .7s step-end infinite;
+  border-right: 2px solid #dfd7a3;
+  margin: 0 auto;
+}
+
+
 @media (hover: hover) and (pointer: fine) {
   .card:hover .card__overlay {
     opacity: 0.4;
     width: 100%;
   }
-
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: #dfd7a3;
+  }
+}
+

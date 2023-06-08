@@ -114,15 +114,24 @@ function Card(props) {
   })
 
   return (
-    <div className="card" style={!props.sliderImgClass ? {width: imgWidth + '%'} : {width: 'auto', cursor: 'auto'}}
-      onClick={handlCardClick}>
-      <img src={props.card.link} alt={props.card.name} className={`card__img ${props.sliderImgClass ? props.sliderImgClass : ''}`}  ></img>
+    <div className={`card${props.card.prop ? ` card${props.card.prop}` : ''}`} onClick={handlCardClick}>
+      {
+        props.card.src ?
+          <>
+            <img
+              src={props.card.src}
+              alt='picture'
+              className={`card__img ${props.sliderImgClass ? props.sliderImgClass : ''}`}
+            />
+            {props.card?.text}
+          </>
 
-      <div className="card__overlay" style={props.sliderImgClass ? {display: 'none'} : {display: 'block'}}></div>
-      {/* <p className="card__tag" onClick={handleTagClick}>{props.tag}</p> */}
+        : props.card.text ?  props.card.text : props.card.text
+      }
+
+      {/* <div className="card__overlay" style={props.sliderImgClass ? {display: 'none'} : {display: 'block'}}></div> */}
     </div>
   );
 }
-
 
 export default Card;

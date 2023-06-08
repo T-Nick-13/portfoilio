@@ -1,10 +1,10 @@
 :root {
   --page-background: rgb(231 229 229);
   --header-font-color: #bdc1c6;
-  --page-font-color: #5f5c5c;
+  --page-font-color: #5b5b5b;
   --main-font: 15px;
   --standart-transition: all 0.3s linear;
-  --content-width: 97%;
+  --content-width: 98%;
   --header-height: 50px;
   --task-text-color: #8B8B8B;
   --task-background: #3c3c3c;
@@ -12,11 +12,13 @@
   --link-color: #4685de;
   --header-width: 760px;
 
-  --max-width: 1200px;
+  --max-width: 1300px;
   --section-margin: 40px;
   --header-height: 180px;
   --mouse-width: 45px;
   --site-gap: 22px;
+  --main-gap: 55px;
+  --grid-row-gap: 5em;
 }
 
 
@@ -24,6 +26,7 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
   font-size: var(--main-font);
+  color: var(--page-font-color)
 }
 
 .page__wrapper {

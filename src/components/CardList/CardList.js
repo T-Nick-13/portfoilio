@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 import { Link } from 'react-router-dom';
-import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry';
+import { pictures, rowTest } from '../../utils/constants';
 
 function CardList(props) {
 
@@ -10,48 +10,25 @@ function CardList(props) {
   }, [])
 
   return (
-      <section className="main__pictures">
-        {/* <ResponsiveMasonry
-          columnsCountBreakPoints={{350: 1, 580: 2, 900: 3}}
-        >
-          <Masonry className="masonry" gutter="5px">
-            {props.pic.map((card) =>{
-              return (
-                <Card
-                  card={card}
-                  tag={card.tag}
-                  key={card._id}
-                  onCardClick={props.onCardClick}
-                  onTagClick={props.onTagClick}
-                  setClickedTag={props.setClickedTag}
-                  btnActive={props.btnActive}
-                />
-              )
-            })}
-          </Masonry>
-        </ResponsiveMasonry> */}
-        <div className="cards-container">
-          <a name="cards" id="cards"></a>
-          {props.pic.map((card) =>{
-              return (
-                <Card
-                  card={card}
-                  tag={card.tag}
-                  key={card._id}
-                  onCardClick={props.onCardClick}
-                  onTagClick={props.onTagClick}
-                  setClickedTag={props.setClickedTag}
-                  btnActive={props.btnActive}
-                />
-              )
-            })}
+    <div className="cards-container">
+      {rowTest.map((r, inx) => (
+        <div className="cards-container__row" key={inx}>
+          {r.row.map((i, indx) => (
+            <Card
+              card={i}
+              key={indx}
+              onCardClick={props.onCardClick}
+              onTagClick={props.onTagClick}
+              setClickedTag={props.setClickedTag}
+              btnActive={props.btnActive}
+          />
+          ))}
         </div>
-        <Link to="/works" className={`main__btn${props.btnActive ? ' main__btn_active' : ''}`}>Other works</Link>
-      </section>
+      ))}
+    </div>
 
   );
 
 }
-
 
 export default CardList;

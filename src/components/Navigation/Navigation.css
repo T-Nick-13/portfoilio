@@ -11,7 +11,7 @@ nav {
   position: relative;
 
   width: var(--content-width);
-  max-width: var(--header-width);
+  /* max-width: var(--header-width); */
   justify-content: space-between;
 }
 

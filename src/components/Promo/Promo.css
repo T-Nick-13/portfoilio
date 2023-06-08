@@ -25,7 +25,8 @@
 .promo__text-box {
   position: absolute;
   top: 32%;
-  width: 100%;
+  left: 23%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
 }
@@ -35,6 +36,4 @@
   font-size: 1.5em;
   margin: 0;
   line-height: 1.5em;
-  max-width: var(--header-width);
-  width: var(--content-width);
 }

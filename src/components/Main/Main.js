@@ -14,14 +14,17 @@ function Main(props) {
   return (
     <main className="main">
       <Promo />
-      <CardList
-        pic={props.pic}
-        onCardClick={props.handleCardClick}
-        onTagClick={props.handleTagClick}
-        setClickedTag={props.setClickedTag}
-        btnActive={true}
-      />
-      <p className={`filter__btn ${menuBtnClass}`} onClick={handleFilterDropping}>Show all works</p>
+      <div className="main__pictures">
+        <h2 className="main__heading">Welcome to Stafeeva.site !</h2>
+        <CardList
+          pic={props.pic}
+          onCardClick={props.handleCardClick}
+          onTagClick={props.handleTagClick}
+          setClickedTag={props.setClickedTag}
+          btnActive={true}
+        />
+      </div>
+      {/* <p className={`filter__btn ${menuBtnClass}`} onClick={handleFilterDropping}>Show all works</p> */}
     </main>
 
   );
