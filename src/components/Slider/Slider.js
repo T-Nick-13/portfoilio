@@ -2,13 +2,26 @@ import React from 'react';
 import SlickSilder from "react-slick";
 import Card from '../Card/Card';
 import SliderArrow from '../SliderArrow/SliderArrow';
+import { rows } from '../../utils/constants';
 
 function Slider(props) {
 
   const sliderRef = React.useRef();
 
+  function getImages() {
+    const imgArr = [];
+    rows.forEach((i) => {
+      i.row.forEach((el) => {
+        if (el.src) {
+          imgArr.push({ src: el.src });
+        }
+      })
+    })
+    return imgArr;
+  }
+
   React.useEffect(() => {
-    sliderRef.current.slickGoTo(props.pic.indexOf(props.card));
+    sliderRef.current.slickGoTo(getImages().findIndex((i) => i.src === props.card.src));
   }, [props.card])
 
   return (
@@ -29,12 +42,12 @@ function Slider(props) {
               arrowClass="arrow-left"
             />}
           >
-              {props.pic.map((card) =>{
+              {getImages().map((card, index) =>{
                 return (
                   <Card
                     sliderImgClass="slider__img"
                     card={card}
-                    key={card._id}
+                    key={index}
                    />
                 )
               })}

@@ -1,9 +1,9 @@
 .card {
   position: relative;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s;
 }
 
 .card_scaled {
@@ -13,50 +13,45 @@
   z-index: 1;
 }
 
+.card_layout {
+  cursor: pointer;
+}
 
-.card:hover .card__tag{
-  opacity: 1;
+
+.card_layout:hover {
+  transform: translateY(-10%);
 }
 
 .card__overlay {
   position: absolute;
   opacity: 0;
-  background-color: #000;
   height: 100%;
-  width: 0%;
+  width: 100%;
   top: 0;
   left: 0;
   transition: 0.2s all linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__overlay_inactive {
+  display: none;
+}
+
+.card__overlay > div {
+  background: #0000008f;
+  border-radius: 30px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__img {
   width: 100%;
   display: block;
-}
-
-.card__tag {
-  position: absolute;
-  bottom: 0;
-  opacity: 0;
-  font-size: 18px;
-  line-height: 1.7;
-  transition: 0.3s all linear;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(to top, rgb(0,0,0, 0.7), transparent);
-  width: 100%;
-  margin: 0;
-}
-
-.card__tag:hover {
-  text-decoration: underline;
-}
-
-.card > p {
-  /* font-size: 1.5em;
-  line-height: 1.3em;
-  width: 100%;
-  margin: 0; */
 }
 
 .card > p > span {
@@ -122,7 +117,7 @@
 }
 
 .card__inside-text {
-  font-size: 1.3em;
+  font-size: 1.1em;
   position: absolute;
   top: 4%;
   left: 50%;
@@ -163,9 +158,8 @@
 
 
 @media (hover: hover) and (pointer: fine) {
-  .card:hover .card__overlay {
-    opacity: 0.4;
-    width: 100%;
+  .card_layout:hover .card__overlay {
+    opacity: 1;
   }
 }
 

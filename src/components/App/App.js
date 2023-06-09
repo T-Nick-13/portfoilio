@@ -13,6 +13,7 @@ import PopupResult from '../PopupResult/PopupResult';
 import CardList from '../CardList/CardList';
 import PhotoPopup from '../PhotoPopup/PhotoPopup';
 
+
 import { MAIN_API } from '../../utils/config';
 import Api from '../../utils/Api';
 
@@ -29,7 +30,7 @@ function App() {
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
-  const api = new Api ({
+ /*  const api = new Api ({
     baseUrl: MAIN_API,
     headers: {
       'Content-Type': 'application/json'
@@ -51,7 +52,7 @@ function App() {
     .catch((err) => {
       console.log(err);
     })
-  }, [])
+  }, []) */
 
   function handleCardClick(card) {
     setSelectedCard(card);

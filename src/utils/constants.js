@@ -32,7 +32,8 @@ export const sites = [
   },
 ]
 
-import img1 from '../images/light/img1_s.png';//300px
+//height 300px
+import img1 from '../images/light/img1_s.png';
 import img2 from '../images/light/img2_s.png';
 import img3 from '../images/light/img3_s.png';
 import img4 from '../images/light/img4_s.png';
@@ -148,10 +149,10 @@ const text9 =
 ;
 
 const text10 =
-<p className='card__text'>Modern silhouettes of people can showcase the diversity of societ</p>
+  <p className='card__text'>Modern silhouettes of people can showcase the diversity of society</p>
 ;
 
-export let rowTest = [
+export let rows = [
   {
     row: [{ src: img1 }, { src: img2 }, { src: img3 }]
   },
@@ -211,3 +212,4 @@ export let rowTest = [
   },
 
 ]
+
