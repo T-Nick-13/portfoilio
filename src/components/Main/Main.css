@@ -40,7 +40,13 @@
   margin-top: 0;
   text-align: center;
   font-weight: 200;
+  transition: all 0.3s;
 }
+
+.main__heading:hover {
+  transform: translateY(-10%);
+}
+
 
 .filter__btn {
   position: fixed;

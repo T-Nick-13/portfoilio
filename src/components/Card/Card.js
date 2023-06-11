@@ -12,10 +12,9 @@ function Card(props) {
   const cardClass = props.card.prop ? props.card.prop : '';
   const sourceClass = !props.sliderImgClass && props.card.src ? ' card_layout' : '';
 
-
   return (
     <div
-      className={`card card${cardClass}${sourceClass}`}
+      className={`card ${cardClass}${sourceClass}`}
       onClick={handlCardClick}
     >
       {

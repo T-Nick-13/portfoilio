@@ -181,7 +181,7 @@ export let rows = [
     row: [{ src: img15 }]
   },
   {
-    row: [{ text: text10, prop: '_typed' }]
+    row: [{ text: text10, prop: 'card_typed' }]
   },
   {
     row: [{ src: img16 }]
@@ -199,7 +199,7 @@ export let rows = [
     row: [{ src: img23 }, { src: img24 }, { src: img25 }]
   },
   {
-    row: [{ src: img26 }, { src: img27, prop: '_scaled' }, { src: img28 }]
+    row: [{ src: img26 }, { src: img27, prop: 'card_scaled' }, { src: img28 }]
   },
   {
     row: [{ src: img29, text: text7 }]
