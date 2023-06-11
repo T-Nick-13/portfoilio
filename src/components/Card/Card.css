@@ -13,13 +13,25 @@
   z-index: 1;
 }
 
+.card_typed {
+  animation: typing 5s steps(60) infinite, blink-caret .7s step-end infinite;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  border-right: 1px solid var(--page-font-color);
+  margin: 0 auto;
+}
+
 .card_layout {
   cursor: pointer;
 }
 
-
 .card_layout:hover {
   transform: translateY(-10%);
+}
+
+.card_scaled:hover {
+  transform: scale(1.5) translateY(-10%);
 }
 
 .card__overlay {
@@ -191,7 +203,8 @@
     border-color: transparent
   }
   50% {
-    border-color: #dfd7a3;
+    border-color: currentColor;
   }
 }
+
 

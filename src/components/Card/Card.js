@@ -4,7 +4,7 @@ import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 function Card(props) {
 
   function handlCardClick() {
-    if (!props.sliderImgClass) {
+    if (!props.sliderImgClass && props.card.src) {
      props.onCardClick(props.card);
     }
   }
@@ -15,7 +15,7 @@ function Card(props) {
 
   return (
     <div
-      className={`card${cardClass}${sourceClass}`}
+      className={`card card${cardClass}${sourceClass}`}
       onClick={handlCardClick}
     >
       {

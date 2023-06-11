@@ -181,7 +181,7 @@ export let rows = [
     row: [{ src: img15 }]
   },
   {
-    row: [{ text: text10 }]
+    row: [{ text: text10, prop: '_typed' }]
   },
   {
     row: [{ src: img16 }]

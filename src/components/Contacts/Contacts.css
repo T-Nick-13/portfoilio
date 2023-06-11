@@ -1,17 +1,43 @@
 .contacts {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contacts__link {
   transition: var(--standart-transition);
+  display: none;
+  margin-left: 1.3em;
+}
+
+.contacts__link:first-of-type {
+  margin-left: 0;
+}
+
+.contacts__link_active {
+  display: block;
+}
+
+.contacts__link_dim {
+  opacity: 0.4;
 }
 
 .contacts__link:hover {
   opacity: 0.6;
 }
 
+
+.contacts__link_dim:hover {
+  opacity: 0.9;
+}
+
 .contacts__img {
-  width: 28px;
-  margin-left: 10px;
+  display: block;
+  width: 30px;
+
+}
+
+.contacts__img_cut {
+  border-radius: 11px;
 }
 

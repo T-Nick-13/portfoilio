@@ -23,7 +23,6 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(0);
   const [allCards, setAllCards] = React.useState([]);
   const [mainCards, setMainCards] = React.useState([]);
-  const [clickedTag, setClickedTag] = React.useState(false);
   const [inSend, setInSend] = React.useState(false);
   const [isSent, setIsSent] = React.useState(false);
   const [photoIsOpened, setPhotoIsOpened] = React.useState(false);
@@ -111,15 +110,12 @@ function App() {
     <div className="page">
       <div className="page__wrapper">
         <Header
-          setClickedTag={setClickedTag}
         />
         <Switch>
           <Route exact path="/">
             <Main
               pic={mainCards}
               handleCardClick={handleCardClick}
-              clickedTag={clickedTag}
-              setClickedTag={setClickedTag}
             />
           </Route>
 
@@ -127,8 +123,6 @@ function App() {
             <CardList
               pic={allCards}
               onCardClick={handleCardClick}
-              clickedTag={clickedTag}
-              setClickedTag={setClickedTag}
             />
           </Route>
 
@@ -147,7 +141,7 @@ function App() {
           </Route>
 
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}
