@@ -33,7 +33,7 @@ export const sites = [
 ]
 
 //height 300px
-import img1 from '../images/light/img1_s.png';
+/* import img1 from '../images/light/img1_s.png';
 import img2 from '../images/light/img2_s.png';
 import img3 from '../images/light/img3_s.png';
 import img4 from '../images/light/img4_s.png';
@@ -62,7 +62,7 @@ import img27 from '../images/light/img27_s.png';
 import img28 from '../images/light/img28_s.png';
 import img29 from '../images/light/img29_s.png';
 import img30 from '../images/light/img30_s.png';
-import img31 from '../images/light/img31_s.png';
+import img31 from '../images/light/img31_s.png'; */
 
 
 const text1 =
@@ -92,12 +92,12 @@ const test3 =
               a 37,37 0 1,1 -74,0'/>
         </defs>
         <text className='card__circle-text'>
-          <textPath href='#circle' textLength='225'>
-          &#160;SOCIETY &#160; SOCIETY &#160; SOCIETY &#160; SOCIETY &#160; SOCIETY
+          <textPath href='#circle' textLength='235'>
+          &#160; IDENTITY &#160; DIVERSITY &#160; EQUALITY &#160; INCLUSION &#160;
           </textPath>
         </text>
       </svg>
-        <span className='card__circle-title'>DIVERSITY</span>
+        <span className='card__circle-title'>SOCIETY</span>
   </div >
 ;
 
@@ -105,7 +105,7 @@ const test4 =
   <div className='card__vertical-text'>
     <span>SILHOUETTES</span>
     <p>OF PEOPLE - <br />
-      DIVERSITY OF<br />
+      VARIETY OF<br />
       SOCIETY
     </p>
   </div>
@@ -152,63 +152,115 @@ const text10 =
   <p className='card__text'>Modern silhouettes of people can showcase the diversity of society</p>
 ;
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item).default; });
+  return images;
+}
+
+const images = importAll(require.context('../images/light/images_s', false));
+const imagesM = importAll(require.context('../images/light/images_m', false));
+const imagesL = importAll(require.context('../images/light/images_l', false));
+
 export let rows = [
   {
-    row: [{ src: img1 }, { src: img2 }, { src: img3 }]
+    row: [
+      { src: images['img1_s.png'], src_m: imagesM['1.jpg'], src_l: imagesL['1.jpg'] },
+      { src: images['img2_s.png'], src_m: imagesM['2.jpg'], src_l: imagesL['2.jpg'] },
+      { src: images['img3_s.png'], src_m: imagesM['3.jpg'], src_l: imagesL['3.jpg'] }
+    ]
   },
   {
-    row: [{ src: img4 }, { text: text1 }]
+    row: [
+      { src: images['img4_s.png'], src_m: imagesM['4.jpg'], src_l: imagesL['4.jpg'] },
+      { text: text1 }
+    ]
   },
   {
-    row: [{ text: text9 }, { src: img6 }]
+    row: [
+      { text: text9 },
+      { src: images['img5_s.png'], src_m: imagesM['5.jpg'], src_l: imagesL['5.jpg'] }
+    ]
   },
   {
-    row: [{ src: img7 }]
+    row: [{ src: images['img6_s.png'], src_m: imagesM['6.jpg'], src_l: imagesL['6.jpg'] }]
   },
   {
-    row: [{ src: img8 }, { src: img31 }]
+    row: [
+      { src: images['img7_s.png'], src_m: imagesM['7.jpg'], src_l: imagesL['7.jpg'] },
+      { src: images['img30_s.png'], src_m: imagesM['30.jpg'], src_l: imagesL['30.jpg'] }
+    ]
   },
   {
-    row: [{ text: test3 }, { src: img9 }]
+    row: [
+      { text: test3 },
+      { src: images['img8_s.png'], src_m: imagesM['8.jpg'], src_l: imagesL['8.jpg'] }
+    ]
   },
   {
-    row: [{ src: img10 }, { text: test4 }, { src: img11 }]
+    row: [
+      { src: images['img9_s.png'], src_m: imagesM['9.jpg'], src_l: imagesL['9.jpg'] },
+      { text: test4 },
+      { src: images['img10_s.png'], src_m: imagesM['10.jpg'], src_l: imagesL['10.jpg'] }
+    ]
   },
   {
-    row: [{ src: img12 }, { src: img13 }, { src: img14 }]
+    row: [
+      { src: images['img11_s.png'], src_m: imagesM['11.jpg'], src_l: imagesL['11.jpg'] },
+      { src: images['img12_s.png'], src_m: imagesM['12.jpg'], src_l: imagesL['12.jpg'] },
+      { src: images['img13_s.png'], src_m: imagesM['13.jpg'], src_l: imagesL['13.jpg'] }]
   },
   {
-    row: [{ src: img15 }]
+    row: [{ src: images['img14_s.png'], src_m: imagesM['14.jpg'], src_l: imagesL['14.jpg'] }]
   },
   {
     row: [{ text: text10, prop: 'card_typed' }]
   },
   {
-    row: [{ src: img16 }]
+    row: [{ src: images['img15_s.png'], src_m: imagesM['15.jpg'], src_l: imagesL['15.jpg'] }]
   },
   {
-    row: [{ src: img17 }, { text: text5 }, { src: img18 }]
+    row: [
+      { src: images['img16_s.png'], src_m: imagesM['16.jpg'], src_l: imagesL['16.jpg'] },
+      { text: text5 },
+      { src: images['img17_s.png'], src_m: imagesM['17.jpg'], src_l: imagesL['17.jpg'] }
+    ]
   },
   {
-    row: [{ src: img19 }, { src: img20 }]
+    row: [
+      { src: images['img18_s.png'], src_m: imagesM['18.jpg'], src_l: imagesL['18.jpg'] },
+      { src: images['img19_s.png'], src_m: imagesM['19.jpg'], src_l: imagesL['19.jpg'] }
+    ]
   },
   {
-    row: [{ src: img21 }, { text: text6 }, { src: img22 }]
+    row: [
+      { src: images['img20_s.png'], src_m: imagesM['20.jpg'], src_l: imagesL['20.jpg'] },
+      { text: text6 },
+      { src: images['img21_s.png'], src_m: imagesM['21.jpg'], src_l: imagesL['21.jpg'] }
+    ]
   },
   {
-    row: [{ src: img23 }, { src: img24 }, { src: img25 }]
+    row: [
+      { src: images['img22_s.png'], src_m: imagesM['22.jpg'], src_l: imagesL['22.jpg'] },
+      { src: images['img23_s.png'], src_m: imagesM['23.jpg'], src_l: imagesL['23.jpg'] },
+      { src: images['img24_s.png'], src_m: imagesM['24.jpg'], src_l: imagesL['24.jpg'] }
+    ]
   },
   {
-    row: [{ src: img26 }, { src: img27, prop: 'card_scaled' }, { src: img28 }]
+    row: [
+      { src: images['img25_s.png'], src_m: imagesM['25.jpg'], src_l: imagesL['25.jpg'] },
+      { src: images['img26_s.png'], prop: 'card_scaled', src_m: imagesM['26.jpg'], src_l: imagesL['26.jpg'] },
+      { src: images['img27_s.png'], src_m: imagesM['27.jpg'], src_l: imagesL['27.jpg'] }
+    ]
   },
   {
-    row: [{ src: img29, text: text7 }]
+    row: [{ src: images['img28_s.png'], text: text7, src_m: imagesM['28.jpg'], src_l: imagesL['28.jpg'] }]
   },
   {
     row: [{ text: text8 }]
   },
   {
-    row: [{ src: img30 }]
+    row: [{ src: images['img29_s.png'], src_m: imagesM['29.jpg'], src_l: imagesL['29.jpg'] }]
   },
 
 ]

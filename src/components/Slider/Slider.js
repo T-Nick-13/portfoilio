@@ -1,6 +1,5 @@
 import React from 'react';
 import SlickSilder from "react-slick";
-import Card from '../Card/Card';
 import SliderArrow from '../SliderArrow/SliderArrow';
 import { rows } from '../../utils/constants';
 
@@ -13,7 +12,7 @@ function Slider(props) {
     rows.forEach((i) => {
       i.row.forEach((el) => {
         if (el.src) {
-          imgArr.push({ src: el.src });
+          imgArr.push({ src: el.src, src_m: el.src_m, src_l: el.src_l });
         }
       })
     })
@@ -35,7 +34,7 @@ function Slider(props) {
             <SliderArrow
               arrowContainerClass="arrow__container_right"
               arrowClass="arrow-right"
-            />}
+          />}
           prevArrow={
             <SliderArrow
               arrowContainerClass="arrow__container_left"
@@ -44,14 +43,14 @@ function Slider(props) {
           >
               {getImages().map((card, index) =>{
                 return (
-                  <Card
-                    sliderImgClass="slider__img"
-                    card={card}
-                    key={index}
-                   />
+                  <picture key={index}>
+                    <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
+                    <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
+                    <img className='slider__img' src={card.src} alt="Изображение"></img>
+                  </picture>
                 )
               })}
-            </SlickSilder>
+        </SlickSilder>
 
         <button className="popup__close-btn btn-cross" type="button" onClick={props.onClose}>
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
