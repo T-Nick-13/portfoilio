@@ -12,7 +12,7 @@
   width: 90%;
 }
 
-.cards-container__row:nth-of-type(1) {
+/* .cards-container__row:nth-of-type(1) {
   grid-template-columns: calc(70% / 3) 30% calc(70% / 3);
 }
 
@@ -89,5 +89,5 @@
 
 .cards-container__row:nth-of-type(19) {
   width: 100%;
-}
+} */
 

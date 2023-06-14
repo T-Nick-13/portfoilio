@@ -10,13 +10,11 @@ import Slider from '../Slider/Slider';
 import About from '../About/About';
 import ContactForm from '../ContactForm/ContactForm';
 import PopupResult from '../PopupResult/PopupResult';
-import CardList from '../CardList/CardList';
 import PhotoPopup from '../PhotoPopup/PhotoPopup';
-
+import Usage from '../Usage/Usage';
 
 import { MAIN_API } from '../../utils/config';
 import Api from '../../utils/Api';
-
 
 function App() {
 
@@ -119,16 +117,15 @@ function App() {
             />
           </Route>
 
-          <Route exact path="/works">
-            <CardList
-              pic={allCards}
-              onCardClick={handleCardClick}
-            />
-          </Route>
-
           <Route exact path="/about">
             <About
               openPhoto={openPhoto}
+            />
+          </Route>
+
+          <Route exact path="/usage">
+            <Usage
+              handleCardClick={handleCardClick}
             />
           </Route>
 

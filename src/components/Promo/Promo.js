@@ -1,24 +1,16 @@
 import React from 'react';
-import promo from '../../images/light/promo.png';
 
-
-function Promo() {
+function Promo(props) {
 
   return (
     <div className="promo">
       <div className="promo__container">
-        <img className="promo__img" src={promo} alt="people"></img>
+        <img className="promo__img" src={props.imgSrc} alt="people"></img>
         <div className="promo__overlay"></div>
-        <div className="promo__text-box">
-          <p className="promo__text">
-            Hello !<br/>
-            Here you can find modern<br/>
-            illustrations from a graphic<br/>
-            desigher with a 3-year<br/>
-            background
-          </p>
-        </div>
+        {/* <div className="promo__text-box"> */}
 
+          {props.children}
+        {/* </div> */}
       </div>
     </div>
   );

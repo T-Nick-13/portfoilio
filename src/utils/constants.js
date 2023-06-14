@@ -1,70 +1,4 @@
-import site1 from '../images/light/sites/site1.jpg';
-import site2 from '../images/light/sites/site2.jpg';
-import site3 from '../images/light/sites/site3.jpg';
-import site4 from '../images/light/sites/site4.jpg';
-import site5 from '../images/light/sites/site5(1).jpg';
-
-export const sites = [
-  {
-    link: site1,
-    name: 'site1',
-    src: 'https://www.lacers.org/article/mayor-proclaims-juneteenth-official-city-holiday'
-  },
-  {
-    link: site2,
-    name: 'site2',
-    src: 'https://www.stl.tech/blog/diversity-equality-and-inclusion-a-willful-action-not-a-mandate-stl/'
-  },
-  {
-    link: site3,
-    name: 'site3',
-    src: 'https://thesource.metro.net/2022/06/16/go-metro-to-celebrate-juneteenth/'
-  },
-  {
-    link: site4,
-    name: 'site4',
-    src: 'https://premedinc.com/2022/10/05/breast-cancer-awareness-month/'
-  },
-  {
-    link: site5,
-    name: 'site5',
-    src: 'https://alumni.ubc.ca/event/international-womens-day-embrace-equity/'
-  },
-]
-
-//height 300px
-/* import img1 from '../images/light/img1_s.png';
-import img2 from '../images/light/img2_s.png';
-import img3 from '../images/light/img3_s.png';
-import img4 from '../images/light/img4_s.png';
-import img6 from '../images/light/img6_s.png';
-import img7 from '../images/light/img7_s.png';
-import img8 from '../images/light/img8_s.png';
-import img9 from '../images/light/img9_s.png';
-import img10 from '../images/light/img10_s.png';
-import img11 from '../images/light/img11_s.png';
-import img12 from '../images/light/img12_s.png';
-import img13 from '../images/light/img13_s.png';
-import img14 from '../images/light/img14_s.png';
-import img15 from '../images/light/img15_s.png';
-import img16 from '../images/light/img16_s.png';
-import img17 from '../images/light/img17_s.png';
-import img18 from '../images/light/img18_s.png';
-import img19 from '../images/light/img19_s.png';
-import img20 from '../images/light/img20_s.png';
-import img21 from '../images/light/img21_s.png';
-import img22 from '../images/light/img22_s.png';
-import img23 from '../images/light/img23_s.png';
-import img24 from '../images/light/img24_s.png';
-import img25 from '../images/light/img25_s.png';
-import img26 from '../images/light/img26_s.png';
-import img27 from '../images/light/img27_s.png';
-import img28 from '../images/light/img28_s.png';
-import img29 from '../images/light/img29_s.png';
-import img30 from '../images/light/img30_s.png';
-import img31 from '../images/light/img31_s.png'; */
-
-
+//rows for works page
 const text1 =
   <p className='card__text'>The main theme in my works is<br />
     <span>PEOPLE</span>. You can find illustrations<br />
@@ -265,3 +199,77 @@ export let rows = [
 
 ]
 
+//rows for Usage page
+const usageImgS = importAll(require.context('../images/light/sites/s', false));
+const usageImgL = importAll(require.context('../images/light/sites/l', false));
+
+const usageText1 =
+<p className='card__text'>
+  You can see the use of my<br />
+  work in various fields<br />
+</p>
+;
+
+const usageText2 =
+<p className='card__text'>
+  Here are links to several<br />
+  websites featuring my works<br />
+</p>
+;
+
+const usageText3 =
+  <div className='card__circle-wrapper'>
+    <svg viewBox='0 0 100 100' className='card__circle usage__circle'>
+      <defs>
+        <path id='circle'
+          d='
+            M 50, 50
+            m -37, 0
+            a 37,37 0 1,1 74,0
+            a 37,37 0 1,1 -74,0'/>
+      </defs>
+      <text className='card__circle-text'>
+        <textPath href='#circle' textLength='235'>
+        &#160; STAY IN TOUCH &#160; STAY IN TOUCH &#160; STAY IN TOUCH &#160;
+        </textPath>
+      </text>
+    </svg>
+  </div >
+;
+
+export let usageRows = [
+  {
+    row: [
+      { text: usageText1 },
+      { src: usageImgS['1.png'], src_l: usageImgL['1.png'], link: 'https://www.instagram.com/p/Cs1H3m5PpLy/?hl=en' },
+      { src: usageImgS['2.jpg'], src_l: usageImgL['2.jpg'], link: 'https://www.lacers.org/article/mayor-proclaims-juneteenth-official-city-holiday' }
+    ]
+  },
+  {
+    row: [
+      { src: usageImgS['3.png'], src_l: usageImgL['3.png'], link: 'https://www.vendorship.net/category/in-the-news/' },
+      { src: usageImgS['4.png'], src_l: usageImgL['4.png'], link: 'https://www.community-foundation.com/fun' }
+    ]
+  },
+  {
+    row: [
+      { src: usageImgS['5.png'], src_l: usageImgL['5.png'], link: 'https://joiicare.com/journal/gender-bias-and-the-importance-of-equity-in-healthcare' },
+      { text: usageText2 },
+      { src: usageImgS['6.png'], src_l: usageImgL['6.png'], link: 'https://www.lboro.ac.uk/research/ias/events/2023/january/researchseminar-drandrepimentafreire/' }
+    ]
+  },
+  {
+    row: [
+      { src: usageImgS['7.jpg'], src_l: usageImgL['7.jpg'], link: 'https://thesource.metro.net/2022/06/16/go-metro-to-celebrate-juneteenth/' },
+      { src: usageImgS['8.png'], src_l: usageImgL['8.png'], link: 'https://twitter.com/PAVictimsOffice/status/1637881156711358468' },
+      { src: usageImgS['9.jpg'], src_l: usageImgL['9.jpg'], link: 'https://premedinc.com/2022/10/05/breast-cancer-awareness-month/' }
+    ]
+  },
+  {
+    row: [
+      { src: usageImgS['10.png'], src_l: usageImgL['10.png'], link: 'https://www.cdice.ac.uk/events/edi-workshop-2/' },
+      { src: usageImgS['11.jpg'], src_l: usageImgL['11.jpg'], link: 'https://www.stl.tech/blog/diversity-equality-and-inclusion-a-willful-action-not-a-mandate-stl/' },
+      { text: usageText3 }
+    ]
+  },
+]

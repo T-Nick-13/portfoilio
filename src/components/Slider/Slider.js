@@ -1,21 +1,25 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import SlickSilder from "react-slick";
 import SliderArrow from '../SliderArrow/SliderArrow';
-import { rows } from '../../utils/constants';
+import { rows, usageRows } from '../../utils/constants';
 
 function Slider(props) {
 
   const sliderRef = React.useRef();
+  const { pathname } = useLocation();
 
   function getImages() {
     const imgArr = [];
-    rows.forEach((i) => {
+    const array = pathname === '/usage' ? usageRows : rows;
+    array.forEach((i) => {
       i.row.forEach((el) => {
         if (el.src) {
           imgArr.push({ src: el.src, src_m: el.src_m, src_l: el.src_l });
         }
       })
     })
+    console.log(array[0].row[0].src_l)
     return imgArr;
   }
 
@@ -34,22 +38,24 @@ function Slider(props) {
             <SliderArrow
               arrowContainerClass="arrow__container_right"
               arrowClass="arrow-right"
-          />}
+            />
+          }
           prevArrow={
             <SliderArrow
               arrowContainerClass="arrow__container_left"
               arrowClass="arrow-left"
-            />}
-          >
-              {getImages().map((card, index) =>{
-                return (
-                  <picture key={index}>
-                    <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
-                    <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
-                    <img className='slider__img' src={card.src} alt="Изображение"></img>
-                  </picture>
-                )
-              })}
+            />
+          }
+        >
+          {getImages().map((card, index) =>{
+            return (
+              <picture key={index}>
+                <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
+                <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
+                <img className='slider__img' src={card.src} alt="Изображение"></img>
+              </picture>
+            )
+          })}
         </SlickSilder>
 
         <button className="popup__close-btn btn-cross" type="button" onClick={props.onClose}>

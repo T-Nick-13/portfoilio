@@ -1,11 +1,15 @@
 import React from 'react';
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
+import { BsLink45Deg } from 'react-icons/bs';
 
 function Card(props) {
 
-  function handlCardClick() {
-    if (!props.sliderImgClass && props.card.src) {
-     props.onCardClick(props.card);
+  function handlCardClick(e) {
+    if (!props.sliderImgClass && props.card.src &&
+      !e.target.classList.contains('card__icon') &&
+      !e.target.classList.contains('card__overlay-link') &&
+      !e.target.parentElement.classList.contains('card__icon')) {
+      props.onCardClick(props.card);
     }
   }
 
@@ -32,9 +36,16 @@ function Card(props) {
       }
 
       <div className={`card__overlay${!props.card.src || props.sliderImgClass ? ' card__overlay_inactive' : ''}`}>
-        <div>
-        <HiOutlineMagnifyingGlass size={30} color="fff"/>
+        <div className="card__overlay-icon" title="zoom">
+          <HiOutlineMagnifyingGlass size={30} color="fff"/>
         </div>
+        <a
+          href={props.card.link}
+          target="_blank" className={`card__overlay-icon card__overlay-link${props.linkActive ? ' card__overlay-link_active' : ''}`}
+          title="follow the link"
+        >
+          <BsLink45Deg size={30} color="fff" className="card__icon"/>
+        </a>
       </div>
     </div>
   );

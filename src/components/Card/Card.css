@@ -63,7 +63,7 @@
   display: none;
 }
 
-.card__overlay > div {
+.card__overlay-icon {
   background: #0000008f;
   border-radius: 30px;
   height: 45px;
@@ -71,6 +71,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--standart-transition);
+}
+.card__overlay-icon:hover {
+  background: #000000cc;
+}
+
+.card__overlay-link {
+  margin-left: 10px;
+  display: none;
+}
+
+.card__overlay-link_active {
+  display: flex;
+}
+
+.card__overlay-link > a {
+  display: flex;
 }
 
 .card__img {
