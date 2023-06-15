@@ -13,6 +13,8 @@ nav {
   width: var(--content-width);
   /* max-width: var(--header-width); */
   justify-content: space-between;
+  margin: 0;
+  padding: 5px;
 }
 
 .menu__li {
@@ -22,6 +24,7 @@ nav {
 
   transition: opacity 0.3s linear;
   font-size: 1.6em;
+  display: flex;
 }
 
 .menu__li > img {

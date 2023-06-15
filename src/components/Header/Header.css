@@ -1,7 +1,27 @@
 .header {
   position: absolute;
   width: 100%;
+  z-index: 5;
+}
+
+.header_init {
   top: 8%;
+}
+
+.header_transition {
+  transition: top 0.4s;
+}
+
+.header_fixed {
+  position: fixed;
+  top: 0%;
+  background: #000000c2;
+}
+
+.header_hidden {
+  position: fixed;
+  top: -20%;
+  background: #000000c2;
 }
 
 .header__container {
@@ -16,6 +36,7 @@
   max-width: var(--max-width);
   width: var(--content-width);
   color: #fff;
+  /* min-height: 75px; */
 }
 
 .header__logo {

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import SlickSilder from "react-slick";
 import SliderArrow from '../SliderArrow/SliderArrow';
 import { rows, usageRows } from '../../utils/constants';
+import { BsLink45Deg } from 'react-icons/bs';
 
 function Slider(props) {
 
@@ -19,7 +20,6 @@ function Slider(props) {
         }
       })
     })
-    console.log(array[0].row[0].src_l)
     return imgArr;
   }
 
