@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Navigation from '../Navigation/Navigation';
+import Burger from '../Burger/Burger';
 
 function Header(props) {
 
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerState, setHeaderState] = useState('init');
   const [transition, setTransition] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(false);
   const headerHeight = 70;
 
   function controlNavbar() {
@@ -44,14 +46,21 @@ function Header(props) {
     }
   }, [lastScrollY]);
 
+  const openMenu = useCallback(() => {
+    setActiveMenu(!activeMenu);
+  }, [activeMenu]);
+
   return (
     <header className={`header${transition ? ' header_transition' : ''} header_${headerState}`}>
       <div className="header__container">
         <Navigation
-          onTagClick={props.handleTagClick}
-          tags={props.tags}
-          setClickedTag={props.setClickedTag}
+          activeMenu={activeMenu}
+          openMenu={openMenu}
         />
+        <Burger
+          openMenu={openMenu}
+          active={activeMenu}
+      />
       </div>
     </header>
   );

@@ -44,10 +44,12 @@
   margin-right: 5px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .header__container {
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
   }
   .header__container_fixed {
     justify-content: space-between;
@@ -55,6 +57,9 @@
   .header__logo {
     max-width: 120px;
   }
+  .header_init {
+    top: 6%;
+}
 }
 
 @keyframes headerFix {

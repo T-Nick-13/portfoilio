@@ -4,12 +4,7 @@ import logo from '../../images//light/logo.svg';
 
 function Navigation(props) {
 
-  const [openedMenu, setOpenMenu] = React.useState(false);
-  const [openedSubMenu, SetOpenedSubMenu] = React.useState(false);
-
-  const menuClass = openedMenu ? 'menu menu_active' : 'menu';
-  const burgerClass = openedMenu ? 'burger burger_inactive' : 'burger';
-  const liClass = openedSubMenu ? '_active' : '';
+  const menuClass = props.activeMenu ? 'menu menu_active' : 'menu';
 
   const { pathname, hash, key } = useLocation();
 
@@ -32,23 +27,16 @@ function Navigation(props) {
   }, [pathname, hash, key]);
 
   function handleBurgerClick(e) {
-    if (window.innerWidth < 767) {
-      if (openedMenu) {
-        setOpenMenu(false);
-        document.body.classList.remove('body_unscrolled');
-      }
-      else {
-        setOpenMenu(true);
-        document.body.classList.add('body_unscrolled');
-      }
+    if (props.activeMenu) {
+      props.openMenu();
     }
   }
 
   return (
     <>
-    <div className={burgerClass} onClick={handleBurgerClick}>
-      <span></span>
-    </div>
+    <Link to="/" className={`menu__li menu__li-logo`}>
+      <img src={logo} alt="Stafeeva"></img>
+    </Link>
     <nav className={menuClass}>
       <ul className="menu__ul">
         <li>
@@ -56,12 +44,12 @@ function Navigation(props) {
             onClick={handleBurgerClick}>About</Link>
         </li>
 
-        <li className={liClass}>
+        <li>
           <Link to="/#works" className={/* pathname ==='/' ? 'menu__li menu__li_active' : */ 'menu__li'}
             onClick={handleBurgerClick}>Works</Link>
         </li>
 
-        <li>
+        <li className="menu__logo">
           <Link to="/" className={pathname === '/' ? 'menu__li' : 'menu__li'}
             onClick={handleBurgerClick}>
             <img src={logo} alt="Stafeeva"></img>
