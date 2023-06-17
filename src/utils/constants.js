@@ -86,6 +86,13 @@ const text10 =
   <p className='card__text'>Modern silhouettes of people can showcase the diversity of society</p>
 ;
 
+const text11 =
+  <p className='card__text card__text_inside'>I like minimal design<br />
+  if you like it too <br />
+  just let me know :)
+  </p>
+;
+
 function importAll(r) {
   let images = {};
   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item).default; });
@@ -100,7 +107,7 @@ export let rows = [
   {
     row: [
       { src: images['img1_s.png'], src_m: imagesM['1.jpg'], src_l: imagesL['1.jpg'] },
-      { src: images['img2_s.png'], src_m: imagesM['2.jpg'], src_l: imagesL['2.jpg'] },
+      { src: images['img2_s.png'], src_m: imagesM['2.jpg'], src_l: imagesL['2.jpg'], prop: 'card_small' },
       { src: images['img3_s.png'], src_m: imagesM['3.jpg'], src_l: imagesL['3.jpg'] }
     ]
   },
@@ -188,7 +195,10 @@ export let rows = [
     ]
   },
   {
-    row: [{ src: images['img28_s.png'], text: text7, src_m: imagesM['28.jpg'], src_l: imagesL['28.jpg'] }]
+    row: [
+      { text: text11 },
+      { src: images['img28_s.png'], text: text7, src_m: imagesM['28.jpg'], src_l: imagesL['28.jpg'] },
+    ]
   },
   {
     row: [{ text: text8 }]

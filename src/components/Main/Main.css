@@ -167,10 +167,16 @@
 }
 
 
-@media (max-width: 884px) {
+@media (max-width: 768px) {
   /* .main__pictures {
     column-count: 2;
   } */
+
+  .main__pictures .main__img-row {
+    grid-template-columns: 1fr;
+    gap: 4em;
+    justify-items: center;
+  }
 }
 
 @media (max-width: 580px) {
@@ -178,6 +184,13 @@
     column-count: 1;
   } */
 
+  .main__promo-box {
+    left: 6%;
+  }
+
+  .main__promo-text {
+    font-size: 1.3em;
+  }
 }
 
 @keyframes opaccity {

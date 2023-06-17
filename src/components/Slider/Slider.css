@@ -149,6 +149,16 @@
   cursor: auto;
 }
 
+  /* the slides */
+  .slick-slide {
+    margin: 0 27px;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -27px;
+}
+
 @media (max-width: 580px) {
 
   /* .arrow__container {
