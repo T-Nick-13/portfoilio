@@ -1,5 +1,6 @@
 .about {
   animation: opaccity 1s;
+  overflow-x: hidden;
 }
 
 .about__block {
@@ -29,7 +30,6 @@
 
 .dark-box_small {
   padding: 0;
-  min-height: 66vh;
 }
 
 .dark-box__img-cont {
@@ -44,11 +44,20 @@
   left: -138%;
 }
 
-.dark-box__back-img_right {
-  height: 28vh;
+.dark-box__back-img_small {
+  height: 70vh;
   position: absolute;
-  bottom: -170%;
-  left: 75%;
+  display: none;
+  left: 0;
+  bottom: 5%;
+  top: auto;
+}
+
+.dark-box__back-img_right {
+  height: 37vh;
+  position: absolute;
+  bottom: 2%;
+  right: 5%;
 }
 
 .dark-box__photo {
@@ -57,15 +66,17 @@
 }
 
 .dark-box__photo_main {
-  height: 50vh;
-  top: -10em;
-  left: -19em;
+  height: 55vh;
+  position: relative;
+  display: block;
+  /* top: -10em;
+  left: -19em; */
 }
 
 .dark-box__photo_back {
-  height: 31vh;
-  top: 2.8em;
-  left: -23em;
+  height: 34vh;
+  bottom: -18%;
+  left: -19%;
 }
 
 .dark-box__text {
@@ -75,12 +86,28 @@
   left: 13%;
 }
 
+.dark-box__text_small {
+  left: 0;
+}
+
 .dark-box__overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background: #000000a3;
   top: 0;
+}
+
+.dark-box__img-cont_small {
+  display: grid;
+  align-items: center;
+  position: relative;
+  grid-template-columns: auto auto;
+  gap: 3em;
+}
+
+.dark-box__img-cont_small > div {
+  position: relative;
 }
 
 .light-box {
@@ -118,9 +145,71 @@
   margin-top: 40px;
 }
 
+@media (max-width: 768px) {
 
+  .light-box__img-cont > img {
+    margin: 0px 0 50px 50px;
+  }
 
+  .dark-box__img-cont_small {
+    grid-template-columns: auto;
+    justify-items: center;
+    gap: 5em;
+  }
 
+  .dark-box__back-img_right {
+    right: 0;
+  }
+
+}
+
+@media (max-width: 580px) {
+
+  .dark-box__photo_main {
+    height: 48vh;
+  }
+
+  .dark-box__back-img_left {
+    display: none;
+  }
+
+  .dark-box__back-img_small {
+    display: block;
+  }
+
+  .dark-box__text {
+    left: 0;
+  }
+
+  .about__text {
+    font-size: 1.3em;
+  }
+
+  .light-box {
+    padding: 30px 0;
+  }
+
+  .light-box__img-cont > img {
+    margin: 20px 0 20px;
+    order: -1;
+  }
+
+  .light-box__img-cont {
+    flex-direction: column;
+  }
+
+  .dark-box__photo_back {
+    height: 28vh;
+    bottom: -18%;
+    left: -15%;
+  }
+
+  .dark-box__back-img_right {
+    right: -13%;
+    height: 29vh;
+  }
+
+}
 
 @keyframes opaccity {
   from {
