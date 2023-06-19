@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 //rows for works page
 const text1 =
   <p className='card__text'>The main theme in my works is<br />
@@ -228,7 +230,7 @@ const usageText2 =
 ;
 
 const usageText3 =
-  <div className='card__circle-wrapper'>
+  <Link className='card__circle-wrapper' to='/contact' title="go to contacts">
     <svg viewBox='0 0 100 100' className='card__circle usage__circle'>
       <defs>
         <path id='circle'
@@ -244,7 +246,7 @@ const usageText3 =
         </textPath>
       </text>
     </svg>
-  </div >
+  </Link >
 ;
 
 export let usageRows = [

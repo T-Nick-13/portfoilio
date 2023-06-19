@@ -16,7 +16,7 @@ function Slider(props) {
     array.forEach((i) => {
       i.row.forEach((el) => {
         if (el.src) {
-          imgArr.push({ src: el.src, src_m: el.src_m, src_l: el.src_l });
+          imgArr.push({ src: el.src, src_m: el.src_m, src_l: el.src_l, link: el.link });
         }
       })
     })
@@ -49,11 +49,23 @@ function Slider(props) {
         >
           {getImages().map((card, index) =>{
             return (
-              <picture key={index}>
-                <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
-                <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
-                <img className='slider__img' src={card.src} alt="Изображение"></img>
-              </picture>
+              <div className="slider__img-box" key={index}>
+
+                <picture>
+                  <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
+                  <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
+                  <img className='slider__img' src={card.src} alt="Изображение"></img>
+                </picture>
+
+                <a
+                  href={card.link}
+                  target="_blank" className="card__overlay-icon usage__link"
+                  title="follow the link"
+                >
+                  <BsLink45Deg size={30} color="fff" className="card__icon"/>
+                </a>
+
+              </div>
             )
           })}
         </SlickSilder>

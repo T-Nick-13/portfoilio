@@ -159,6 +159,10 @@
     margin: 0 -27px;
 }
 
+.slider__img-box {
+  position: relative;
+}
+
 @media (max-width: 580px) {
 
   /* .arrow__container {

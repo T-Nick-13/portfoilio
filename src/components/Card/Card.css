@@ -48,7 +48,7 @@
 
 .card__overlay {
   position: absolute;
-  opacity: 0;
+  /* opacity: 0; */
   height: 100%;
   width: 100%;
   top: 0;
@@ -71,8 +71,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
   transition: var(--standart-transition);
 }
+
 .card__overlay-icon:hover {
   background: #000000cc;
 }
@@ -105,16 +107,23 @@
 .card__circle-wrapper {
   position: relative;
   display: inline-block;
+
 }
 
 .card__circle {
   animation: rotate 8s infinite linear;
   width: 210px;
+  transition: all 0.3s;
 }
 
 .card__circle-text {
   font-size: 8px;
   font-weight: 400;
+  transition: all 0.3s;
+}
+
+.card__circle-wrapper:hover .card__circle-text {
+  opacity: 0.5;
 }
 
 .card__circle-title {
@@ -248,7 +257,7 @@
 
 
 @media (hover: hover) and (pointer: fine) {
-  .card_layout:hover .card__overlay {
+  .card_layout:hover .card__overlay .card__overlay-icon {
     opacity: 1;
   }
 }

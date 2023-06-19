@@ -11,7 +11,7 @@
 
 .usage__promo-box {
   position: absolute;
-  top: 47%;
+  top: 50%;
   left: 31%;
 }
 
@@ -37,6 +37,51 @@
 
 .usage__circle {
   width: 170px;
+}
+
+.usage__link {
+  position: absolute;
+  top: 11%;
+  left: 12%;
+  margin: 0;
+  opacity: 1;
+  z-index: 5;
+}
+
+.usage__img-link {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .cards-container .usage__img-row {
+    grid-template-columns: 1fr;
+    gap: 4em;
+    justify-items: center;
+  }
+
+  .usage__img-link {
+    display: flex;
+    top: 5%;
+    left: 3%;
+    margin: 0;
+    opacity: 1;
+    position: absolute;
+  }
+}
+
+@media (max-width: 580px) {
+
+  .usage__link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .usage__img-link {
+    width: 40px;
+    height: 40px;
+  }
+
 }
 
 

@@ -13,6 +13,7 @@ function CardList(props) {
               key={indx}
               onCardClick={props.onCardClick}
               linkActive={props.linkActive}
+              linkClass={props.linkClass}
             >
               {props.children}
             </Card>
