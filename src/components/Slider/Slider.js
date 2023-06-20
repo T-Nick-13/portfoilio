@@ -59,7 +59,7 @@ function Slider(props) {
 
                 <a
                   href={card.link}
-                  target="_blank" className="card__overlay-icon usage__link"
+                  target="_blank" className={`card__overlay-icon usage__link${!card.link ? ' usage__link_inactive' : ''}`}
                   title="follow the link"
                 >
                   <BsLink45Deg size={30} color="fff" className="card__icon"/>

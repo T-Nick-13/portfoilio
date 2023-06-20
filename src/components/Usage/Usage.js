@@ -11,7 +11,9 @@ function Usage(props) {
       <Promo imgSrc={promoImg}>
         <div className="usage__promo-box">
           <p className="usage__promo-text">
-            Work Usage
+            Some examples<br />
+            of the usage<br />
+            of my works<br />
           </p>
         </div>
       </Promo>

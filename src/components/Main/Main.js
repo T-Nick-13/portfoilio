@@ -8,14 +8,14 @@ function Main(props) {
   const menuBtnClass = props.clickedTag ? 'filter__btn_active' : '';
 
   return (
-    <main className="main" >
+    <main className="main">
       <Promo imgSrc={promoImg}>
       <div className="main__promo-box">
         <p className="main__promo-text">
           Hello !<br/>
           Here you can find modern<br/>
           illustrations from a graphic<br/>
-          desigher with a 3-year<br/>
+          designer with a 3-year<br/>
           background
         </p>
       </div>

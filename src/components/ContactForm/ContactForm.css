@@ -1,6 +1,6 @@
 .contact {
-  animation: opaccity 1s;
-
+  /* animation: opaccity 1s; */
+  animation: fadein 1s;
 }
 
 .contact__container {
@@ -22,7 +22,7 @@
   max-width: var(--max-width);
   width: 100%;
   overflow-x: hidden;
-  padding-bottom: 15px;
+  padding-bottom: 16px;
   box-sizing: border-box;
 }
 

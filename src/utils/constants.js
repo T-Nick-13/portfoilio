@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const text1 =
   <p className='card__text'>The main theme in my works is<br />
     <span>PEOPLE</span>. You can find illustrations<br />
-    about cultural divercity, equality<br />
+    about cultural diversity, equality,<br />
     inclusion, and human rights
   </p>
 ;
@@ -62,8 +62,8 @@ const text6 =
 ;
 
 const text7 =
-  <p className='card__inside-text'>I like minimal design<br />
-  if you like it too <br />
+  <p className='card__inside-text'>I like minimalist design.<br />
+  If you like it too,<br />
   just let me know :)
   </p>
 ;
@@ -76,7 +76,7 @@ const text8 =
 
 const text9 =
   <div className='card__large-text'>
-    <span>Vector Illsutrations</span>
+    <span>Vector Illustrations</span>
     <p>MODERN <br />
       <span>MINIMALIST</span>
       DESIGN
@@ -89,8 +89,8 @@ const text10 =
 ;
 
 const text11 =
-  <p className='card__text card__text_inside'>I like minimal design<br />
-  if you like it too <br />
+  <p className='card__text card__text_inside'>I like minimalist design.<br />
+  If you like it too,<br />
   just let me know :)
   </p>
 ;

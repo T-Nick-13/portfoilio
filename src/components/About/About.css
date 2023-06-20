@@ -1,6 +1,7 @@
 .about {
-  animation: opaccity 1s;
+  /* animation: opaccity 0.5s; */
   overflow-x: hidden;
+  animation: fadein 1s;
 }
 
 .about__block {
@@ -211,12 +212,12 @@
 
 }
 
-@keyframes opaccity {
+/* @keyframes opaccity {
   from {
-    opacity: 0;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
   }
-}
+} */
 

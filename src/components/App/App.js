@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 require('dotenv').config();
@@ -18,12 +18,12 @@ import Api from '../../utils/Api';
 
 function App() {
 
-  const [selectedCard, setSelectedCard] = React.useState(0);
-  const [allCards, setAllCards] = React.useState([]);
-  const [mainCards, setMainCards] = React.useState([]);
-  const [inSend, setInSend] = React.useState(false);
-  const [isSent, setIsSent] = React.useState(false);
-  const [photoIsOpened, setPhotoIsOpened] = React.useState(false);
+  const [selectedCard, setSelectedCard] = useState(0);
+  const [allCards, setAllCards] = useState([]);
+  const [mainCards, setMainCards] = useState([]);
+  const [inSend, setInSend] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [photoIsOpened, setPhotoIsOpened] = useState(false);
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
@@ -84,7 +84,7 @@ function App() {
 
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
 
     function handleEscClose(e) {
       if (e.key === 'Escape') {
@@ -107,14 +107,14 @@ function App() {
   return (
     <div className="page">
       <div className="page__wrapper">
-        <Header
-        />
+        <Header/>
         <Switch>
           <Route exact path="/">
             <Main
               pic={mainCards}
               handleCardClick={handleCardClick}
             />
+            <Footer />
           </Route>
 
           <Route exact path="/about">
@@ -138,7 +138,7 @@ function App() {
           </Route>
 
         </Switch>
-        {/* <Footer /> */}
+
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}

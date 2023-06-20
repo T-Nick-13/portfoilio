@@ -8,10 +8,10 @@ import aboutPhoto01 from '../../images/light/about1.jpg';
 import aboutPhoto02 from '../../images/light/about2.jpg';
 import aboutPhoto03 from '../../images/light/about3.jpg';
 
-function About() {
+function About(props) {
 
   return (
-    <div className="about">
+    <div className={`about`}>
       <div className="dark-box about__block">
         <div className="dark-box__img-cont">
           <p className='dark-box__text about__text'>
@@ -33,7 +33,7 @@ function About() {
             stock sites.<br/>
             My illustrations<br/>
             have been sold more<br/>
-            than 45,000 times
+            than 48,000 times
           </p>
           <img src={aboutPhoto01} alt="photo"></img>
         </div>

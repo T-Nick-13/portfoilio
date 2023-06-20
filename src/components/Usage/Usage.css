@@ -1,3 +1,7 @@
+.usage {
+  animation: fadein 1s;
+}
+
 .usage__pictures {
   padding: var(--main-gap) 0 var(--main-gap);
 }
@@ -11,7 +15,7 @@
 
 .usage__promo-box {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 31%;
 }
 
@@ -46,6 +50,10 @@
   margin: 0;
   opacity: 1;
   z-index: 5;
+}
+
+.usage__link_inactive {
+  display: none;
 }
 
 .usage__img-link {

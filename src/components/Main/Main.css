@@ -1,5 +1,6 @@
 .main {
-  animation: opaccity 0.5s;
+  /* animation: opaccity 0.5s; */
+  animation: fadein 0.3s;
 }
 
 .main__promo-box {
