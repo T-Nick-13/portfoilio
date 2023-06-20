@@ -73,10 +73,15 @@
   justify-content: center;
   opacity: 0;
   transition: var(--standart-transition);
+  cursor: pointer;
 }
 
 .card__overlay-icon:hover {
   background: #000000cc;
+}
+
+.card__overlay-icon_inactive {
+  display: none;
 }
 
 .card__overlay-link {

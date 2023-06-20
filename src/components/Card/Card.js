@@ -42,7 +42,7 @@ function Card(props) {
         <a
           href={props.card.link}
           target="_blank"
-          className={`card__overlay-icon ${props.linkActive ? props.linkClass : ''}`}
+          className={`card__overlay-icon ${props.linkActive ? props.linkClass : ' card__overlay-icon_inactive'}`}
           title="follow the link"
         >
           <BsLink45Deg size={30} color="fff" className="card__icon"/>
