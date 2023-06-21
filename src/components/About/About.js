@@ -11,6 +11,7 @@ import aboutPhoto03 from '../../images/light/about3.jpg';
 function About(props) {
 
   return (
+
     <div className={`about`}>
       <div className="dark-box about__block">
         <div className="dark-box__img-cont">
@@ -66,7 +67,6 @@ function About(props) {
         />
         <p className="about__text">Stay in touch:)</p>
       </div>
-
     </div>
   );
 }

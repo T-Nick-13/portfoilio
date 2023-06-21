@@ -8,6 +8,7 @@ function Main(props) {
   const menuBtnClass = props.clickedTag ? 'filter__btn_active' : '';
 
   return (
+
     <main className="main">
       <Promo imgSrc={promoImg}>
       <div className="main__promo-box">
@@ -30,6 +31,8 @@ function Main(props) {
         />
       </div>
     </main>
+
+
 
   );
 

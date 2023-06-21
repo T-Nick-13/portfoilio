@@ -1,5 +1,5 @@
 .usage {
-  animation: fadein 1s;
+
 }
 
 .usage__pictures {
@@ -11,6 +11,7 @@
   font-size: 1.5em;
   margin: 0;
   line-height: 1.5em;
+  animation: slideInTop 0.3s;
 }
 
 .usage__promo-box {

@@ -1,6 +1,5 @@
 .main {
-  /* animation: opaccity 0.5s; */
-  animation: fadein 0.3s;
+
 }
 
 .main__promo-box {
@@ -14,7 +13,9 @@
   font-size: 1.5em;
   margin: 0;
   line-height: 1.5em;
+  animation: slideInRight 0.3s ease-out;
 }
+
 
 .main__pictures {
   /* max-width: var(--max-width);
@@ -194,11 +195,3 @@
   }
 }
 
-@keyframes opaccity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}

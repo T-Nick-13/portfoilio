@@ -6,8 +6,6 @@ import contactImg from '../../images/light/contact.png';
 
 function ContactForm(props) {
 
-  //#383838
-
   const [isValid, setIsValid] = React.useState(false);
   const [error, setError] = React.useState({undefined});
   const [data, setData] = React.useState({

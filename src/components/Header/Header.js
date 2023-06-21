@@ -8,7 +8,7 @@ function Header(props) {
   const [headerState, setHeaderState] = useState('init');
   const [transition, setTransition] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
-  const headerHeight = 70;
+  const headerHeight = 80;
 
   function controlNavbar() {
     if (typeof window !== 'undefined') {
@@ -22,7 +22,7 @@ function Header(props) {
         setHeaderState('hidden');
         setTimeout(() => {
           setTransition(true);
-        })
+        }, 100)
       }
 
       if (window.scrollY > headerHeight && window.scrollY > lastScrollY) {

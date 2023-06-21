@@ -3,7 +3,6 @@ import Promo from '../Promo/Promo';
 import promoImg from '../../images/light/usage_promo1.png';
 import CardList from '../CardList/CardList';
 import { usageRows } from '../../utils/constants';
-import { BsLink45Deg } from 'react-icons/bs';
 
 function Usage(props) {
   return (

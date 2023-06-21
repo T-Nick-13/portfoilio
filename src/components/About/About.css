@@ -1,7 +1,7 @@
 .about {
   /* animation: opaccity 0.5s; */
   overflow-x: hidden;
-  animation: fadein 1s;
+  /* animation: fadein 1s; */
 }
 
 .about__block {
@@ -43,6 +43,7 @@
   position: absolute;
   top: -163%;
   left: -138%;
+  animation: fadeinFull 0.5s;
 }
 
 .dark-box__back-img_small {
@@ -85,6 +86,10 @@
   z-index: 1;
   position: relative;
   left: 13%;
+}
+
+.dark-box__text:first-of-type {
+  animation: slideInLeft 0.3s ease-out;
 }
 
 .dark-box__text_small {

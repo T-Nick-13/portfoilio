@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-require('dotenv').config();
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -13,9 +12,6 @@ import PopupResult from '../PopupResult/PopupResult';
 import PhotoPopup from '../PhotoPopup/PhotoPopup';
 import Usage from '../Usage/Usage';
 
-import { MAIN_API } from '../../utils/config';
-import Api from '../../utils/Api';
-
 function App() {
 
   const [selectedCard, setSelectedCard] = useState(0);
@@ -26,30 +22,6 @@ function App() {
   const [photoIsOpened, setPhotoIsOpened] = useState(false);
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
-
- /*  const api = new Api ({
-    baseUrl: MAIN_API,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  });
-
-  React.useEffect(() => {
-    Promise.all([
-      api.getCards()
-    ])
-    .then(([data]) => {
-      localStorage.setItem('cards', JSON.stringify(data));
-      const cards = JSON.parse(localStorage.getItem('cards')).sort(function(a, b){
-        return a.index-b.index
-      });
-      setAllCards(cards);
-      setMainCards(cards.filter((i) => i.mainPage === true));
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }, []) */
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -104,40 +76,42 @@ function App() {
     document.addEventListener('click', handleOverlayClose);
   }, [])
 
+  const location = useLocation();
+
   return (
     <div className="page">
       <div className="page__wrapper">
         <Header/>
-        <Switch>
-          <Route exact path="/">
-            <Main
-              pic={mainCards}
-              handleCardClick={handleCardClick}
-            />
-            <Footer />
-          </Route>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/">
+              <Main
+                pic={mainCards}
+                handleCardClick={handleCardClick}
+              />
+              <Footer />
+            </Route>
 
-          <Route exact path="/about">
-            <About
-              openPhoto={openPhoto}
-            />
-          </Route>
+            <Route exact path="/about">
+              <About
+                openPhoto={openPhoto}
+              />
+            </Route>
 
-          <Route exact path="/usage">
-            <Usage
-              handleCardClick={handleCardClick}
-            />
-          </Route>
+            <Route exact path="/usage">
+              <Usage
+                handleCardClick={handleCardClick}
+              />
+            </Route>
 
-          <Route exact path="/contact">
-            <ContactForm
-              sendEmail={sendEmail}
-              inSend={inSend}
-              isSent={isSent}
-            />
-          </Route>
+            <Route exact path="/contact">
+              <ContactForm
+                sendEmail={sendEmail}
+                inSend={inSend}
+                isSent={isSent}
+              />
+            </Route>
 
-        </Switch>
+          </Switch>
 
         <Slider
           card={selectedCard}
