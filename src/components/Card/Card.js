@@ -1,6 +1,8 @@
 import React from 'react';
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 import { BsLink45Deg } from 'react-icons/bs';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 function Card(props) {
 
@@ -24,9 +26,12 @@ function Card(props) {
       {
         props.card.src ?
           <>
-            <img
+            <LazyLoadImage
+              height={'100%'}
+              effect="opacity"
               src={props.card.src}
-              alt='picture'
+              width={'100%'}
+              alt="picture"
               className={`card__img ${props.sliderImgClass ? props.sliderImgClass : ''}`}
             />
             {props.card?.text}
