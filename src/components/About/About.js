@@ -34,7 +34,7 @@ function About(props) {
             stock sites.<br/>
             My illustrations<br/>
             have been sold more<br/>
-            than 48,000 times
+            than 50,000 times
           </p>
           <img src={aboutPhoto01} alt="photo"></img>
         </div>

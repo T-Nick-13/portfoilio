@@ -11,7 +11,8 @@ function Header(props) {
   const headerHeight = 80;
 
   function controlNavbar() {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && headerState !== 'active-menu') {
+
       //transition is not active before the first scroll
       if (window.scrollY < headerHeight) {
         setHeaderState('init');
@@ -44,11 +45,18 @@ function Header(props) {
         window.removeEventListener('scroll', controlNavbar);
       };
     }
-  }, [lastScrollY]);
+  }, [lastScrollY, activeMenu]);
 
-  const openMenu = useCallback(() => {
-    setActiveMenu(!activeMenu);
-  }, [activeMenu]);
+  function openMenu() {
+    if (!activeMenu) {
+      setActiveMenu(true);
+      setHeaderState('active-menu');
+    } else {
+      setActiveMenu(false);
+      setTransition(false)
+      setHeaderState('init');
+    }
+  };
 
   return (
     <header className={`header${transition ? ' header_transition' : ''} header_${headerState}`}>

@@ -51,15 +51,23 @@
     padding: 10px;
     width: 90%;
   }
+
   .header__container_fixed {
     justify-content: space-between;
   }
+
   .header__logo {
     max-width: 120px;
   }
+
   .header_init {
     top: 6%;
-}
+  }
+
+  .header_active-menu {
+    top: 6%;
+    position: fixed;
+  }
 }
 
 @keyframes headerFix {
