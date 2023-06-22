@@ -10,9 +10,12 @@ function Usage(props) {
       <Promo imgSrc={promoImg}>
         <div className="usage__promo-box">
           <p className="usage__promo-text">
-            Some examples<br />
-            of the usage<br />
-            of my works<br />
+            Some examples
+            <br />
+            of the usage
+            <br />
+            of my works
+            <br />
           </p>
         </div>
       </Promo>
@@ -21,13 +24,12 @@ function Usage(props) {
           onCardClick={props.handleCardClick}
           rowClass="usage__img-row"
           rows={usageRows}
-          linkActive={true}
+          linkActive
           linkClass=" usage__img-link"
-        >
-        </CardList>
+        />
       </div>
     </div>
-  )
+  );
 }
 
 export default Usage;

@@ -1,12 +1,11 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import SlickSilder from "react-slick";
+import SlickSilder from 'react-slick';
+import { BsLink45Deg } from 'react-icons/bs';
 import SliderArrow from '../SliderArrow/SliderArrow';
 import { rows, usageRows } from '../../utils/constants';
-import { BsLink45Deg } from 'react-icons/bs';
 
 function Slider(props) {
-
   const sliderRef = React.useRef();
   const { pathname } = useLocation();
 
@@ -16,58 +15,60 @@ function Slider(props) {
     array.forEach((i) => {
       i.row.forEach((el) => {
         if (el.src) {
-          imgArr.push({ src: el.src, src_m: el.src_m, src_l: el.src_l, link: el.link });
+          imgArr.push({
+            src: el.src, src_m: el.src_m, src_l: el.src_l, link: el.link,
+          });
         }
-      })
-    })
+      });
+    });
     return imgArr;
   }
 
   React.useEffect(() => {
     sliderRef.current.slickGoTo(getImages().findIndex((i) => i.src === props.card.src));
-  }, [props.card])
+  }, [props.card]);
 
   return (
-    <div className={`popup-image ${props.card ? 'popup_opened' : ''}`} style={{paddingRight: 17 +'px'}}>
+    <div className={`popup-image ${props.card ? 'popup_opened' : ''}`} style={{ paddingRight: `${17}px` }}>
       <div className="popup-image__container">
 
         <SlickSilder
-          focusOnSelect={true}
+          focusOnSelect
           ref={sliderRef}
-          nextArrow={
+          nextArrow={(
             <SliderArrow
               arrowContainerClass="arrow__container_right"
               arrowClass="arrow-right"
             />
-          }
-          prevArrow={
+          )}
+          prevArrow={(
             <SliderArrow
               arrowContainerClass="arrow__container_left"
               arrowClass="arrow-left"
             />
-          }
+          )}
         >
-          {getImages().map((card, index) =>{
-            return (
-              <div className="slider__img-box" key={index}>
+          {getImages().map((card) => (
+            <div className="slider__img-box" key={card.src ? card.src : card.text}>
 
-                <picture>
-                  <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l}></source>
-                  <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m}></source>
-                  <img className='slider__img' src={card.src} alt="Изображение"></img>
-                </picture>
+              <picture>
+                <source className="slider__img" media="(min-width: 768px)" srcSet={card.src_l} />
+                <source className="slider__img" media="(max-width: 767px)" srcSet={card.src_m} />
+                <img className="slider__img" src={card.src} alt="Изображение" />
+              </picture>
 
-                <a
-                  href={card.link}
-                  target="_blank" className={`card__overlay-icon usage__link${!card.link ? ' usage__link_inactive' : ''}`}
-                  title="follow the link"
-                >
-                  <BsLink45Deg size={30} color="fff" className="card__icon"/>
-                </a>
+              <a
+                href={card.link}
+                target="_blank"
+                className={`card__overlay-icon usage__link${!card.link ? ' usage__link_inactive' : ''}`}
+                title="follow the link"
+                rel="noreferrer"
+              >
+                <BsLink45Deg size={30} color="fff" className="card__icon" />
+              </a>
 
-              </div>
-            )
-          })}
+            </div>
+          ))}
         </SlickSilder>
 
         <button className="popup__close-btn btn-cross" type="button" onClick={props.onClose}>

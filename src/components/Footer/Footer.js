@@ -1,3 +1,4 @@
+import React from 'react';
 import Contacts from '../Contacts/Contacts';
 
 function Footer() {
@@ -9,6 +10,5 @@ function Footer() {
     </footer>
   );
 }
-
 
 export default Footer;

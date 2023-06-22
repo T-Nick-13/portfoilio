@@ -2,8 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Navigation from '../Navigation/Navigation';
 import Burger from '../Burger/Burger';
 
-function Header(props) {
-
+function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerState, setHeaderState] = useState('init');
   const [transition, setTransition] = useState(false);
@@ -12,18 +11,17 @@ function Header(props) {
 
   function controlNavbar() {
     if (typeof window !== 'undefined' && headerState !== 'active-menu') {
-
-      //transition is not active before the first scroll
+      // transition is not active before the first scroll
       if (window.scrollY < headerHeight) {
         setHeaderState('init');
         setTransition(false);
       }
-      //set active transition after first scroll
+      // set active transition after first scroll
       if (window.scrollY > headerHeight && window.scrollY > lastScrollY && headerState === 'init') {
         setHeaderState('hidden');
         setTimeout(() => {
           setTransition(true);
-        }, 100)
+        }, 100);
       }
 
       if (window.scrollY > headerHeight && window.scrollY > lastScrollY) {
@@ -36,7 +34,7 @@ function Header(props) {
 
       setLastScrollY(window.scrollY);
     }
-  };
+  }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -44,19 +42,30 @@ function Header(props) {
       return () => {
         window.removeEventListener('scroll', controlNavbar);
       };
-    }
+    } return false;
   }, [lastScrollY, activeMenu]);
 
-  function openMenu() {
+  /*  function openMenu() {
     if (!activeMenu) {
       setActiveMenu(true);
       setHeaderState('active-menu');
     } else {
       setActiveMenu(false);
-      setTransition(false)
+      setTransition(false);
       setHeaderState('init');
     }
-  };
+  } */
+
+  const openMenu = useCallback(() => {
+    if (!activeMenu) {
+      setActiveMenu(true);
+      setHeaderState('active-menu');
+    } else {
+      setActiveMenu(false);
+      setTransition(false);
+      setHeaderState('init');
+    }
+  }, [activeMenu]);
 
   return (
     <header className={`header${transition ? ' header_transition' : ''} header_${headerState}`}>
@@ -68,7 +77,7 @@ function Header(props) {
         <Burger
           openMenu={openMenu}
           active={activeMenu}
-      />
+        />
       </div>
     </header>
   );

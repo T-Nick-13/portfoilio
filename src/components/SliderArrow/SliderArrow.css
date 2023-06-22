@@ -12,6 +12,8 @@
   z-index: 5;
   top: 50%;
   transform: translate(0, -50%);
+  background: none;
+  border: none;
 }
 
 .arrow__container:hover {

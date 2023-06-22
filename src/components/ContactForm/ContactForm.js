@@ -5,34 +5,32 @@ import Contacts from '../Contacts/Contacts';
 import contactImg from '../../images/light/contact.png';
 
 function ContactForm(props) {
-
   const [isValid, setIsValid] = React.useState(false);
-  const [error, setError] = React.useState({undefined});
+  const [error, setError] = React.useState({ undefined });
   const [data, setData] = React.useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const [form, setForm] = React.useState();
 
   function handleChange(e) {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setForm(e.target.closest('form'));
 
     const checkValidation = () => {
-      if (name == 'email' && value != '' && e.target.validationMessage != '') {
+      if (name === 'email' && value !== '' && e.target.validationMessage !== '') {
         return 'invalid email. Pleasy try again';
       }
-      if (value == '') {
+      if (value === '') {
         return 'please fill in this field';
-      } else {
-        return '';
       }
-    }
-    setError({ ...error, [name]: checkValidation() })
+      return '';
+    };
+    setError({ ...error, [name]: checkValidation() });
     setData({
       ...data,
-      [name]: value
+      [name]: value,
     });
     setIsValid(e.target.closest('form').checkValidity());
   }
@@ -63,49 +61,86 @@ function ContactForm(props) {
               {/* <h1 className="form__title">Contact form</h1> */}
 
               <div className="form__item">
-                <input id="formName" type="text" name="name" className="form__input _req"
-                  onChange={handleChange} required maxLength="30">
-                </input>
-                <label htmlFor="formName"
-                  className={error.name != "" && error.name != undefined  ? "form__label form__label_active" : "form__label"}>
-                  Name*: {error.name}
+                <input
+                  id="formName"
+                  type="text"
+                  name="name"
+                  className="form__input _req"
+                  onChange={handleChange}
+                  required
+                  maxLength="30"
+                />
+                <label
+                  htmlFor="formName"
+                  className={error.name !== '' && error.name !== undefined ? 'form__label form__label_active' : 'form__label'}
+                >
+                  Name*:
+                  {' '}
+                  {error.name}
                 </label>
               </div>
 
               <div className="form__item">
-                <input id="formEmail" type="email" required name="email"
-                  className="form__input _req _email" onChange={handleChange}></input>
-                <label htmlFor="formEmail"
-                  className={error.email != "" && error.email != undefined  ? "form__label form__label_active" : "form__label"}>
-                  E-mail*: {error.email}
+                <input
+                  id="formEmail"
+                  type="email"
+                  required
+                  name="email"
+                  className="form__input _req _email"
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="formEmail"
+                  className={error.email !== '' && error.email !== undefined ? 'form__label form__label_active' : 'form__label'}
+                >
+                  E-mail*:
+                  {' '}
+                  {error.email}
                 </label>
               </div>
 
               <div className="form__item">
-                <textarea id="formMessage" name="message" required className="form__input form__area _req"
-                  onChange={handleChange}></textarea>
-                <label htmlFor="formMessage"
+                <textarea
+                  id="formMessage"
+                  name="message"
+                  required
+                  className="form__input form__area _req"
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="formMessage"
                   className={
-                    error.message != "" && error.message != undefined  ? "form__label form__label-area form__label-area_active"
-                      : "form__label form__label-area"}> Message*: {error.message}
+                    error.message !== '' && error.message !== undefined ? 'form__label form__label-area form__label-area_active'
+                      : 'form__label form__label-area'
+}
+                >
+                  {' '}
+                  Message*:
+                  {' '}
+                  {error.message}
                 </label>
               </div>
 
-              <button type="submit" className={isValid ? "form__button form__button_active" : "form__button"}>Send</button>
+              <button type="submit" className={isValid ? 'form__button form__button_active' : 'form__button'}>Send</button>
 
             </form>
-            <Preloader inSend={props.inSend}/>
-            <p className="contact__text contact__text_form">Please fill out<br/> this form</p>
+            <Preloader inSend={props.inSend} />
+            <p className="contact__text contact__text_form">
+              Please fill out
+              <br />
+              {' '}
+              this form
+            </p>
           </div>
-          <img className="contact__img" src={contactImg} alt="workplace"></img>
+          <img className="contact__img" src={contactImg} alt="workplace" />
         </div>
-        <div className="contact__overlay"></div>
+        <div className="contact__overlay" />
 
         <div className="contact__links">
           <p className="contact__text contact__text_contact">or text me here</p>
           <div>
             <Contacts
-              activeName={true}
+              activeName
               activeLinks={['telegram', 'email']}
             />
           </div>
