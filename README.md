@@ -2,7 +2,7 @@
 
 View the project: <https://stafeeva.site/>
 
-![Project image](https://github.com/T-Nick-13/lfcstat/blob/main/src/images/light/screen.jpg)
+![Project image](https://github.com/netitov/portfoilio/blob/main/src/images/light/screen.jpg)
 
 ### Features and content
 
