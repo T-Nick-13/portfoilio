@@ -58,7 +58,6 @@ function ContactForm(props) {
         <div className="contact__img-box">
           <div className="form">
             <form className="form__body" onSubmit={handleSubmit} id="form">
-              {/* <h1 className="form__title">Contact form</h1> */}
 
               <div className="form__item">
                 <input

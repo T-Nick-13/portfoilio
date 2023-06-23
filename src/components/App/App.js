@@ -14,29 +14,16 @@ import Usage from '../Usage/Usage';
 
 function App() {
   const [selectedCard, setSelectedCard] = useState(0);
-  /* const [allCards, setAllCards] = useState([]); */
-  /* const [mainCards, setMainCards] = useState([]); */
   const [inSend, setInSend] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [photoIsOpened, setPhotoIsOpened] = useState(false);
 
   const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } = process.env;
 
-  /* function handleCardClick(card) {
-    setSelectedCard(card);
-    document.body.classList.add('body_unscrolled');
-  } */
-
   const handleCardClick = useCallback((card) => {
     setSelectedCard(card);
     document.body.classList.add('body_unscrolled');
   }, [selectedCard]);
-
-  /* function handlePopupClose() {
-    setSelectedCard(0);
-    setPhotoIsOpened(false);
-    document.body.classList.remove('body_unscrolled');
-  } */
 
   const handlePopupClose = useCallback(() => {
     setSelectedCard(0);
@@ -44,27 +31,9 @@ function App() {
     document.body.classList.remove('body_unscrolled');
   }, [selectedCard]);
 
-  /* function closePopupResult() {
-    setIsSent(false);
-  }
- */
-
   const closePopupResult = useCallback(() => {
     setIsSent(false);
   }, [isSent]);
-
-  /* function sendEmail(data) {
-    setInSend(true);
-    emailjs.send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, data, REACT_APP_PUBLIC_KEY)
-      .then(() => {
-        setInSend(false);
-        setIsSent(true);
-      }, (error) => {
-        console.log(error.text);
-        setIsSent(false);
-        setInSend(false);
-      });
-  } */
 
   const sendEmail = useCallback((data) => {
     setInSend(true);
@@ -78,10 +47,6 @@ function App() {
         setInSend(false);
       });
   }, [inSend]);
-
-  /* function openPhoto() {
-    setPhotoIsOpened(true);
-  } */
 
   const openPhoto = useCallback(() => {
     setPhotoIsOpened(true);
@@ -146,7 +111,6 @@ function App() {
         <Slider
           card={selectedCard}
           onClose={handlePopupClose}
-          /* pic={location.pathname === '/works' ? allCards : mainCards} */
         />
         <PopupResult
           isSent={isSent}

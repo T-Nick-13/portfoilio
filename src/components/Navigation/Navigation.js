@@ -23,12 +23,6 @@ function Navigation(props) {
     }
   }, [pathname, hash, key]);
 
-  /* function handleBurgerClick() {
-    if (props.activeMenu) {
-      props.openMenu();
-    }
-  } */
-
   const handleBurgerClick = useCallback(() => {
     if (props.activeMenu) {
       props.openMenu();

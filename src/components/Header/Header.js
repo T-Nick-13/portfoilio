@@ -45,17 +45,6 @@ function Header() {
     } return false;
   }, [lastScrollY, activeMenu]);
 
-  /*  function openMenu() {
-    if (!activeMenu) {
-      setActiveMenu(true);
-      setHeaderState('active-menu');
-    } else {
-      setActiveMenu(false);
-      setTransition(false);
-      setHeaderState('init');
-    }
-  } */
-
   const openMenu = useCallback(() => {
     if (!activeMenu) {
       setActiveMenu(true);
