@@ -2,39 +2,33 @@
 
 View the project: <https://stafeeva.site/>
 
-![Project gif](https://github.com/T-Nick-13/lfcstat/blob/main/src/images/video3%20(1).gif)
+![Project image](https://github.com/T-Nick-13/lfcstat/blob/main/src/images/light/screen.jpg)
 
 ### Features and content
 
-- Premier league table
-- players' stats
-- team stats charts: dynamics by years
-- player comparison charts
-- last news
-- regular data update
+- view illustrations in the layout and slider
+- send messages via the contact form
+- follow the links to view usage examples
+- visit the author's social media
+
+- grid layout
+- animations
+- image slider
+- adaptive layout
 
 ### Technologies
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-
-![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white)
-
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Credits
 
 | Name | Description|
 | --- | --- |
 | [React Icons](https://react-icons.github.io/react-icons) | Nice icons |
-| [SofaSport](https://rapidapi.com/tipsters/api/sofasport) | Players and team stats API |
-| [SportScore](https://rapidapi.com/tipsters/api/sportscore1) | Players and team stats API  |
-| [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1) | Latest team news API |
-| [React Splide](https://splidejs.com/) | Flexible react slider |
-
+| [React Slick](https://react-slick.neostack.com/) | React slider |
+| [EmailJS](https://www.emailjs.com/) | Sending email messages through the contact form |
 
 ## Setup
 
