@@ -4,7 +4,7 @@ import Contacts from '../Contacts/Contacts';
 import aboutImg01 from '../../images/light/aboutImg01.png';
 import aboutImg01S from '../../images/light/aboutImg01_small.png';
 import aboutImg02 from '../../images/light/aboutImg02.png';
-import aboutPhoto01 from '../../images/light/about1.jpg';
+import aboutPhoto01 from '../../images/light/aboutMain.jpeg';
 import aboutPhoto02 from '../../images/light/about2.jpg';
 import aboutPhoto03 from '../../images/light/about3.jpg';
 

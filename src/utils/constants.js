@@ -178,8 +178,9 @@ export const rows = [
   {
     row: [
       { src: images['img11_s.png'], src_m: imagesM['11.jpg'], src_l: imagesL['11.jpg'] },
+      { src: images['img13_s.jpg'], src_m: imagesM['13.jpg'], src_l: imagesL['13.jpg'] },
       { src: images['img12_s.png'], src_m: imagesM['12.jpg'], src_l: imagesL['12.jpg'] },
-      { src: images['img13_s.png'], src_m: imagesM['13.jpg'], src_l: imagesL['13.jpg'] },
+
     ],
     number: 8,
   },

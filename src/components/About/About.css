@@ -129,6 +129,11 @@
 .light-box__img-cont > img {
   height: 50vh;
   margin: 0px 0 60px 138px;
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
 }
 
 
