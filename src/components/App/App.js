@@ -11,6 +11,7 @@ import ContactForm from '../ContactForm/ContactForm';
 import PopupResult from '../PopupResult/PopupResult';
 import PhotoPopup from '../PhotoPopup/PhotoPopup';
 import Usage from '../Usage/Usage';
+import Diversity from '../Diversity/Diversity';
 
 function App() {
   const [selectedCard, setSelectedCard] = useState(0);
@@ -104,6 +105,10 @@ function App() {
               inSend={inSend}
               isSent={isSent}
             />
+          </Route>
+
+          <Route exact path="/diversity">
+            <Diversity />
           </Route>
 
         </Switch>

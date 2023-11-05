@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import Burger from '../Burger/Burger';
 
@@ -8,6 +9,8 @@ function Header() {
   const [transition, setTransition] = useState(false);
   const [activeMenu, setActiveMenu] = useState(false);
   const headerHeight = 80;
+
+  const location = useLocation();
 
   function controlNavbar() {
     if (typeof window !== 'undefined' && headerState !== 'active-menu') {
@@ -57,7 +60,10 @@ function Header() {
   }, [activeMenu]);
 
   return (
-    <header className={`header${transition ? ' header_transition' : ''} header_${headerState}`}>
+    <header
+      className={`header${transition ? ' header_transition' : ''} header_${headerState}`}
+      style={{ display: location.pathname === '/diversity' ? 'none' : 'block' }}
+    >
       <div className="header__container">
         <Navigation
           activeMenu={activeMenu}
